@@ -1,0 +1,90 @@
+/* header */
+
+
+nav ul li a.nav-hover{
+    position: relative;
+}
+
+ nav ul li a.nav-hover::before {
+    content: "";
+    position: absolute;
+    background: #2d7881;
+    width: 0%;
+    height: 2px;
+    bottom: 0%;
+    left: 0%;
+    transition: width 0.5s , opacity 0.5s;
+    opacity: 0;
+}
+
+nav ul li a.nav-hover:hover:before {
+    width: 100%;
+    opacity: 1;
+}
+
+.nav-join li a{
+    color: #1d555b;
+    font-weight: bold;
+}
+
+ /* X-Small devices (portrait phones, less than 576px) */
+ @media screen and (max-width:480px) {
+    .nav-join{
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(2,48%);
+        width: 40%;
+        top: 0;
+        right: 0;
+    }
+
+
+
+    .nav-join li a{
+        color: #2d7881;
+        font-weight: bold;
+    }
+
+    .navbar-collapse{
+        position: relative;
+    }
+
+    nav ul li a.nav-hover::before{
+        display: none;
+    }
+}
+
+.font-nav{
+    font-family: 'Dancing Script', cursive;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+
+/* // Medium devices (tablets, less than 992px) */
+@media screen and (min-width:481px) and (max-width:960px) {
+    .nav-join{
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(2,48%);
+        width: 20%;
+        top: 0;
+        right: 0;
+    }
+
+
+
+    .nav-join li a{
+        color: #2d7881;
+        font-weight: bold;
+    }
+
+    .navbar-collapse{
+        position: relative;
+    }
+
+    nav ul li a.nav-hover::before{
+        display: none;
+    }
+ }
+

@@ -1,0 +1,158 @@
+/* https://huemint.com/website-1/#palette=cdcfcf-140e0e-9ec2c6 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background: var(--maincolor);
+    font-family: "PT sans", sans-serif;
+    min-height: 100vh;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+:root {
+    --maincolor: #fff;
+    --subcolor: #140e0e;
+    --hovers: #2d7881;
+     /* --maincolor: #FFFAF1; */
+    /* --subcolor: #7b5244; */
+    /* --hovers: #A05E2B;  */
+  }
+
+
+  .button{
+    width: 300px;
+    height: 600px;
+    border: 1px solid black;
+    border-radius: 300px;
+  }
+  .section-padding {
+    padding: 2%;
+  }
+  
+  .section-header {
+    text-align: center;
+  }
+  
+  .section-header:hover .line {
+    width: 150px;
+  }
+  
+  .section-title {
+    font-size: 30px;
+  }
+
+  .line {
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: #2d7881;
+    margin: auto;
+    transition: width 0.5s;
+  }
+
+  .bot{
+    position: fixed;
+    z-index: 10;
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background: black;
+  }
+  
+  /* .title-line{
+    text-align: center;
+    padding: 20px 0px;
+    position: relative;
+    width: 20%;
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.title-line::before{
+    content:"";
+    position: absolute;
+    border: 2px solid #2d7881;
+    width: 50%;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%,0);
+    transition: width 0.5s;
+}
+
+.title-line:hover::before{
+    width: 70%;
+} */
+
+
+/* mobile */
+@media screen and (max-width:480px) {
+
+    .title-line::before{
+        content:"";
+        width: 100%;
+    }
+    .title-line:hover::before{
+        width: 100%;
+    }
+    
+}
+
+
+
+
+
+/*  <header>
+      <div class="container">
+        <div class="header-content">
+          <img
+            src="./css/css code main/images/x-hotel (1) (1).png"
+            alt="x-hotel"
+            draggable="false"
+          />
+          <nav class="navbar">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Explore</a></li>
+              <li><a href="#">Rooms</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+          <!-- ./navbar -->
+          <div class="login">
+            <ul>
+              <li><a href="http://127.0.0.1:3000/register.html">Join</a></li>
+              <span class="join-line"></span>
+              <li><a href="http://127.0.0.1:3000/sign-in.html">Sign-in</a></li>
+              <li>
+                <a href="#"><i class="fa-solid fa-user fa-lg"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- ./header-content -->
+      </div>
+      <!-- ./container -->
+    </header>
+ */

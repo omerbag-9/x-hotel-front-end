@@ -1,0 +1,153 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background: var(--maincolor);
+    font-family: "PT sans", sans-serif;
+    min-height: 100vh;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+:root {
+    --maincolor: #fff;
+    --subcolor: #140e0e;
+    --hovers: #2d7881;
+
+  }
+
+  .bot{
+    position: fixed;
+    z-index: 10;
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background: black;
+  }
+  
+  a{
+    text-decoration: none;
+} */
+
+  /* register */
+/* .register{
+    position: relative;
+}
+
+.sign-up{
+    margin: 100px auto;
+    padding-bottom: 20px;
+    width: 60%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.sign-up h2 , .form-desc{
+    text-align: center;
+}
+
+.sign-up h2{
+    margin: 50px;
+    color: #2d7881;
+}
+
+.sign-up form table tr td{
+    display: block;
+ margin: 10px 0px;
+}
+
+.sign-up form table tr td input{
+    padding: 10px 0px;
+    outline: transparent;
+}
+
+.sign-up form table tr td button{
+    width: 100%;
+    height: 50px;
+    background: #2d7881;
+    border: 0;
+    font-size: 20px;
+    color: #fff;
+}
+
+.sign-up form table tr td span{
+    color: #999999;
+}
+.sign-up form table{
+    margin: auto;
+}
+
+.sign-up td a{
+    color: #2d7881;
+} */
+
+body{
+    display: flex;
+    flex-direction: column;
+    background: var(--maincolor);
+    min-height: 100vh;
+    place-content: center;
+}
+
+.form-info-color{
+    color: #2d7881;
+}
+
+.btn-our-color{
+    background: #2d7881;
+}
+
+.linkcolor{
+    color: #2d7881;
+}
+
+.form-container{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+.form-width{
+    width: 50%;
+    margin: auto;
+    padding: 50px;
+}
+
+.btn-sign{
+    outline:1px solid #2d7881;
+    border-radius: 10px;
+    padding: 8px 18px;
+    color: #2d7881;
+    border: none;
+    background: white;
+    transition: color 0.5s , background 0.5s;
+}
+.btn-sign:hover{
+    background: #2d7881;
+    color: white;
+}
+
+/* mobile */
+@media screen and (max-width:480px) {
+    .form-container{
+        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+    }
+    .form-width{
+        width: 100%;
+    }
+}
+
+/* tablets */
+@media screen and (min-width:481px) and (max-width:960px) {
+    .form-width{
+        width: 100%;
+        height: 100vh;
+    }
+}
+

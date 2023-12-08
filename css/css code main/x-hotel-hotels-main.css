@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background: var(--maincolor);
+    font-family: "PT sans", sans-serif;
+    min-height: 100vh;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+:root {
+    --maincolor: #fff;
+    --subcolor: #140e0e;
+    --hovers: #2d7881;
+     /* --maincolor: #FFFAF1; */
+    /* --subcolor: #7b5244; */
+    /* --hovers: #A05E2B;  */
+  }
+  
+.home {
+    background-image: url(../images/manor-house-2359884_1920.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    /* border-radius: 60px ; */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  
+  .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #2d7881;
+      top: 0%;
+      left: 0%;
+      opacity: 0.3;
+    }
+  
+    .home-content{
+      text-align: center;
+      color: white;
+      position: absolute;
+      left: 50%;
+      top: 60%;
+      transform: translate(-50%,-50%);
+    }
+  
+  .home-content h1 {
+      font-size: 50px;
+      margin: 10px 0;
+    }
+    
+    .home-content .home-button {
+      width: 40px;
+      height: 70px;
+      border-radius: 35px;
+      border: white 2px solid;
+      margin: auto;
+      margin-top: 30px;
+      position: relative;
+    }
+    
+    .home-content .home-button i {
+      /* line-height: 4; */
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation-name:bill;
+      animation-duration:2s;
+      animation-iteration-count:infinite;
+      /* animation-fill-mode:backwards; */
+      animation-delay: 2s;
+    }
+  
+    @keyframes bill{
+      50%{
+        top: 40%;
+        opacity: 0;
+      }
+      75%{
+        top: 0;
+        opacity: 0;
+      }
+    }
+  
+    /* mobile */
+  @media screen and (max-width: 480px) {
+    .home-p{
+      display: none;
+    }
+    .home {
+      background-image: url(../images/manor-house-2359884_1920.jpg);
+      background-size: cover;
+      height: 80vh;
+      width: 100%;
+      /* border-radius: 60px ; */
+      position: relative;
+      overflow: hidden;
+    }
+  
+  }
+  
+  /* tablets */
+  @media screen and (min-width: 481px) and (max-width: 960px) {
+  
+  }
+
+  /* hotels */
+  .hotels{
+   margin: 3% 0;
+   margin-top: 6%;
+  }
+  .hotels-content{
+    display: grid;
+    grid-template-columns: 31% 31% 31%;
+    justify-content: space-between;
+  }
+
+  .hotels-item{    
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+  }
+
+  .hotels-item img:hover{
+    scale: 1.2;
+  }
+
+  .hotels-item img{
+    width: 100%;
+    transition: scale 0.5s;
+  }
+
+  .item-overlay{
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+    color: white;
+  }
+
+  .item-overlay h2{
+    margin: 0;
+    font-size: 24px;
+  }
+
+  .hotels-header a{
+    color: var(--hovers);
+  }
+
+
+    /* mobile */
+@media screen and (max-width:480px) {
+    .hotels-content{
+      grid-template-columns: 100%;
+      row-gap: 1%;
+    }
+  }
+  
+  /* tablets */
+  @media screen and (min-width:481px) and (max-width:960px) {
+   
+  }
