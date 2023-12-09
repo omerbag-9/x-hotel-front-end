@@ -10,6 +10,13 @@
     padding: 0% 0px 4% 0;
 }
 
+.events-items{
+    display: grid;
+    grid-template-columns: repeat(2,30%);
+    justify-content: space-between;
+    padding: 0% 0px 4% 0;
+}
+
 .booking-item{
     width: 100%;
     margin: 15px 0px;
@@ -73,6 +80,25 @@
 @media screen and (min-width:481px) and (max-width:960px) {
 
     .booking-items{
+        display: grid;
+        place-content: center;
+        grid-template-columns: repeat(2,50%);
+    }
+}
+
+/* mobile */
+@media screen and (max-width:480px) {
+    .events-items{
+        display: grid;
+        grid-template-columns: repeat(1,100%);
+    }
+
+}
+
+/* tablets */
+@media screen and (min-width:481px) and (max-width:960px) {
+
+    .events-items{
         display: grid;
         place-content: center;
         grid-template-columns: repeat(2,50%);
