@@ -6,7 +6,7 @@ var input2 = document.getElementsByClassName("check1-2")[1];
 var input3 = document.getElementsByClassName("check1-3")[0];
 var input4 = document.getElementsByClassName("check1-4")[1];
 
-
+console.log("hell");
 $(input1).datepicker({
   format: 'yyyy-mm-dd',
   autoclose: true,
