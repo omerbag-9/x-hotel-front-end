@@ -162,9 +162,13 @@ a{
 
   /* mobile */
 @media screen and (max-width:480px) {
+  .Container{
+    width: 99%;
+  }
   .hotels-content{
     grid-template-columns: 100%;
     row-gap: 1%;
+    padding-bottom: 50px;
   }
 }
 
