@@ -58,16 +58,46 @@ $(input1).datepicker({
 })
 
 
-async function login() {
+// async function login() {
 
-  var user = {
-    UserEmail: emailIput.value,
-    password: passwordIput.value,
+//   var user = {
+//     UserEmail: emailIput.value,
+//     password: passwordIput.value,
+
+//   }
+
+//   var data = await fetch('', {
+//     method: "post",
+//     body: JSON.stringify(user)
+//   })
+//   let res = await data.json()
+
+//   console.log(res);
+// }
+
+var firstNameInput = getElementById("validationDefault01");
+var lastNameInput = getElementById("validationDefault02");
+var emailInput = getElementById("validationDefaultUsername");
+var countryInput = getElementById("validationDefault03");
+var zipInput = getElementById("validationDefault05");
+var hobbiesInput = getElementById("validationDefault08");
+var passwordInput = getElementById("password");
+
+async function register() {
+
+  var UserProfile = {
+    first_name: firstNameInput.value,
+    last_name: lastNameInput.value,
+    email: emailInput.value,
+    country:countryInput.value,
+    zip: Number(zipInput.value),
+    hobbies: hobbiesInput.value,
+    password: passwordInput.value,
   }
 
   var data = await fetch('', {
-    method: "post",
-    body: JSON.stringify(user)
+    method: "POST",
+    body: JSON.stringify(UserProfile)
   })
   let res = await data.json()
 
