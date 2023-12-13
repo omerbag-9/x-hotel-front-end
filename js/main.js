@@ -24,27 +24,50 @@
 //   datesDisabled: datesForDisable,
 // })
 
+//post first room
+// var checkin1 = document.getquerySelector("input .check1")
+// var checkout1 = document.getquerySelector("input .check1")
 
-// $(input3).datepicker({
-//   format: 'yyyy-mm-dd',
-//   autoclose: true,
-//   weekStart: 1,
-//   calendarWeeks: true,
-//   todayHighlight: true,
-//   datesDisabled: datesForDisable2,
-// })
-// $(input4).datepicker({
-//   format: 'yyyy-mm-dd',
-//   autoclose: true,
-//   weekStart: 1,
-//   calendarWeeks: true,
-//   todayHighlight: true,
-//   datesDisabled: datesForDisable2,
-// })
-
-
+// async function bookingRoom1() {
+//     var booking1 = {
+//         check_in: checkin1.value,
+//         check_out: checkout1.value
+//     }
+//     var data = await fetch(`localhost:8000/api/login/`, {
+//         method: "post",
+//         body: JSON.stringify(booking1)
+//     })
+//     let res = await data.json()
+//     console.log(res);
+// }
+// bookingRoom1()
 
 
+//post second room
+// var checkin2 = document.getquerySelector("input .check2")
+// var checkout2 = document.getquerySelector("input .check2")
+
+// async function bookingRoom1() {
+//     var booking2 = {
+//         check_in: checkin2.value,
+//         check_out: checkout2.value
+//     }
+//     var data = await fetch(`localhost:8000/api/login/`, {
+//         method: "post",
+//         body: JSON.stringify(booking2)
+//     })
+//     let res = await data.json()
+//     console.log(res);
+// }
+// bookingRoom2()
+
+
+
+
+
+
+
+//events
 // var datesForDisable1 = ["2023-12-7", "2023-12-8"]
 
 // var input1 = document.getElementById("checkin");
