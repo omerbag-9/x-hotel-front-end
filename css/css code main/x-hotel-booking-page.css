@@ -55,10 +55,19 @@
     .booking-left{
         margin-bottom: 20px;
     }
+    .navbar-toggler span{
+     background-image: var(--bs-navbar-toggler-icon-bg);
+    }
 }
 
 
 /* tablets */
 @media screen and (min-width:481px) and (max-width:960px) {
-
+    .navbar-toggler span{
+        background-image: var(--bs-navbar-toggler-icon-bg);
+       }
+       .booking{
+        width: 90%;
+        margin: auto;
+       }
 }
