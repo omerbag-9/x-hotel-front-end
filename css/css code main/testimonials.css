@@ -1,0 +1,25 @@
+.testimonials{
+    display: grid;
+    grid-template-columns: repeat(3,30%);
+    gap:3%;
+}
+
+.testimonials-item{
+    position: relative;
+    padding: 70px 50px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+
+
+.testimonials-item p{
+    margin: 0;
+}
+
+.testimonials-name{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    margin-bottom: 120px;
+}

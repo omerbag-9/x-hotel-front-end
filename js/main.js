@@ -58,6 +58,105 @@
 // })
 
 
+
+
+
+
+
+
+// review local
+// var reviewNameInput = document.getElementById("review-name")
+// var reviewMessageInput = document.getElementById("review-message")
+// var reviewList = [];
+// if (localStorage.getItem("reviews") != null) {
+//     reviewList = JSON.parse(localStorage.getItem("reviews"))
+//     displayData()
+// }
+
+
+// function addReview() {
+//   var review = {
+//       reviewName: reviewNameInput.value,
+//       reviewMessage: reviewMessageInput.value
+//   }
+//   reviewList.push(review)
+//   localStorage.setItem("reviews", JSON.stringify(reviewList))
+//   displayData()
+// }
+// function displayData() {
+//   var temp = "";
+//   for (var i = 0; i < reviewList.length; i++) {
+//       temp += ` <div class="testimonials-item bg-body-tertiary">
+//       <div class="testimonials-name">
+//       <h5>`+reviewList[i].reviewName+`</h5>
+//     </div>
+//     <div class="testimonials-desc">
+//       <p><i class="fa-solid fa-comment"></i>`+reviewList[i].reviewMessage+`<i class="fa-solid fa-comment"></i></p>
+//     </div>
+//     </div>`
+//   }
+//   document.getElementById("myReview").innerHTML = temp
+// }
+
+
+
+
+
+
+
+// get and add review
+// let reviewList = [];
+// async function addReview() {
+//     let myReq = await fetch(``)
+//     let Data = await myReq.json()
+//     reviewList = Data.reviews
+//     console.log(reviewList)
+//     displayReview()
+//     }
+
+//     addReview()
+
+//     function displayReview(){
+//         let temp = ""
+//         reviewList.forEach((element)=>{
+//             temp+=`<div class="testimonials-item bg-body-tertiary">
+//         <div class="testimonials-name">
+//        <h5>${element.reviewName}</h5>
+//        </div>
+//        <div class="testimonials-desc">
+//         <p><i class="fa-solid fa-comment"></i>${element.reviewMessage}<i class="fa-solid fa-comment"></i></p>
+//        </div>
+//       </div>`
+//         })
+//         document.getElementById("myReview").innerHTML = temp
+//     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // async function login() {
 
 //   var user = {
@@ -77,99 +176,62 @@
 
 ////////////////////////////////
 
-// var firstNameInput = getElementById("validationDefault01");
-// var lastNameInput = getElementById("validationDefault02");
-// var emailInput = getElementById("validationDefaultUsername");
-// var countryInput = getElementById("validationDefault03");
-// var zipInput = getElementById("validationDefault05");
-// var hobbiesInput = getElementById("validationDefault08");
-// var passwordInput = getElementById("password");
+// login
+// var userNameLoginInput = document.getElementById("username")
+// var emailLoginInput = document.getElementById("email")
+// var passwordLoginInput = document.getElementById("password")
 
-// async function register() {
-
-//   var UserProfile = {
-//     first_name: firstNameInput.value,
-//     last_name: lastNameInput.value,
-//     email: emailInput.value,
-//     country:countryInput.value,
-//     zip: Number(zipInput.value),
-//     hobbies: hobbiesInput.value,
-//     password: passwordInput.value,
-//   }
-
-/////////////////////////////////
-
-
-async function register() {
-  var data = await fetch(`https://jsonplaceholder.typicode.com/users`, {
-    method: "get",
-    body: JSON(users)
-  })
-  let res = await data.json()
-  console.log(res);
-  displayData()
-}
-
-function displayData() {
-  var temp = "";
-  for (var i = 0; i < users.length; i++) {
-      temp += `  <div>
-      <h1>`+users[i].name+`</h1>
-      <h1>`+users[i].username+`</h1>
-      <h1>`+users[i].email+`</h1>
-      <h1>`+users[i].id+`</h1>
-  </div>`
-
-         
-  }
-  document.getElementById("myData").innerHTML = temp
-}
-
-
-// var firstNameInput = getElementById("validationDefault01");
-// var lastNameInput = getElementById("validationDefault02");
-// var emailInput = getElementById("validationDefaultUsername");
-// var countryInput = getElementById("validationDefault03");
-// var zipInput = getElementById("validationDefault05");
-// var hobbiesInput = getElementById("validationDefault08");
-// var passwordInput = getElementById("password");
-// var userList = []
-
-
-// async function register() {
-
-//   var UserProfile = {
-//     first_name: firstNameInput.value,
-//     last_name: lastNameInput.value,
-//     email: emailInput.value,
-//     country:countryInput.value,
-//     zip: Number(zipInput.value),
-//     hobbies: hobbiesInput.value,
-//     password: passwordInput.value,
-//   }
-
-//   var data = await fetch('', {
-//     method: "post",
-//     body: JSON.stringify(UserProfile)
-//   })
-//   let res = await data.json()
-//   console.log(res);
-//   displayData()
+// async function loginData() {
+//     var loginUserData = {
+//         username: userNameLoginInput.value,
+//         email: emailLoginInput.value,
+//         password: passwordLoginInput.value,
+//     }
+//     var data = await fetch(`localhost:8000/api/login/`, {
+//         method: "post",
+//         body: JSON.stringify(loginUserData)
+//     })
+//     let res = await data.json()
+//     console.log(res);
 // }
+// loginData()
 
-// function displayData() {
-//   var temp = "";
-//   for (var i = 0; i < productList.length; i++) {
-//       temp += 
-//       `<div>
-//       `+ i +` 
-//       `+ productList[i].name + `
-//       `+ productList[i].price +` 
-//       `+ productList[i].category +` 
-//       `+ productList[i].sale + `
-//       `+ productList[i].desc + `</div>`
-              
-         
-//   }
-//   document.getElementById("myData").innerHTML = temp
+
+
+
+
+
+
+
+
+// register
+// var userNameJoinInput = document.getElementById("username")
+// var firstNameJoinInput = document.getElementById("first_name")
+// var lastNameJoinInput = document.getElementById("last_name")
+// var countryJoinInput = document.getElementById("country")
+// var zipJoinInput = Number(document.getElementById("zip"))
+// var emailJoinInput = document.getElementById("email")
+// var passwordJoinInput = document.getElementById("password")
+// var hobbiesJoinInput = document.getElementById("hobbies")
+
+// async function joinData() {
+//     var joinUserData = {
+//         username: userNameJoinInput.value,
+//         first_name:firstNameJoinInput.value,
+//         last_name:lastNameJoinInput,
+//         country:countryJoinInput,
+//         zip:zipJoinInput,
+//         email: emailJoinInput.value,
+//         password: passwordJoinInput.value,
+//         hobbies:hobbiesJoinInput,
+//     }
+//     var data = await fetch(`localhost:8000/api/login/`, {
+//         method: "post",
+//         body: JSON.stringify(joinUserData)
+//     })
+//     let res = await data.json()
+//     console.log(res);
 // }
+// joinData()
+
+
