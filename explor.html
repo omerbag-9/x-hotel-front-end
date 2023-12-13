@@ -3,14 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hotels</title>
+    <title>Explor</title>
     <link rel="stylesheet" href="./css/css code main/bootstrap.min.css" />
     <script src="./js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="./css/css code main/x-hotel-main.css">
+    <link rel="stylesheet" href="css/css code main/explor.css" />
     <link rel="stylesheet" href="css/css code main/x-hotel-header.css" />
-    <link rel="stylesheet" href="css/css code main/x-hotel-hotels.css" />
-    <link rel="stylesheet" href="./css/css code main/x-hotel-footer.css">
+    <link rel="stylesheet" href="./css/css code main/x-hotel-footer.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Dancing+Script:wght@600&family=PT+Sans&family=Roboto+Serif:opsz,wght@8..144,200;8..144,300&family=Varela+Round&display=swap"
       rel="stylesheet"
@@ -49,17 +48,21 @@
               >
             </li>
             <li class="nav-item ms-4">
-              <a class="nav-link nav-hover fw-bold text-black" href="./explor.html"
+              <a class="nav-link nav-hover fw-bold text-black" href="#"
                 >Explore</a
               >
             </li>
             <li class="nav-item ms-4">
-              <a class="nav-link nav-hover fw-bold text-black" href="./hotels.html"
+              <a
+                class="nav-link nav-hover fw-bold text-black"
+                href="./hotels.html"
                 >Hotels</a
               >
             </li>
             <li class="nav-item ms-4">
-              <a class="nav-link nav-hover fw-bold text-black" href="./about.html"
+              <a
+                class="nav-link nav-hover fw-bold text-black"
+                href="./about.html"
                 >About</a
               >
             </li>
@@ -80,121 +83,76 @@
         </div>
       </div>
     </nav>
-    <!-- home -->
-    <div class="home">
-      <div class="overlay"></div>
 
-      <div class="home-content">
-        <h1 class="title">Choose Your Hotel</h1>
-        <div class="home-button">
-          <i class="fa fa-arrow-down" aria-hidden="true"> </i>
-        </div>
-        <!-- button -->
-      </div>
-      <!-- ./home-content -->
+    <!-- explor-home -->
+    <div class="explor-home">
+      <video controls autoplay class="w-100">
+        <source src="./css/images/Mondrian Park Avenue.mp4" type="video/mp4" />
+        <!-- <source src="movie.ogg" type="video/ogg"> -->
+        Your browser does not support the video tag.
+      </video>
     </div>
-    <!-- ./home -->
+    <!-- ./explor-home -->
 
-    <!-- hotels -->
-    <div class="hotels p-5 ">
-      <div class="section-header section-padding">
-        <h2 class="section-title">Hotels</h2>
-        <span class="line"></span>
+    <!-- tour -->
+    <div class="tour">
+        <div class="tour-title section-header m-auto text-center mb-5">
+            <h2 class="section-title footer-title text-black">Take a Tour</h2>
+            <span class="line"></span>
+          </div>
+      <!-- <div class="tour-title m-auto text-center mb-5">
+        <h2>Take a Tour</h2>
+      </div> -->
+      <div class="tour-item container">
+        <div class="tour-img position-relative">
+          <img src="css/images/room.png" alt="" class="w-100" />
+          <div class="tour-desc text-center m-auto position-absolute">
+            <h3>Luxurious Rooms</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+              velit id quo ipsum molestiae. Nam facilis, tempore reprehenderit
+              recusandae debitis maxime repellendus impedit autem repudiandae
+              nostrum, odio ratione officiis inventore molestias! Alias ipsam, eum
+              eos sunt nobis at qui nostrum. Mollitia incidunt perferendis omnis
+              iste animi aperiam. Temporibus, consequuntur quisquam!
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="hotels-content Container m-auto">
-        <a href="./booking.html">
-        <div class="hotels-item">
-          <img src="css/images/Rectangle 5.png" alt="" />
-          <div class="item-overlay">
-            <h2>Helton</h2>
-            <span class="d-block">Cairo,Egypt</span>
-            <span>480$/night</span>
+      <div class="tour-item container">
+        <div class="tour-img position-relative">
+          <img src="css/images/gym.png" alt="" class="w-100" />
+          <div class="tour-desc text-center m-auto position-absolute">
+            <h3>Gym Center</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+              velit id quo ipsum molestiae. Nam facilis, tempore reprehenderit
+              recusandae debitis maxime repellendus impedit autem repudiandae
+              nostrum, odio ratione officiis inventore molestias! Alias ipsam, eum
+              eos sunt nobis at qui nostrum. Mollitia incidunt perferendis omnis
+              iste animi aperiam. Temporibus, consequuntur quisquam!
+            </p>
           </div>
         </div>
-      </a>
-        <a href="./booking.html">
-        <div class="hotels-item">
-          <img src="css/images/Rectangle 20.png" alt="" />
-          <div class="item-overlay">
-            <h2>Sky View Hotel</h2>
-            <span class="d-block">Egypt,Hurghada</span>
-            <span>200$/night</span>
+      </div>
+      <div class="tour-item container last-item">
+        <div class="tour-img position-relative">
+          <img src="css/images/resturant.png" alt="" class="w-100" />
+          <div class="tour-desc text-center m-auto position-absolute">
+            <h3>Restaurant</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+              velit id quo ipsum molestiae. Nam facilis, tempore reprehenderit
+              recusandae debitis maxime repellendus impedit autem repudiandae
+              nostrum, odio ratione officiis inventore molestias! Alias ipsam, eum
+              eos sunt nobis at qui nostrum. Mollitia incidunt perferendis omnis
+              iste animi aperiam. Temporibus, consequuntur quisquam!
+            </p>
           </div>
         </div>
-      </a>
-      <a href="./booking.html">
-        <div class="hotels-item">
-          <img src="css/images/Rectangle 21.png" alt="" />
-          <div class="item-overlay">
-            <h2>Tanoak Resort</h2>
-            <span class="d-block">Egypt,Ain Sokhna</span>
-            <span>100$/night</span>
-          </div>
-        </div>
-      </a>
-      <a href="./booking.html">
-        <div class="hotels-item">
-          <img src="css/images/Rectangle 21.png" alt="" />
-          <div class="item-overlay">
-            <h2>Tolip Resort</h2>
-            <span class="d-block">Egypt,Ain Sokhna</span>
-            <span>330$/night</span>
-          </div>
-        </div>
-      </a>
-      <a href="./booking.html">
-        <div class="hotels-item">
-          <img src="css/images/Rectangle 5.png" alt="" />
-          <div class="item-overlay">
-            <h2>Pavillon Luxor</h2>
-            <span class="d-block">Egypt,Luxor</span>
-            <span>80$/night</span>
-          </div>
-        </div>
-      </a>
-      <a href="./booking.html">
-        <div class="hotels-item">
-          <img src="css/images/Rectangle 20.png" alt="" />
-          <div class="item-overlay">
-            <h2>Siva Golden</h2>
-            <span class="d-block">Egypt,Red Sea</span>
-            <span>50$/night</span>
-          </div>
-        </div>
-      </a>
-      <a href="./booking.html">
-        <div class="hotels-item">
-          <img src="css/images/Rectangle 20.png" alt="" />
-          <div class="item-overlay">
-            <h2>Kendaka Nubian</h2>
-            <span class="d-block">Egypt,Aswan</span>
-            <span>150$/night</span>
-          </div>
-        </div>
-      </a>
-      <a href="./booking.html">
-        <div class="hotels-item">
-          <img src="css/images/Rectangle 21.png" alt="" />
-          <div class="item-overlay">
-            <h2>Jewel Hotel</h2>
-            <span class="d-block">Egypt,Sharm El Sheikh</span>
-            <span>190$/night</span>
-          </div>
-        </div>
-      </a>
-      <a href="./booking.html">
-        <div class="hotels-item">
-          <img src="css/images/Rectangle 5.png" alt="" />
-          <div class="item-overlay">
-            <h2>Helton</h2>
-            <span class="d-block">Egypt,Alexandrina</span>
-            <span>500$/night</span>
-          </div>
-        </div>
-      </a>
       </div>
     </div>
-    <!-- ./hotels -->
+    <!-- ./tour -->
 
     <footer>
       <div class="footer-items">
@@ -206,7 +164,7 @@
             </div>
             <!-- ./section-header -->
           </div>
-          <!-- ./footer-item --> 
+          <!-- ./footer-item -->
           <ul class="footer-title-list">
             <li><a href="#">About us</a></li>
             <li><a href="#">Environmental, Social and Governance (ESG)</a></li>
@@ -228,7 +186,7 @@
               <a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a>
             </li>
           </ul>
-  
+
           <ul class="footer-policy">
             <li><a href="#">Legal Notice</a></li>
             <li><a href="#">Privacy Notice</a></li>
@@ -243,7 +201,5 @@
       </div>
       <!-- ./footer-items -->
     </footer>
-    
-
   </body>
 </html>
