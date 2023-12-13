@@ -26,6 +26,10 @@
   }
   
   /* history section */
+
+  .home{
+    background-image: url(../images/lobby-346426_1920.jpg);
+  }
   
   .history {
     padding: 5% 0;
