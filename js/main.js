@@ -191,24 +191,22 @@ async function loginData() {
 }
 
 
+// change password
+var oldPassword = document.getElementById("old_password")
+var newPassword = document.getElementById("new_password")
 
-//change password
-// var oldPassword = document.getElementById("oldPassword")
-// var newPassword = document.getElementById("newPassword")
-
-// async function changeData() {
-//     var changeUserData = {
-//         old_password: oldPassword.value,
-//         new_password: newPassword.value,
-//     }
-//     var data = await fetch(`localhost:8000/api/login/`, {
-//         method: "post",
-//         body: JSON.stringify(changeUserData)
-//     })
-//     let res = await data.json()
-//     console.log(res);
-// }
-// changeData()
+async function changeData() {
+    var changeUserData = {
+        old_password: oldPassword.value,
+        new_password: newPassword.value,
+    }
+    var data = await fetch(`localhost:8000/api/login/`, {
+        method: "post",
+        body: JSON.stringify(changeUserData)
+    })
+    let res = await data.json()
+    console.log(res);
+}
 
 
 
@@ -247,7 +245,6 @@ async function joinData() {
     let res = await data.json()
     console.log(res);
 }
-
 
 
 // Make a GET request to obtain the CSRF token from the HTML
@@ -300,22 +297,21 @@ async function joinData() {
 
 
 // review post
-// var userPostReview = document.getElementById("review-name")
-// var postReviewMessage = document.getElementById("review-message")
+var userPostReview = document.getElementById("user")
+var postReviewMessage = document.getElementById("comment")
 
-// async function sendReview() {
-//     var userSendReview = {
-//         username: userPostReview.value,
-//         message: postReviewMessage.value,
-//     }
-//     var data = await fetch(``, {
-//         method: "post",
-//         body: JSON.stringify(userSendReview)
-//     })
-//     let res = await data.json()
-//     console.log(res);
-// }
-// sendReview()
+async function sendReview() {
+    var userSendReview = {
+        user: userPostReview.value,
+        comment: postReviewMessage.value,
+    }
+    var data = await fetch(``, {
+        method: "post",
+        body: JSON.stringify(userSendReview)
+    })
+    let res = await data.json()
+    console.log(res);
+}
 
 
 
