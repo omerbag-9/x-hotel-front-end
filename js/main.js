@@ -170,25 +170,25 @@ $(input2).datepicker({
 
 ////////////////////////////////
 
-// login
-// var userNameLoginInput = document.getElementById("username")
-// var emailLoginInput = document.getElementById("email")
-// var passwordLoginInput = document.getElementById("password")
+login
+var userNameLoginInput = document.getElementById("username")
+var emailLoginInput = document.getElementById("email")
+var passwordLoginInput = document.getElementById("password")
 
-// async function loginData() {
-//     var loginUserData = {
-//         username: userNameLoginInput.value,
-//         email: emailLoginInput.value,
-//         password: passwordLoginInput.value,
-//     }
-//     var data = await fetch(`localhost:8000/api/login/`, {
-//         method: "post",
-//         body: JSON.stringify(loginUserData)
-//     })
-//     let res = await data.json()
-//     console.log(res);
-// }
-// loginData()
+async function loginData() {
+    var loginUserData = {
+        username: userNameLoginInput.value,
+        email: emailLoginInput.value,
+        password: passwordLoginInput.value,
+    }
+    var data = await fetch(`https://xhotel-backend.onrender.com/api/login/`, {
+        method: "post",
+        body: JSON.stringify(loginUserData)
+    })
+    let res = await data.json()
+    console.log(res);
+}
+loginData()
 
 
 
@@ -219,34 +219,34 @@ $(input2).datepicker({
 
 
 // register
-// var userNameJoinInput = document.getElementById("username")
-// var firstNameJoinInput = document.getElementById("first_name")
-// var lastNameJoinInput = document.getElementById("last_name")
-// var countryJoinInput = document.getElementById("country")
-// var zipJoinInput = Number(document.getElementById("zip"))
-// var emailJoinInput = document.getElementById("email")
-// var passwordJoinInput = document.getElementById("password")
-// var hobbiesJoinInput = document.getElementById("hobbies")
+var userNameJoinInput = document.getElementById("username")
+var firstNameJoinInput = document.getElementById("first_name")
+var lastNameJoinInput = document.getElementById("last_name")
+var countryJoinInput = document.getElementById("country")
+var zipJoinInput = Number(document.getElementById("zip"))
+var emailJoinInput = document.getElementById("email")
+var passwordJoinInput = document.getElementById("password")
+var hobbiesJoinInput = document.getElementById("hobbies")
 
-// async function joinData() {
-//     var joinUserData = {
-//         username: userNameJoinInput.value,
-//         first_name:firstNameJoinInput.value,
-//         last_name:lastNameJoinInput,
-//         country:countryJoinInput,
-//         zip:zipJoinInput,
-//         email: emailJoinInput.value,
-//         password: passwordJoinInput.value,
-//         hobbies:hobbiesJoinInput,
-//     }
-//     var data = await fetch(`localhost:8000/api/login/`, {
-//         method: "post",
-//         body: JSON.stringify(joinUserData)
-//     })
-//     let res = await data.json()
-//     console.log(res);
-// }
-// joinData()
+async function joinData() {
+    var joinUserData = {
+        username: userNameJoinInput.value,
+        first_name:firstNameJoinInput.value,
+        last_name:lastNameJoinInput,
+        country:countryJoinInput,
+        zip:zipJoinInput,
+        email: emailJoinInput.value,
+        password: passwordJoinInput.value,
+        hobbies:hobbiesJoinInput,
+    }
+    var data = await fetch(`https://xhotel-backend.onrender.com/api/register/`, {
+        method: "post",
+        body: JSON.stringify(joinUserData)
+    })
+    let res = await data.json()
+    console.log(res);
+}
+joinData()
 
 
 
