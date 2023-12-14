@@ -183,6 +183,7 @@ async function loginData() {
     }
     var data = await fetch(`https://xhotel-backend.onrender.com/api/login/`, {
         method: "post",
+        credentials:'include',
         body: JSON.stringify(loginUserData)
     })
     let res = await data.json()
@@ -230,23 +231,39 @@ var hobbiesJoinInput = document.getElementById("hobbies")
 
 async function joinData() {
     var joinUserData = {
-        username: userNameJoinInput.value,
-        first_name:firstNameJoinInput.value,
-        last_name:lastNameJoinInput.value,
-        country:countryJoinInput.value,
-        zip:zipJoinInput.value,
-        email: emailJoinInput.value,
-        password: passwordJoinInput.value,
-        hobbies:hobbiesJoinInput.value
+        username: userNameJoinInput,
+        first_name:firstNameJoinInput,
+        last_name:lastNameJoinInput,
+        country:countryJoinInput,
+        zip:zipJoinInput,
+        email: emailJoinInput,
+        password: passwordJoinInput,
+        hobbies:hobbiesJoinInput
     }
     var data = await fetch(`https://xhotel-backend.onrender.com/api/register/`, {
         method: "post",
+        credentials:'include',
         body: JSON.stringify(joinUserData)
     })
     let res = await data.json()
     console.log(res);
 }
 joinData()
+
+// // Replace 'your_csrf_token' with the actual CSRF token you obtained from cookies
+// const csrfToken = '4kBdldPUYrRLf87CUNCBt4vkZdQEM3Wpwjbxj9DjmwpEuLq7zhdPjCBvuJrek8iY';
+
+// // Example: Make a request with the CSRF token
+// fetch('https://xhotel-backend.onrender.com/api/register/', {
+//   method: 'GET',  // Or any other HTTP method
+//   headers: {
+//     'Content-Type': 'application/json',
+//     'X-CSRFToken': csrfToken,
+//   },
+// })
+//   .then(response => response.json())
+//   .then(data => console.log('Response Data:', data))
+//   .catch(error => console.error('Error:', error));
 
 
 
