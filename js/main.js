@@ -240,7 +240,7 @@ async function joinData() {
         password: passwordJoinInput,
         hobbies:hobbiesJoinInput
     }
-    var data = await fetch(`https://xhotel-backend.onrender.com/api/`, {
+    var data = await fetch(`https://xhotel-backend.onrender.com/api/register/`, {
         method: "post",
         credentials:'include',
         body: JSON.stringify(joinUserData)
