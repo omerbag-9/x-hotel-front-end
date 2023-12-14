@@ -1,28 +1,28 @@
 // first room checkin and checkout
-// var datesForDisable = ["2023-12-6", "2023-12-5"]
-// var datesForDisable2 = ["2023-12-10", "2023-12-9"]
-// var input1 = document.getElementsByClassName("check1-2")[0];
-// var input2 = document.getElementsByClassName("check1-2")[1];
-// var input3 = document.getElementsByClassName("check1-3")[0];
-// var input4 = document.getElementsByClassName("check1-4")[1];
+var datesForDisable = ["2023-12-6", "2023-12-5"]
+var datesForDisable2 = ["2023-12-10", "2023-12-9"]
+var input1 = document.getElementsByClassName("check1-2")[0];
+var input2 = document.getElementsByClassName("check1-2")[1];
+var input3 = document.getElementsByClassName("check1-3")[0];
+var input4 = document.getElementsByClassName("check1-4")[1];
 
-// console.log("hell");
-// $(input1).datepicker({
-//   format: 'yyyy-mm-dd',
-//   autoclose: true,
-//   weekStart: 1,
-//   calendarWeeks: true,
-//   todayHighlight: true,
-//   datesDisabled: datesForDisable,
-// })
-// $(input2).datepicker({
-//   format: 'yyyy-mm-dd',
-//   autoclose: true,
-//   weekStart: 1,
-//   calendarWeeks: true,
-//   todayHighlight: true,
-//   datesDisabled: datesForDisable,
-// })
+console.log("hell");
+$(input1).datepicker({
+  format: 'yyyy-mm-dd',
+  autoclose: true,
+  weekStart: 1,
+  calendarWeeks: true,
+  todayHighlight: true,
+  datesDisabled: datesForDisable,
+})
+$(input2).datepicker({
+  format: 'yyyy-mm-dd',
+  autoclose: true,
+  weekStart: 1,
+  calendarWeeks: true,
+  todayHighlight: true,
+  datesDisabled: datesForDisable,
+})
 
 //post first room
 // var checkin1 = document.getquerySelector("input .check1")
@@ -127,58 +127,6 @@
 
 
 
-// get and add review
-// let reviewList = [];
-// async function addReview() {
-//     let myReq = await fetch(``)
-//     let Data = await myReq.json()
-//     reviewList = Data.reviews
-//     console.log(reviewList)
-//     displayReview()
-//     }
-
-//     addReview()
-
-//     function displayReview(){
-//         let temp = ""
-//         reviewList.forEach((element)=>{
-//             temp+=`<div class="testimonials-item bg-body-tertiary">
-//         <div class="testimonials-name">
-//        <h5>${element.reviewName}</h5>
-//        </div>
-//        <div class="testimonials-desc">
-//         <p><i class="fa-solid fa-comment"></i>${element.reviewMessage}<i class="fa-solid fa-comment"></i></p>
-//        </div>
-//       </div>`
-//         })
-//         document.getElementById("myReview").innerHTML = temp
-//     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // async function login() {
 
@@ -196,6 +144,29 @@
 
 //   console.log(res);
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ////////////////////////////////
 
@@ -291,6 +262,43 @@
 //     console.log(res);
 // }
 // sendReview()
+
+
+
+
+
+
+// get and add review
+// let reviewList = [];
+// async function addReview() {
+//     let myReq = await fetch(``)
+//     let Data = await myReq.json()
+//     reviewList = Data.reviews
+//     console.log(reviewList)
+//     displayReview()
+//     }
+
+//     addReview()
+
+//     function displayReview(){
+//         let temp = ""
+//         reviewList.forEach((element)=>{
+//             temp+=`<div class="testimonials-item bg-body-tertiary">
+//         <div class="testimonials-name">
+//        <h5>${element.reviewName}</h5>
+//        </div>
+//        <div class="testimonials-desc">
+//         <p><i class="fa-solid fa-comment"></i>${element.reviewMessage}<i class="fa-solid fa-comment"></i></p>
+//        </div>
+//       </div>`
+//         })
+//         document.getElementById("myReview").innerHTML = temp
+//     }
+
+
+
+
+
 
 
 
