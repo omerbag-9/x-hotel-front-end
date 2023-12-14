@@ -177,9 +177,9 @@ var passwordLoginInput = document.getElementById("password")
 
 async function loginData() {
     var loginUserData = {
-        username: userNameLoginInput,
-        email: emailLoginInput,
-        password: passwordLoginInput,
+        username: userNameLoginInput.value,
+        email: emailLoginInput.value,
+        password: passwordLoginInput.value,
     }
     var data = await fetch(`https://xhotel-backend.onrender.com/api/login/`, {
         method: "post",
@@ -231,14 +231,14 @@ var hobbiesJoinInput = document.getElementById("hobbies")
 
 async function joinData() {
     var joinUserData = {
-        username: userNameJoinInput,
-        first_name:firstNameJoinInput,
-        last_name:lastNameJoinInput,
-        country:countryJoinInput,
-        zip:zipJoinInput,
-        email: emailJoinInput,
-        password: passwordJoinInput,
-        hobbies:hobbiesJoinInput
+        username: userNameJoinInput.value,
+        first_name:firstNameJoinInput.value,
+        last_name:lastNameJoinInput.value,
+        country:countryJoinInput.value,
+        zip:zipJoinInput.value,
+        email: emailJoinInput.value,
+        password: passwordJoinInput.value,
+        hobbies:hobbiesJoinInput.value
     }
     var data = await fetch(`https://xhotel-backend.onrender.com/api/register/`, {
         method: "post",
