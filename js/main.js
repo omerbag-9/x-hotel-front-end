@@ -1,10 +1,10 @@
 // first room checkin and checkout
 var datesForDisable = ["2023-12-6", "2023-12-5"]
 var datesForDisable2 = ["2023-12-10", "2023-12-9"]
-var input1 = document.getElementsByClassName("check1-2")[0];
-var input2 = document.getElementsByClassName("check1-2")[1];
-var input3 = document.getElementsByClassName("check1-3")[0];
-var input4 = document.getElementsByClassName("check1-4")[1];
+var input1 = document.getElementsByClassName("check1-1")[0];
+var input2 = document.getElementsByClassName("check1-1")[1];
+var input3 = document.getElementsByClassName("check1-2")[0];
+var input4 = document.getElementsByClassName("check1-2")[1];
 
 console.log("hell");
 $(input1).datepicker({
