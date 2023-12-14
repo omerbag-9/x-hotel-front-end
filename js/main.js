@@ -189,7 +189,6 @@ async function loginData() {
     let res = await data.json()
     console.log(res);
 }
-loginData()
 
 
 
@@ -248,7 +247,7 @@ async function joinData() {
     let res = await data.json()
     console.log(res);
 }
-joinData()
+
 
 
 // Make a GET request to obtain the CSRF token from the HTML
