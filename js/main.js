@@ -250,7 +250,7 @@ async function joinData() {
 }
 joinData()
 
-<<<<<<< HEAD
+
 // Make a GET request to obtain the CSRF token from the HTML
 // fetch('https://xhotel-backend.onrender.com/some/django/view/')
 //     .then(response => response.text()) // Change to response.text() to get HTML
@@ -259,7 +259,7 @@ joinData()
 //         const parser = new DOMParser();
 //         const doc = parser.parseFromString(html, 'text/html');
 //         const csrfToken = doc.querySelector('input[name=csrfmiddlewaretoken]').value;
-=======
+
 // // Replace 'your_csrf_token' with the actual CSRF token you obtained from cookies
 // const csrfToken = '4kBdldPUYrRLf87CUNCBt4vkZdQEM3Wpwjbxj9DjmwpEuLq7zhdPjCBvuJrek8iY';
 
@@ -275,7 +275,7 @@ joinData()
 //   .then(data => console.log('Response Data:', data))
 //   .catch(error => console.error('Error:', error));
 
->>>>>>> 77841f20dd7801872f8008c0bfd4c481b0d1e037
+
 
 //         // Use the token in your subsequent POST request
 //         fetch('https://xhotel-backend.onrender.com/api/register/', {
