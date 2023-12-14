@@ -266,13 +266,13 @@ $(input2).datepicker({
 
 
 // review post
-// var userPostReview = document.getElementById("username")
-// var postReviewMessage = document.getElementById("email")
+// var userPostReview = document.getElementById("review-name")
+// var postReviewMessage = document.getElementById("review-message")
 
 // async function sendReview() {
 //     var userSendReview = {
 //         username: userPostReview.value,
-//         email: postReviewMessage.value,
+//         message: postReviewMessage.value,
 //     }
 //     var data = await fetch(``, {
 //         method: "post",
