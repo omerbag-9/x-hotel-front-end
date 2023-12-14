@@ -259,3 +259,35 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// review post
+// var userPostReview = document.getElementById("username")
+// var postReviewMessage = document.getElementById("email")
+
+// async function sendReview() {
+//     var userSendReview = {
+//         username: userPostReview.value,
+//         email: postReviewMessage.value,
+//     }
+//     var data = await fetch(``, {
+//         method: "post",
+//         body: JSON.stringify(userSendReview)
+//     })
+//     let res = await data.json()
+//     console.log(res);
+// }
+// sendReview()
