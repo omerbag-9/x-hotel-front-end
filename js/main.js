@@ -177,9 +177,9 @@ var passwordLoginInput = document.getElementById("password")
 
 async function loginData() {
     var loginUserData = {
-        username: userNameLoginInput.value,
-        email: emailLoginInput.value,
-        password: passwordLoginInput.value,
+        username: userNameLoginInput,
+        email: emailLoginInput,
+        password: passwordLoginInput,
     }
     var data = await fetch(`https://xhotel-backend.onrender.com/api/login/`, {
         method: "post",
