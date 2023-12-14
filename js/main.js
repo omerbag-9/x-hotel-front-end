@@ -239,7 +239,7 @@ async function joinData() {
         password: passwordJoinInput.value,
         hobbies:hobbiesJoinInput.value
     }
-    var data = await fetch(`https://xhotel-backend.onrender.com/api/register/`, {
+    var data = await fetch(`https://xhotel-backend.onrender.com/api/`, {
         method: "post",
         body: JSON.stringify(joinUserData)
     })
@@ -248,11 +248,26 @@ async function joinData() {
 }
 joinData()
 
+// Make a GET request to obtain the CSRF token from the HTML
+// fetch('https://xhotel-backend.onrender.com/some/django/view/')
+//     .then(response => response.text()) // Change to response.text() to get HTML
+//     .then(html => {
+//         // Extract CSRF token from the HTML
+//         const parser = new DOMParser();
+//         const doc = parser.parseFromString(html, 'text/html');
+//         const csrfToken = doc.querySelector('input[name=csrfmiddlewaretoken]').value;
 
-
-
-
-
+//         // Use the token in your subsequent POST request
+//         fetch('https://xhotel-backend.onrender.com/api/register/', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//                 'X-CSRFToken': csrfToken,
+//             },
+//             // Include your JSON payload here
+//             body: JSON.stringify(yourPayload),
+//         });
+//     });
 
 
 
