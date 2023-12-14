@@ -1,28 +1,28 @@
 // first room checkin and checkout
-var datesForDisable = ["2023-12-6", "2023-12-5"]
-var datesForDisable2 = ["2023-12-10", "2023-12-9"]
-var input1 = document.getElementsByClassName("check1-1")[0];
-var input2 = document.getElementsByClassName("check1-1")[1];
-var input3 = document.getElementsByClassName("check1-2")[0];
-var input4 = document.getElementsByClassName("check1-2")[1];
+// var datesForDisable = ["2023-12-6", "2023-12-5"]
+// var datesForDisable2 = ["2023-12-10", "2023-12-9"]
+// var input1 = document.getElementsByClassName("check1-1")[0];
+// var input2 = document.getElementsByClassName("check1-1")[1];
+// var input3 = document.getElementsByClassName("check1-2")[0];
+// var input4 = document.getElementsByClassName("check1-2")[1];
 
-console.log("hell");
-$(input1).datepicker({
-  format: 'yyyy-mm-dd',
-  autoclose: true,
-  weekStart: 1,
-  calendarWeeks: true,
-  todayHighlight: true,
-  datesDisabled: datesForDisable,
-})
-$(input2).datepicker({
-  format: 'yyyy-mm-dd',
-  autoclose: true,
-  weekStart: 1,
-  calendarWeeks: true,
-  todayHighlight: true,
-  datesDisabled: datesForDisable,
-})
+// console.log("hell");
+// $(input1).datepicker({
+//   format: 'yyyy-mm-dd',
+//   autoclose: true,
+//   weekStart: 1,
+//   calendarWeeks: true,
+//   todayHighlight: true,
+//   datesDisabled: datesForDisable,
+// })
+// $(input2).datepicker({
+//   format: 'yyyy-mm-dd',
+//   autoclose: true,
+//   weekStart: 1,
+//   calendarWeeks: true,
+//   todayHighlight: true,
+//   datesDisabled: datesForDisable,
+// })
 
 //post first room
 // var checkin1 = document.getquerySelector("input .check1")
@@ -223,7 +223,7 @@ var userNameJoinInput = document.getElementById("username")
 var firstNameJoinInput = document.getElementById("first_name")
 var lastNameJoinInput = document.getElementById("last_name")
 var countryJoinInput = document.getElementById("country")
-var zipJoinInput = Number(document.getElementById("zip"))
+var zipJoinInput = document.getElementById("zip")
 var emailJoinInput = document.getElementById("email")
 var passwordJoinInput = document.getElementById("password")
 var hobbiesJoinInput = document.getElementById("hobbies")
@@ -232,12 +232,12 @@ async function joinData() {
     var joinUserData = {
         username: userNameJoinInput.value,
         first_name:firstNameJoinInput.value,
-        last_name:lastNameJoinInput,
-        country:countryJoinInput,
-        zip:zipJoinInput,
+        last_name:lastNameJoinInput.value,
+        country:countryJoinInput.value,
+        zip:zipJoinInput.value,
         email: emailJoinInput.value,
         password: passwordJoinInput.value,
-        hobbies:hobbiesJoinInput,
+        hobbies:hobbiesJoinInput.value
     }
     var data = await fetch(`https://xhotel-backend.onrender.com/api/register/`, {
         method: "post",
