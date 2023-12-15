@@ -1,28 +1,125 @@
 // first room checkin and checkout
-// var datesForDisable = ["2023-12-6", "2023-12-5"]
-// var datesForDisable2 = ["2023-12-10", "2023-12-9"]
-// var input1 = document.getElementsByClassName("check1-1")[0];
-// var input2 = document.getElementsByClassName("check1-1")[1];
-// var input3 = document.getElementsByClassName("check1-2")[0];
-// var input4 = document.getElementsByClassName("check1-2")[1];
+var datesForDisable  = ["2023-12-6", "2023-12-5"]
+var datesForDisable2 = ["2023-12-10", "2023-12-9"]
+var datesForDisable3 = ["2023-12-11", "2023-12-13"]
+var datesForDisable4 = ["2023-12-22", "2023-12-25"]
+var datesForDisable5 = ["2023-12-1", "2023-12-3"]
+var datesForDisable6 = ["2023-12-2", "2023-12-4"]
+var input1 = document.getElementsByClassName("check1")[0];
+var input2 = document.getElementsByClassName("check1")[1];
+var input3 = document.getElementsByClassName("check2")[0];
+var input4 = document.getElementsByClassName("check2")[1];
+var input5 = document.getElementsByClassName("check3")[0];
+var input6 = document.getElementsByClassName("check3")[1];
+var input7 = document.getElementsByClassName("check4")[0];
+var input8 = document.getElementsByClassName("check4")[1];
+var input9 = document.getElementsByClassName("check5")[0];
+var input10 = document.getElementsByClassName("check5")[1];
+var input11 = document.getElementsByClassName("check6")[0];
+var input12 = document.getElementsByClassName("check6")[1];
 
-// console.log("hell");
-// $(input1).datepicker({
-//   format: 'yyyy-mm-dd',
-//   autoclose: true,
-//   weekStart: 1,
-//   calendarWeeks: true,
-//   todayHighlight: true,
-//   datesDisabled: datesForDisable,
-// })
-// $(input2).datepicker({
-//   format: 'yyyy-mm-dd',
-//   autoclose: true,
-//   weekStart: 1,
-//   calendarWeeks: true,
-//   todayHighlight: true,
-//   datesDisabled: datesForDisable,
-// })
+// room1
+$(input1).datepicker({
+  format: 'yyyy-mm-dd',
+  autoclose: true,
+  weekStart: 1,
+  calendarWeeks: true,
+  todayHighlight: true,
+  datesDisabled: datesForDisable,
+})
+$(input2).datepicker({
+  format: 'yyyy-mm-dd',
+  autoclose: true,
+  weekStart: 1,
+  calendarWeeks: true,
+  todayHighlight: true,
+  datesDisabled: datesForDisable,
+})
+// room2
+$(input3).datepicker({
+  format: 'yyyy-mm-dd',
+  autoclose: true,
+  weekStart: 1,
+  calendarWeeks: true,
+  todayHighlight: true,
+  datesDisabled: datesForDisable2,
+})
+$(input4).datepicker({
+  format: 'yyyy-mm-dd',
+  autoclose: true,
+  weekStart: 1,
+  calendarWeeks: true,
+  todayHighlight: true,
+  datesDisabled: datesForDisable2,
+})
+// room3
+$(input5).datepicker({
+  format: 'yyyy-mm-dd',
+  autoclose: true,
+  weekStart: 1,
+  calendarWeeks: true,
+  todayHighlight: true,
+  datesDisabled: datesForDisable3,
+})
+$(input6).datepicker({
+  format: 'yyyy-mm-dd',
+  autoclose: true,
+  weekStart: 1,
+  calendarWeeks: true,
+  todayHighlight: true,
+  datesDisabled: datesForDisable3,
+})
+// room4
+$(input7).datepicker({
+  format: 'yyyy-mm-dd',
+  autoclose: true,
+  weekStart: 1,
+  calendarWeeks: true,
+  todayHighlight: true,
+  datesDisabled: datesForDisable4,
+})
+$(input8).datepicker({
+  format: 'yyyy-mm-dd',
+  autoclose: true,
+  weekStart: 1,
+  calendarWeeks: true,
+  todayHighlight: true,
+  datesDisabled: datesForDisable4,
+})
+// room5
+$(input9).datepicker({
+  format: 'yyyy-mm-dd',
+  autoclose: true,
+  weekStart: 1,
+  calendarWeeks: true,
+  todayHighlight: true,
+  datesDisabled: datesForDisable5,
+})
+$(input10).datepicker({
+  format: 'yyyy-mm-dd',
+  autoclose: true,
+  weekStart: 1,
+  calendarWeeks: true,
+  todayHighlight: true,
+  datesDisabled: datesForDisable5,
+})
+// room6
+$(input11).datepicker({
+  format: 'yyyy-mm-dd',
+  autoclose: true,
+  weekStart: 1,
+  calendarWeeks: true,
+  todayHighlight: true,
+  datesDisabled: datesForDisable6,
+})
+$(input12).datepicker({
+  format: 'yyyy-mm-dd',
+  autoclose: true,
+  weekStart: 1,
+  calendarWeeks: true,
+  todayHighlight: true,
+  datesDisabled: datesForDisable6,
+})
 
 //post first room
 // var checkin1 = document.getquerySelector("input .check1")
