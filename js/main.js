@@ -419,31 +419,31 @@ async function sendReview() {
 
 
 // get and add review
-// let reviewList = [];
-// async function addReview() {
-//     let myReq = await fetch(``)
-//     let Data = await myReq.json()
-//     reviewList = Data.reviews
-//     console.log(reviewList)
-//     displayReview()
-//     }
+let reviewList = [];
+async function addReview() {
+    let myReq = await fetch(`http://127.0.0.1:8000/api/api/reviews/`)
+    let Data = await myReq.json()
+    reviewList = Data.reviews
+    console.log(reviewList)
+    displayReview()
+    }
 
-//     addReview()
+    addReview()
 
-//     function displayReview(){
-//         let temp = ""
-//         reviewList.forEach((element)=>{
-//             temp+=`<div class="testimonials-item bg-body-tertiary">
-//         <div class="testimonials-name">
-//        <h5>${element.reviewName}</h5>
-//        </div>
-//        <div class="testimonials-desc">
-//         <p><i class="fa-solid fa-comment"></i>${element.reviewMessage}<i class="fa-solid fa-comment"></i></p>
-//        </div>
-//       </div>`
-//         })
-//         document.getElementById("myReview").innerHTML = temp
-//     }
+    function displayReview(){
+        let temp = ""
+        reviewList.forEach((element)=>{
+            temp+=`<div class="testimonials-item bg-body-tertiary">
+        <div class="testimonials-name">
+       <h5>${element.reviewName}</h5>
+       </div>
+       <div class="testimonials-desc">
+        <p><i class="fa-solid fa-comment"></i>${element.reviewMessage}<i class="fa-solid fa-comment"></i></p>
+       </div>
+      </div>`
+        })
+        document.getElementById("myReview").innerHTML = temp
+    }
 
 
 
@@ -464,30 +464,30 @@ async function sendReview() {
 
 
 // get and add hotels
-// let hotelsList = [];
-// async function addHotel() {
-//     let myReq = await fetch(``)
-//     let Data = await myReq.json()
-//     hotelsList = Data.Hotel
-//     console.log(hotelsList)
-//     displayHotel()
-//     }
+let hotelsList = [];
+async function addHotel() {
+    let myReq = await fetch(``)
+    let Data = await myReq.json()
+    hotelsList = Data.Hotel
+    console.log(hotelsList)
+    displayHotel()
+    }
 
-//     addHotel()
+    addHotel()
 
-//     function displayHotel(){
-//         let temp = ""
-//         hotelsList.forEach((element)=>{
-//             temp+=`<a href="./booking.html">
-//             <div class="hotels-item">
-//               <img src="${element.hotelImg}" alt="" />
-//               <div class="item-overlay">
-//                 <h2>${element.hotelName}</h2>
-//                 <span class="d-block">${element.hotelLocation}</span>
-//                 <span>${element.hotelAvgPrice}</span>
-//               </div>
-//             </div>
-//           </a>`
-//         })
-//         document.getElementById("hotelsData").innerHTML = temp
-//     }
+    function displayHotel(){
+        let temp = ""
+        hotelsList.forEach((element)=>{
+            temp+=`<a href="./booking.html">
+            <div class="hotels-item">
+              <img src="${element.hotelImg}" alt="" />
+              <div class="item-overlay">
+                <h2>${element.hotelName}</h2>
+                <span class="d-block">${element.hotelLocation}</span>
+                <span>${element.hotelAvgPrice}</span>
+              </div>
+            </div>
+          </a>`
+        })
+        document.getElementById("hotelsData").innerHTML = temp
+    }
