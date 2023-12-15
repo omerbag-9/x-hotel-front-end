@@ -476,10 +476,12 @@ let reviewList = [];
 
 async function addReview() {
     let myReq = await fetch(`https://xhotel-backend.onrender.com/api/api/reviews/`)
+    console.log(myReq)
     let Data = await myReq.json()
     reviewList = Data.reviews
     console.log(reviewList)
     displayReview()
+
     }
 
     addReview()
