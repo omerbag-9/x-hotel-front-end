@@ -268,42 +268,42 @@
 ////////////////////////////////
 
 // login
-var userNameLoginInput = document.getElementById("username")
-var emailLoginInput = document.getElementById("email")
-var passwordLoginInput = document.getElementById("password")
+// var userNameLoginInput = document.getElementById("username")
+// var emailLoginInput = document.getElementById("email")
+// var passwordLoginInput = document.getElementById("password")
 
-async function loginData() {
-    var loginUserData = {
-        username: userNameLoginInput.value,
-        email: emailLoginInput.value,
-        password: passwordLoginInput.value,
-    }
-    var data = await fetch(`https://xhotel-backend.onrender.com/api/login/`, {
-        method: "post",
-        credentials:'include',
-        body: JSON.stringify(loginUserData)
-    })
-    let res = await data.json()
-    console.log(res);
-}
+// async function loginData() {
+//     var loginUserData = {
+//         username: userNameLoginInput.value,
+//         email: emailLoginInput.value,
+//         password: passwordLoginInput.value,
+//     }
+//     var data = await fetch(`https://xhotel-backend.onrender.com/api/login/`, {
+//         method: "post",
+//         credentials:'include',
+//         body: JSON.stringify(loginUserData)
+//     })
+//     let res = await data.json()
+//     console.log(res);
+// }
 
 
 // change password
-var oldPassword = document.getElementById("old_password")
-var newPassword = document.getElementById("new_password")
+// var oldPassword = document.getElementById("old_password")
+// var newPassword = document.getElementById("new_password")
 
-async function changeData() {
-    var changeUserData = {
-        old_password: oldPassword.value,
-        new_password: newPassword.value,
-    }
-    var data = await fetch(`localhost:8000/api/login/`, {
-        method: "post",
-        body: JSON.stringify(changeUserData)
-    })
-    let res = await data.json()
-    console.log(res);
-}
+// async function changeData() {
+//     var changeUserData = {
+//         old_password: oldPassword.value,
+//         new_password: newPassword.value,
+//     }
+//     var data = await fetch(`localhost:8000/api/login/`, {
+//         method: "post",
+//         body: JSON.stringify(changeUserData)
+//     })
+//     let res = await data.json()
+//     console.log(res);
+// }
 
 
 
@@ -314,37 +314,37 @@ async function changeData() {
 
 
 // register
-var userNameJoinInput = document.getElementById("username")
-var firstNameJoinInput = document.getElementById("first_name")
-var lastNameJoinInput = document.getElementById("last_name")
-var countryJoinInput = document.getElementById("country")
-var zipJoinInput = document.getElementById("zip")
-var emailJoinInput = document.getElementById("email")
-var passwordJoinInput = document.getElementById("password")
-var hobbiesJoinInput = document.getElementById("hobbies")
+// var userNameJoinInput = document.getElementById("username")
+// var firstNameJoinInput = document.getElementById("first_name")
+// var lastNameJoinInput = document.getElementById("last_name")
+// var countryJoinInput = document.getElementById("country")
+// var zipJoinInput = document.getElementById("zip")
+// var emailJoinInput = document.getElementById("email")
+// var passwordJoinInput = document.getElementById("password")
+// var hobbiesJoinInput = document.getElementById("hobbies")
 
-async function joinData() {
-    var joinUserData = {
-        username: userNameJoinInput.value,
-        first_name:firstNameJoinInput.value,
-        last_name:lastNameJoinInput.value,
-        country:countryJoinInput.value,
-        zip:zipJoinInput.value,
-        email: emailJoinInput.value,
-        password: passwordJoinInput.value,
-        hobbies:hobbiesJoinInput.value
-    }
-    var data = await fetch(`https://xhotel-backend.onrender.com/api/register/`, {
-        method: "post",
-        credentials:'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(joinUserData)
-    })
-    let res = await data.json()
-    console.log(res);
-}
+// async function joinData() {
+//     var joinUserData = {
+//         username: userNameJoinInput.value,
+//         first_name:firstNameJoinInput.value,
+//         last_name:lastNameJoinInput.value,
+//         country:countryJoinInput.value,
+//         zip:zipJoinInput.value,
+//         email: emailJoinInput.value,
+//         password: passwordJoinInput.value,
+//         hobbies:hobbiesJoinInput.value
+//     }
+//     var data = await fetch(`https://xhotel-backend.onrender.com/api/register/`, {
+//         method: "post",
+//         credentials:'include',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(joinUserData)
+//     })
+//     let res = await data.json()
+//     console.log(res);
+// }
 
 
 // Make a GET request to obtain the CSRF token from the HTML
@@ -493,30 +493,30 @@ async function sendReview() {
 
 
 // get and add hotels
-let hotelsList = [];
-async function addHotel() {
-    let myReq = await fetch(``)
-    let Data = await myReq.json()
-    hotelsList = Data.Hotel
-    console.log(hotelsList)
-    displayHotel()
-    }
+// let hotelsList = [];
+// async function addHotel() {
+//     let myReq = await fetch(``)
+//     let Data = await myReq.json()
+//     hotelsList = Data.Hotel
+//     console.log(hotelsList)
+//     displayHotel()
+//     }
 
-    addHotel()
+//     addHotel()
 
-    function displayHotel(){
-        let temp = ""
-        hotelsList.forEach((element)=>{
-            temp+=`<a href="./booking.html">
-            <div class="hotels-item">
-              <img src="${element.hotelImg}" alt="" />
-              <div class="item-overlay">
-                <h2>${element.hotelName}</h2>
-                <span class="d-block">${element.hotelLocation}</span>
-                <span>${element.hotelAvgPrice}</span>
-              </div>
-            </div>
-          </a>`
-        })
-        document.getElementById("hotelsData").innerHTML = temp
-    }
+//     function displayHotel(){
+//         let temp = ""
+//         hotelsList.forEach((element)=>{
+//             temp+=`<a href="./booking.html">
+//             <div class="hotels-item">
+//               <img src="${element.hotelImg}" alt="" />
+//               <div class="item-overlay">
+//                 <h2>${element.hotelName}</h2>
+//                 <span class="d-block">${element.hotelLocation}</span>
+//                 <span>${element.hotelAvgPrice}</span>
+//               </div>
+//             </div>
+//           </a>`
+//         })
+//         document.getElementById("hotelsData").innerHTML = temp
+//     }
