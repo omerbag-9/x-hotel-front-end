@@ -337,6 +337,9 @@ async function joinData() {
     var data = await fetch(`https://xhotel-backend.onrender.com/api/register/`, {
         method: "post",
         credentials:'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify(joinUserData)
     })
     let res = await data.json()
