@@ -1,125 +1,125 @@
-// first room checkin and checkout
-var datesForDisable  = ["2023-12-6", "2023-12-5"]
-var datesForDisable2 = ["2023-12-10", "2023-12-9"]
-var datesForDisable3 = ["2023-12-11", "2023-12-13"]
-var datesForDisable4 = ["2023-12-22", "2023-12-25"]
-var datesForDisable5 = ["2023-12-1", "2023-12-3"]
-var datesForDisable6 = ["2023-12-2", "2023-12-4"]
-var input1 = document.getElementsByClassName("check1")[0];
-var input2 = document.getElementsByClassName("check1")[1];
-var input3 = document.getElementsByClassName("check2")[0];
-var input4 = document.getElementsByClassName("check2")[1];
-var input5 = document.getElementsByClassName("check3")[0];
-var input6 = document.getElementsByClassName("check3")[1];
-var input7 = document.getElementsByClassName("check4")[0];
-var input8 = document.getElementsByClassName("check4")[1];
-var input9 = document.getElementsByClassName("check5")[0];
-var input10 = document.getElementsByClassName("check5")[1];
-var input11 = document.getElementsByClassName("check6")[0];
-var input12 = document.getElementsByClassName("check6")[1];
+// // first room checkin and checkout
+// var datesForDisable  = ["2023-12-6", "2023-12-5"]
+// var datesForDisable2 = ["2023-12-10", "2023-12-9"]
+// var datesForDisable3 = ["2023-12-11", "2023-12-13"]
+// var datesForDisable4 = ["2023-12-22", "2023-12-25"]
+// var datesForDisable5 = ["2023-12-1", "2023-12-3"]
+// var datesForDisable6 = ["2023-12-2", "2023-12-4"]
+// var input1 = document.getElementsByClassName("check1")[0];
+// var input2 = document.getElementsByClassName("check1")[1];
+// var input3 = document.getElementsByClassName("check2")[0];
+// var input4 = document.getElementsByClassName("check2")[1];
+// var input5 = document.getElementsByClassName("check3")[0];
+// var input6 = document.getElementsByClassName("check3")[1];
+// var input7 = document.getElementsByClassName("check4")[0];
+// var input8 = document.getElementsByClassName("check4")[1];
+// var input9 = document.getElementsByClassName("check5")[0];
+// var input10 = document.getElementsByClassName("check5")[1];
+// var input11 = document.getElementsByClassName("check6")[0];
+// var input12 = document.getElementsByClassName("check6")[1];
 
-// room1
-$(input1).datepicker({
-  format: 'yyyy-mm-dd',
-  autoclose: true,
-  weekStart: 1,
-  calendarWeeks: true,
-  todayHighlight: true,
-  datesDisabled: datesForDisable,
-})
-$(input2).datepicker({
-  format: 'yyyy-mm-dd',
-  autoclose: true,
-  weekStart: 1,
-  calendarWeeks: true,
-  todayHighlight: true,
-  datesDisabled: datesForDisable,
-})
-// room2
-$(input3).datepicker({
-  format: 'yyyy-mm-dd',
-  autoclose: true,
-  weekStart: 1,
-  calendarWeeks: true,
-  todayHighlight: true,
-  datesDisabled: datesForDisable2,
-})
-$(input4).datepicker({
-  format: 'yyyy-mm-dd',
-  autoclose: true,
-  weekStart: 1,
-  calendarWeeks: true,
-  todayHighlight: true,
-  datesDisabled: datesForDisable2,
-})
-// room3
-$(input5).datepicker({
-  format: 'yyyy-mm-dd',
-  autoclose: true,
-  weekStart: 1,
-  calendarWeeks: true,
-  todayHighlight: true,
-  datesDisabled: datesForDisable3,
-})
-$(input6).datepicker({
-  format: 'yyyy-mm-dd',
-  autoclose: true,
-  weekStart: 1,
-  calendarWeeks: true,
-  todayHighlight: true,
-  datesDisabled: datesForDisable3,
-})
-// room4
-$(input7).datepicker({
-  format: 'yyyy-mm-dd',
-  autoclose: true,
-  weekStart: 1,
-  calendarWeeks: true,
-  todayHighlight: true,
-  datesDisabled: datesForDisable4,
-})
-$(input8).datepicker({
-  format: 'yyyy-mm-dd',
-  autoclose: true,
-  weekStart: 1,
-  calendarWeeks: true,
-  todayHighlight: true,
-  datesDisabled: datesForDisable4,
-})
-// room5
-$(input9).datepicker({
-  format: 'yyyy-mm-dd',
-  autoclose: true,
-  weekStart: 1,
-  calendarWeeks: true,
-  todayHighlight: true,
-  datesDisabled: datesForDisable5,
-})
-$(input10).datepicker({
-  format: 'yyyy-mm-dd',
-  autoclose: true,
-  weekStart: 1,
-  calendarWeeks: true,
-  todayHighlight: true,
-  datesDisabled: datesForDisable5,
-})
-// room6
-$(input11).datepicker({
-  format: 'yyyy-mm-dd',
-  autoclose: true,
-  weekStart: 1,
-  calendarWeeks: true,
-  todayHighlight: true,
-  datesDisabled: datesForDisable6,
-})
-$(input12).datepicker({
-  format: 'yyyy-mm-dd',
-  autoclose: true,
-  weekStart: 1,
-  calendarWeeks: true,
-  todayHighlight: true,
-  datesDisabled: datesForDisable6,
-})
+// // room1
+// $(input1).datepicker({
+//   format: 'yyyy-mm-dd',
+//   autoclose: true,
+//   weekStart: 1,
+//   calendarWeeks: true,
+//   todayHighlight: true,
+//   datesDisabled: datesForDisable,
+// })
+// $(input2).datepicker({
+//   format: 'yyyy-mm-dd',
+//   autoclose: true,
+//   weekStart: 1,
+//   calendarWeeks: true,
+//   todayHighlight: true,
+//   datesDisabled: datesForDisable,
+// })
+// // room2
+// $(input3).datepicker({
+//   format: 'yyyy-mm-dd',
+//   autoclose: true,
+//   weekStart: 1,
+//   calendarWeeks: true,
+//   todayHighlight: true,
+//   datesDisabled: datesForDisable2,
+// })
+// $(input4).datepicker({
+//   format: 'yyyy-mm-dd',
+//   autoclose: true,
+//   weekStart: 1,
+//   calendarWeeks: true,
+//   todayHighlight: true,
+//   datesDisabled: datesForDisable2,
+// })
+// // room3
+// $(input5).datepicker({
+//   format: 'yyyy-mm-dd',
+//   autoclose: true,
+//   weekStart: 1,
+//   calendarWeeks: true,
+//   todayHighlight: true,
+//   datesDisabled: datesForDisable3,
+// })
+// $(input6).datepicker({
+//   format: 'yyyy-mm-dd',
+//   autoclose: true,
+//   weekStart: 1,
+//   calendarWeeks: true,
+//   todayHighlight: true,
+//   datesDisabled: datesForDisable3,
+// })
+// // room4
+// $(input7).datepicker({
+//   format: 'yyyy-mm-dd',
+//   autoclose: true,
+//   weekStart: 1,
+//   calendarWeeks: true,
+//   todayHighlight: true,
+//   datesDisabled: datesForDisable4,
+// })
+// $(input8).datepicker({
+//   format: 'yyyy-mm-dd',
+//   autoclose: true,
+//   weekStart: 1,
+//   calendarWeeks: true,
+//   todayHighlight: true,
+//   datesDisabled: datesForDisable4,
+// })
+// // room5
+// $(input9).datepicker({
+//   format: 'yyyy-mm-dd',
+//   autoclose: true,
+//   weekStart: 1,
+//   calendarWeeks: true,
+//   todayHighlight: true,
+//   datesDisabled: datesForDisable5,
+// })
+// $(input10).datepicker({
+//   format: 'yyyy-mm-dd',
+//   autoclose: true,
+//   weekStart: 1,
+//   calendarWeeks: true,
+//   todayHighlight: true,
+//   datesDisabled: datesForDisable5,
+// })
+// // room6
+// $(input11).datepicker({
+//   format: 'yyyy-mm-dd',
+//   autoclose: true,
+//   weekStart: 1,
+//   calendarWeeks: true,
+//   todayHighlight: true,
+//   datesDisabled: datesForDisable6,
+// })
+// $(input12).datepicker({
+//   format: 'yyyy-mm-dd',
+//   autoclose: true,
+//   weekStart: 1,
+//   calendarWeeks: true,
+//   todayHighlight: true,
+//   datesDisabled: datesForDisable6,
+// })
 
 //post first room
 // var checkin1 = document.getquerySelector("input .check1")
@@ -405,7 +405,7 @@ async function sendReview() {
         user: userPostReview.value,
         comment: postReviewMessage.value,
     }
-    var data = await fetch(``, {
+    var data = await fetch(`https://xhotel-backend.onrender.com/api/api/reviews/`, {
         method: "post",
         body: JSON.stringify(userSendReview)
     })
@@ -420,8 +420,9 @@ async function sendReview() {
 
 // get and add review
 let reviewList = [];
+
 async function addReview() {
-    let myReq = await fetch(`http://127.0.0.1:8000/api/api/reviews/`)
+    let myReq = await fetch(`https://xhotel-backend.onrender.com/api/api/reviews/`)
     let Data = await myReq.json()
     reviewList = Data.reviews
     console.log(reviewList)
@@ -435,10 +436,10 @@ async function addReview() {
         reviewList.forEach((element)=>{
             temp+=`<div class="testimonials-item bg-body-tertiary">
         <div class="testimonials-name">
-       <h5>${element.reviewName}</h5>
+       <h5>${element.user}</h5>
        </div>
        <div class="testimonials-desc">
-        <p><i class="fa-solid fa-comment"></i>${element.reviewMessage}<i class="fa-solid fa-comment"></i></p>
+        <p><i class="fa-solid fa-comment"></i>${element.comment}<i class="fa-solid fa-comment"></i></p>
        </div>
       </div>`
         })
@@ -446,6 +447,31 @@ async function addReview() {
     }
 
 
+
+// let recipesList = [];
+
+// async function getData() {
+//     let myReq = await fetch(`https://forkify-api.herokuapp.com/api/search?q=pizza`)
+//     let Data = await myReq.json()
+//     recipesList = Data.recipes
+//     console.log(recipesList)
+//     display()
+//     }
+
+//     getData()
+
+//     function display(){
+//         let temp = ""
+//         recipesList.forEach((element)=>{
+//             temp+=`    <div class="d-inline-block ">
+//             <div class="item bg-info text-center">
+//             <h1>${element.publisher}</h1>
+//                 <h6>${element.title}</h6>
+//             </div>
+//         </div>`
+//         })
+//         document.getElementById("mypizza").innerHTML = temp
+//     }
 
 
 
