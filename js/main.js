@@ -407,7 +407,7 @@ async function sendReview() {
     }
     var data = await fetch(`https://xhotel-backend.onrender.com/api/api/reviews/`, {
         method: "post",
-        body: JSON.parse(userSendReview)
+        body: JSON.stringify(userSendReview)
     })
     let res = await data.json()
     console.log(res);
