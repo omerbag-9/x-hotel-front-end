@@ -180,6 +180,31 @@
 
 
 
+// let recipesList = [];
+
+// async function getData() {
+//     let myReq = await fetch(`https://forkify-api.herokuapp.com/api/search?q=pizza`)
+//     let Data = await myReq.json()
+//     recipesList = Data.recipes
+//     console.log(recipesList)
+//     display()
+//     }
+
+//     getData()
+
+//     function display(){
+//         let temp = ""
+//         recipesList.forEach((element)=>{
+//             temp+=`    <div class="d-inline-block ">
+//             <div class="item bg-info text-center">
+//             <h1>${element.publisher}</h1>
+//                 <h6>${element.title}</h6>
+//             </div>
+//         </div>`
+//         })
+//         document.getElementById("mypizza").innerHTML = temp
+//     }
+
 
 
 
@@ -265,27 +290,30 @@
 
 
 
-////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
 
 // login
-// var userNameLoginInput = document.getElementById("username")
-// var emailLoginInput = document.getElementById("email")
-// var passwordLoginInput = document.getElementById("password")
+var userNameLoginInput = document.getElementById("username")
+var emailLoginInput = document.getElementById("email")
+var passwordLoginInput = document.getElementById("password")
 
-// async function loginData() {
-//     var loginUserData = {
-//         username: userNameLoginInput.value,
-//         email: emailLoginInput.value,
-//         password: passwordLoginInput.value,
-//     }
-//     var data = await fetch(`https://xhotel-backend.onrender.com/api/login/`, {
-//         method: "post",
-//         credentials:'include',
-//         body: JSON.stringify(loginUserData)
-//     })
-//     let res = await data.json()
-//     console.log(res);
-// }
+async function loginData() {
+    var loginUserData = {
+        username: userNameLoginInput.value,
+        email: emailLoginInput.value,
+        password: passwordLoginInput.value,
+    }
+    var data = await fetch(`https://xhotel-backend.onrender.com/api/login/`, {
+        method: "post",
+        credentials:'include',
+        headers: {
+            'Authorization': `Bearer ${apiKey}`,
+          },
+        body: JSON.stringify(loginUserData)
+    })
+    let res = await data.json()
+    console.log(res);
+}
 
 
 // change password
@@ -314,151 +342,59 @@
 
 
 // register
-var userNameJoinInput = document.getElementById("username")
-var firstNameJoinInput = document.getElementById("first_name")
-var lastNameJoinInput = document.getElementById("last_name")
-var countryJoinInput = document.getElementById("country")
-var zipJoinInput = document.getElementById("zip")
-var emailJoinInput = document.getElementById("email")
-var passwordJoinInput = document.getElementById("password")
-var hobbiesJoinInput = document.getElementById("hobbies")
+// var userNameJoinInput = document.getElementById("username")
+// var firstNameJoinInput = document.getElementById("first_name")
+// var lastNameJoinInput = document.getElementById("last_name")
+// var countryJoinInput = document.getElementById("country")
+// var zipJoinInput = document.getElementById("zip")
+// var emailJoinInput = document.getElementById("email")
+// var passwordJoinInput = document.getElementById("password")
+// var hobbiesJoinInput = document.getElementById("hobbies")
 
-async function joinData() {
-    var joinUserData = {
-        username: userNameJoinInput.value,
-        first_name:firstNameJoinInput.value,
-        last_name:lastNameJoinInput.value,
-        country:countryJoinInput.value,
-        zip:zipJoinInput.value,
-        email: emailJoinInput.value,
-        password: passwordJoinInput.value,
-        hobbies:hobbiesJoinInput.value
-    }
-    var data = await fetch(`https://xhotel-backend.onrender.com/api/register/`, {
-        method: "post",
-        credentials:'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(joinUserData)
-    })
-    let res = await data.json()
-    console.log(res);
-}
-
-
-// Make a GET request to obtain the CSRF token from the HTML
-// fetch('https://xhotel-backend.onrender.com/some/django/view/')
-//     .then(response => response.text()) // Change to response.text() to get HTML
-//     .then(html => {
-//         // Extract CSRF token from the HTML
-//         const parser = new DOMParser();
-//         const doc = parser.parseFromString(html, 'text/html');
-//         const csrfToken = doc.querySelector('input[name=csrfmiddlewaretoken]').value;
-
-// // Replace 'your_csrf_token' with the actual CSRF token you obtained from cookies
-// const csrfToken = '4kBdldPUYrRLf87CUNCBt4vkZdQEM3Wpwjbxj9DjmwpEuLq7zhdPjCBvuJrek8iY';
-
-// // Example: Make a request with the CSRF token
-// fetch('https://xhotel-backend.onrender.com/api/register/', {
-//   method: 'GET',  // Or any other HTTP method
-//   headers: {
-//     'Content-Type': 'application/json',
-//     'X-CSRFToken': csrfToken,
-//   },
-// })
-//   .then(response => response.json())
-//   .then(data => console.log('Response Data:', data))
-//   .catch(error => console.error('Error:', error));
-
-
-
-//         // Use the token in your subsequent POST request
-//         fetch('https://xhotel-backend.onrender.com/api/register/', {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//                 'X-CSRFToken': csrfToken,
-//             },
-//             // Include your JSON payload here
-//             body: JSON.stringify(yourPayload),
-//         });
-//     });
-
-
-
-
-
-
-
-
-
+// async function joinData() {
+//     var joinUserData = {
+//         username: userNameJoinInput.value,
+//         first_name:firstNameJoinInput.value,
+//         last_name:lastNameJoinInput.value,
+//         country:countryJoinInput.value,
+//         zip:zipJoinInput.value,
+//         email: emailJoinInput.value,
+//         password: passwordJoinInput.value,
+//         hobbies:hobbiesJoinInput.value
+//     }
+//     var data = await fetch(`http://serco-dev.com:2020/api/register/`, {
+//         method: "post",
+//         credentials:'include',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(joinUserData)
+//     })
+//     let res = await data.json()
+//     console.log(res);
+// }
 
 
 
 // review post
-var userPostReview = document.getElementById("user")
-var postReviewMessage = document.getElementById("comment")
+// var userPostReview = document.getElementById("user")
+// var postReviewMessage = document.getElementById("comment")
 
-async function sendReview() {
-    var userSendReview = {
-        user: userPostReview.value,
-        comment: postReviewMessage.value,
-    }
-    var data = await fetch(`https://xhotel-backend.onrender.com/api/api/reviews/`, {
-        method: "post",
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userSendReview)
-    })
-    let res = await data.json()
-    console.log(res);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let recipesList = [];
-
-// async function getData() {
-//     let myReq = await fetch(`https://forkify-api.herokuapp.com/api/search?q=pizza`)
-//     let Data = await myReq.json()
-//     recipesList = Data.recipes
-//     console.log(recipesList)
-//     display()
+// async function sendReview() {
+//     var userSendReview = {
+//         user: userPostReview.value,
+//         comment: postReviewMessage.value,
 //     }
-
-//     getData()
-
-//     function display(){
-//         let temp = ""
-//         recipesList.forEach((element)=>{
-//             temp+=`    <div class="d-inline-block ">
-//             <div class="item bg-info text-center">
-//             <h1>${element.publisher}</h1>
-//                 <h6>${element.title}</h6>
-//             </div>
-//         </div>`
-//         })
-//         document.getElementById("mypizza").innerHTML = temp
-//     }
-
-
-
-
-
-
-
+//     var data = await fetch(`https://xhotel-backend.onrender.com/api/api/reviews/`, {
+//         method: "post",
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(userSendReview)
+//     })
+//     let res = await data.json()
+//     console.log(res);
+// }
 
 
 
@@ -472,32 +408,33 @@ async function sendReview() {
 
 
 // get and add review
-let reviewList = [];
+// let reviewList = [];
 
-async function addReview() {
-    let myReq = await fetch(`https://xhotel-backend.onrender.com/api/api/reviews/`)
-    let Data = await myReq.json()
-    reviewList = Data.reviews
-    console.log(reviewList)
-    displayReview()
-    }
+// async function addReview() {
+//     let myReq = await fetch(`http://serco-dev.com:2020/api/api/reviews/`)
+//     console.log(myReq)
+//     let Data = await myReq.json()
+//     reviewList = Data.reviews
+//     console.log(reviewList)
+//     displayReview()
+//     }
 
-    addReview()
+//     addReview()
 
-    function displayReview(){
-        let temp = ""
-        reviewList.forEach((element)=>{
-            temp+=`<div class="testimonials-item bg-body-tertiary">
-        <div class="testimonials-name">
-       <h5>${element.user}</h5>
-       </div>
-       <div class="testimonials-desc">
-        <p><i class="fa-solid fa-comment"></i>${element.comment}<i class="fa-solid fa-comment"></i></p>
-       </div>
-      </div>`
-        })
-        document.getElementById("myReview").innerHTML = temp
-    }
+//     function displayReview(){
+//         let temp = ""
+//         reviewList.forEach((element)=>{
+//             temp+=`<div class="testimonials-item bg-body-tertiary">
+//         <div class="testimonials-name">
+//        <h5>${element.user}</h5>
+//        </div>
+//        <div class="testimonials-desc">
+//         <p><i class="fa-solid fa-comment"></i>${element.comment}<i class="fa-solid fa-comment"></i></p>
+//        </div>
+//       </div>`
+//         })
+//         document.getElementById("myReview").innerHTML = temp
+//     }
 
 
 
@@ -532,3 +469,77 @@ async function addReview() {
 //         })
 //         document.getElementById("hotelsData").innerHTML = temp
 //     }
+
+
+
+
+
+
+
+// dashboard numbers
+// let dashList = [];
+
+// async function addDash() {
+//     let myReq = await fetch(`http://serco-dev.com:2020/api/api/reviews/`)
+//     console.log(myReq)
+//     let Data = await myReq.json()
+//     dashList = Data.dashnums
+//     console.log(dashList)
+//     displayDash()
+
+//     }
+
+//     addDash()
+
+//     function displayDash(){
+//         let temp = ""
+//         dashList.forEach((element)=>{
+//             temp+=`<div class="dash-item dashback1 bg-info">
+//             <p class="dash-item-desc fw-bold ms-2 ">sales</p>
+//             <p class="dash-item-num fw-bold fs-1 ">${element.sales}</p>
+//           </div>
+//           <div class="dash-item dashback2 bg-info">
+//             <p class="dash-item-desc fw-bold ms-2 ">orders</p>
+//             <p class="dash-item-num fw-bold fs-1 ">+${element.orders}%</p>
+//           </div>
+//           <div class="dash-item dashback3 bg-info">
+//             <p class="dash-item-desc fw-bold ms-2 ">visits</p>
+//             <p class="dash-item-num fw-bold fs-1 ">+${element.visits}%</p>
+//           </div>`
+//         })
+//         document.getElementById("myDash").innerHTML = temp
+//     }
+
+
+
+// local reviews
+var nameInput = document.getElementById("user")
+var commentInput = document.getElementById("comment")
+var reviewList = [];
+if (localStorage.getItem("reviews") != null) {
+    reviewList = JSON.parse(localStorage.getItem("reviews"))
+    displayData()
+}
+function addreview() {
+    var review = {
+        user: user.value,
+        comment: comment.value,
+    }
+    reviewList.push(review)
+    localStorage.setItem("reviews", JSON.stringify(reviewList))
+    displayData()
+}
+function displayData() {
+    var temp = "";
+    for (var i = 0; i < reviewList.length; i++) {
+        temp += ` <div class="testimonials-item  ">
+        <div class="testimonials-name">
+        <h5>`+reviewList[i].user+`</h5>
+      </div>
+      <div class="testimonials-desc">
+        <p><i class="fa-solid fa-comment"></i>&nbsp;`+reviewList[i].comment+`&nbsp;<i class="fa-solid fa-comment"></i></p>
+      </div>
+      </div> `
+    }
+    document.getElementById("myReview").innerHTML = temp
+}
