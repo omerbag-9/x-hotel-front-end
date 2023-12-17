@@ -180,6 +180,31 @@
 
 
 
+// let recipesList = [];
+
+// async function getData() {
+//     let myReq = await fetch(`https://forkify-api.herokuapp.com/api/search?q=pizza`)
+//     let Data = await myReq.json()
+//     recipesList = Data.recipes
+//     console.log(recipesList)
+//     display()
+//     }
+
+//     getData()
+
+//     function display(){
+//         let temp = ""
+//         recipesList.forEach((element)=>{
+//             temp+=`    <div class="d-inline-block ">
+//             <div class="item bg-info text-center">
+//             <h1>${element.publisher}</h1>
+//                 <h6>${element.title}</h6>
+//             </div>
+//         </div>`
+//         })
+//         document.getElementById("mypizza").innerHTML = temp
+//     }
+
 
 
 
@@ -372,35 +397,6 @@
 // }
 
 
-
-
-
-
-
-// let recipesList = [];
-
-// async function getData() {
-//     let myReq = await fetch(`https://forkify-api.herokuapp.com/api/search?q=pizza`)
-//     let Data = await myReq.json()
-//     recipesList = Data.recipes
-//     console.log(recipesList)
-//     display()
-//     }
-
-//     getData()
-
-//     function display(){
-//         let temp = ""
-//         recipesList.forEach((element)=>{
-//             temp+=`    <div class="d-inline-block ">
-//             <div class="item bg-info text-center">
-//             <h1>${element.publisher}</h1>
-//                 <h6>${element.title}</h6>
-//             </div>
-//         </div>`
-//         })
-//         document.getElementById("mypizza").innerHTML = temp
-//     }
 
 
 
