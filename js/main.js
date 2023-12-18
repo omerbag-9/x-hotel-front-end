@@ -293,27 +293,27 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 // login
-var userNameLoginInput = document.getElementById("username")
-var emailLoginInput = document.getElementById("email")
-var passwordLoginInput = document.getElementById("password")
+// var userNameLoginInput = document.getElementById("username")
+// var emailLoginInput = document.getElementById("email")
+// var passwordLoginInput = document.getElementById("password")
 
-async function loginData() {
-    var loginUserData = {
-        username: userNameLoginInput.value,
-        email: emailLoginInput.value,
-        password: passwordLoginInput.value,
-    }
-    var data = await fetch(`https://xhotel-backend.onrender.com/api/login/`, {
-        method: "post",
-        credentials:'include',
-        headers: {
-            'Authorization': `Bearer ${apiKey}`,
-          },
-        body: JSON.stringify(loginUserData)
-    })
-    let res = await data.json()
-    console.log(res);
-}
+// async function loginData() {
+//     var loginUserData = {
+//         username: userNameLoginInput.value,
+//         email: emailLoginInput.value,
+//         password: passwordLoginInput.value,
+//     }
+//     var data = await fetch(`http://serco-dev.com:2020/api/login/`, {
+//         method: "post",
+//         credentials:'include',
+//         headers: {
+//             'Authorization': `Bearer ${Token}`,
+//         },
+//             body: JSON.stringify(loginUserData)
+//     })
+//     let res = await data.json()
+//     console.log(res);
+// }
 
 
 // change password
@@ -341,7 +341,7 @@ async function loginData() {
 
 
 
-// register
+// // register
 // var userNameJoinInput = document.getElementById("username")
 // var firstNameJoinInput = document.getElementById("first_name")
 // var lastNameJoinInput = document.getElementById("last_name")
@@ -408,33 +408,33 @@ async function loginData() {
 
 
 // get and add review
-// let reviewList = [];
+let reviewList = [];
 
-// async function addReview() {
-//     let myReq = await fetch(`http://serco-dev.com:2020/api/api/reviews/`)
-//     console.log(myReq)
-//     let Data = await myReq.json()
-//     reviewList = Data.reviews
-//     console.log(reviewList)
-//     displayReview()
-//     }
+async function addReview() {
+    let myReq = await fetch(`http://serco-dev.com:2020/api/api/reviews/`)
+    console.log(myReq)
+    let Data = await myReq.json()
+    reviewList = Data.reviews
+    console.log(reviewList)
+    displayReview()
+    }
 
-//     addReview()
+    addReview()
 
-//     function displayReview(){
-//         let temp = ""
-//         reviewList.forEach((element)=>{
-//             temp+=`<div class="testimonials-item bg-body-tertiary">
-//         <div class="testimonials-name">
-//        <h5>${element.user}</h5>
-//        </div>
-//        <div class="testimonials-desc">
-//         <p><i class="fa-solid fa-comment"></i>${element.comment}<i class="fa-solid fa-comment"></i></p>
-//        </div>
-//       </div>`
-//         })
-//         document.getElementById("myReview").innerHTML = temp
-//     }
+    function displayReview(){
+        let temp = ""
+        reviewList.forEach((element)=>{
+            temp+=`<div class="testimonials-item bg-body-tertiary">
+        <div class="testimonials-name">
+       <h5>${element.user}</h5>
+       </div>
+       <div class="testimonials-desc">
+        <p><i class="fa-solid fa-comment"></i>${element.comment}<i class="fa-solid fa-comment"></i></p>
+       </div>
+      </div>`
+        })
+        document.getElementById("myReview").innerHTML = temp
+    }
 
 
 
@@ -513,33 +513,33 @@ async function loginData() {
 
 
 // local reviews
-var nameInput = document.getElementById("user")
-var commentInput = document.getElementById("comment")
-var reviewList = [];
-if (localStorage.getItem("reviews") != null) {
-    reviewList = JSON.parse(localStorage.getItem("reviews"))
-    displayData()
-}
-function addreview() {
-    var review = {
-        user: user.value,
-        comment: comment.value,
-    }
-    reviewList.push(review)
-    localStorage.setItem("reviews", JSON.stringify(reviewList))
-    displayData()
-}
-function displayData() {
-    var temp = "";
-    for (var i = 0; i < reviewList.length; i++) {
-        temp += ` <div class="testimonials-item  ">
-        <div class="testimonials-name">
-        <h5>`+reviewList[i].user+`</h5>
-      </div>
-      <div class="testimonials-desc">
-        <p><i class="fa-solid fa-comment"></i>&nbsp;`+reviewList[i].comment+`&nbsp;<i class="fa-solid fa-comment"></i></p>
-      </div>
-      </div> `
-    }
-    document.getElementById("myReview").innerHTML = temp
-}
+// var nameInput = document.getElementById("user")
+// var commentInput = document.getElementById("comment")
+// var reviewList = [];
+// if (localStorage.getItem("reviews") != null) {
+//     reviewList = JSON.parse(localStorage.getItem("reviews"))
+//     displayData()
+// }
+// function addreview() {
+//     var review = {
+//         user: user.value,
+//         comment: comment.value,
+//     }
+//     reviewList.push(review)
+//     localStorage.setItem("reviews", JSON.stringify(reviewList))
+//     displayData()
+// }
+// function displayData() {
+//     var temp = "";
+//     for (var i = 0; i < reviewList.length; i++) {
+//         temp += ` <div class="testimonials-item  ">
+//         <div class="testimonials-name">
+//         <h5>`+reviewList[i].user+`</h5>
+//       </div>
+//       <div class="testimonials-desc">
+//         <p><i class="fa-solid fa-comment"></i>&nbsp;`+reviewList[i].comment+`&nbsp;<i class="fa-solid fa-comment"></i></p>
+//       </div>
+//       </div> `
+//     }
+//     document.getElementById("myReview").innerHTML = temp
+// }
