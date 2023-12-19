@@ -1,72 +1,134 @@
+
 .parent {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    }
-    
-    .div1 {
-        display: grid;
-        gap: 10px;
-        place-content: center;
-         grid-area: 1 / 1 / 9 / 2;
-        border-right: 2px solid black;
-    }
-    .div2 {
+  /* height: 100vh; */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
 
-         grid-area: 1 / 2 / 4 / 6; 
-        }
-    .div3 {
-        display: grid;
-        align-items: center;
-         grid-area: 4 / 2 / 9 / 6;
-         }
+.div1 {
+  display: grid;
+  gap: 10px;
+  place-content: center;
+  grid-area: 1 / 1 / 9 / 2;
+  border-right: 2px solid black;
+}
+.div2 {
+   height: 60vh;
+  grid-area: 1 / 2 / 4 / 6;
+}
+.div3 {
+  display: grid;
+  align-items: center;
+  grid-area: 4 / 2 / 9 / 6;
+}
 
-         .div1 h2{
-            font-size: 50px;
-         }
-         .div1 h3{
-            font-size: 30px;
-            color: #2d7881;
-         }
+.div1 h2 {
+  font-size: 50px;
+}
+.div1 h3 {
+  font-size: 30px;
+  color: #2d7881;
+}
 
-         .div2 h2{
-            font-size: 55px;
-            margin-left: 50px;
-         }
-         
-         .div3 h2{
-            margin-left: 110px;
-         }
+.div2 h2 {
+  font-size: 55px;
+  margin-left: 50px;
+}
 
-         .dash-items{
-            display: grid;
-            grid-template-columns: repeat(3,20%);
-            justify-content: center;
-            margin-top: 50px;
-            height: 200px;
-            gap: 3%;
-         }
+.div3 h2 {
+  margin-left: 110px;
+}
 
-         .dash-item{
-            background-repeat: no-repeat;
-            background-size: cover;
-            color: black;
-            
-         }
+.dash-items {
+  display: grid;
+  grid-template-columns: repeat(3, 20%);
+  justify-content: center;
+  margin-top: 50px;
+  height: 200px;
+  gap: 3%;
+}
 
-         .dashback1{
-            background-image: url(./images/dashred.jpg);
-         }
-         .dashback2{
-            background-image: url(./images/dashgreen.jpg);
-         }
-         .dashback3{
-            background-image: url(./images/dashblue.jpg);
-         }
+.dash-item {
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+}
 
-         .progress{
-            margin: 30px 0px;
-         }
+.dashback1 {
+  background-image: url(./images/dashred.jpg);
+}
+.dashback2 {
+  background-image: url(./images/dashgreen.jpg);
+}
+.dashback3 {
+  background-image: url(./images/dashblue.jpg);
+}
+
+.progress {
+  margin: 30px 0px;
+}
+
+
+
+/* mobile */
+@media screen and (max-width:480px) {
+  .div1 h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+  .parent {
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .div1{
+  grid-area: 1 / 1 / 3 / 3;
+  }
+  .div2 {
+   height: 75vh;
+   grid-area: 1 / 3 / 3 / 6;
+ }
+ .div2 h2 {
+  font-size: 30px;
+}
+
+ .dash-items {
+  grid-template-columns: repeat(1, 70%);
+  row-gap: 40px;
+}
+.dash-item{
+  padding: 10px 10px;
+}
+.div3 {
+  padding: 50px 0;
+  grid-area: 4 / 1 / 6 / 6;
+}
+.div3 .container{
+  width: 90%;
+}
+}
+
+/* tablets */
+@media screen and (min-width:481px) and (max-width:960px) {
+  .parent {
+    grid-template-rows: repeat(5, 1fr);
+  }
+  .div1{
+  grid-area: 1 / 1 / 6 / 3;
+  }
+  .div2 {
+   height: 75vh;
+   grid-area: 1 / 3 / 4 / 6;
+ }
+
+ .dash-items {
+  grid-template-columns: repeat(1, 50%);
+  margin-top: 120px;
+  row-gap: 50px;
+}
+.div3 {
+  padding: 50px 0;
+  grid-area: 4 / 1 / 6 / 6;
+}
+}
