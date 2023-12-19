@@ -1,23 +1,3 @@
-// review post
-var userPostReview = document.getElementById("user")
-var postReviewMessage = document.getElementById("comment")
-
-async function sendReview() {
-    var userSendReview = {
-        name: userPostReview.value,
-        comment: postReviewMessage.value,
-    }
-    var data = await fetch(`https://xhotel-backend.onrender.com/api/api/reviews/`, {
-        method: "post",
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userSendReview)
-    })
-    let res = await data.json()
-    console.log(res);
-}
-
 
 // get and add review
 let reviewList = [];
