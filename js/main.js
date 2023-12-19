@@ -38,7 +38,7 @@ async function addReview() {
         reviewList.forEach((element)=>{
             temp+=`<div class="testimonials-item bg-body-tertiary">
         <div class="testimonials-name">
-       <h5>${element.user}</h5>
+       <h5>${element.name}</h5>
        </div>
        <div class="testimonials-desc">
         <p><i class="fa-solid fa-comment"></i>${element.comment}<i class="fa-solid fa-comment"></i></p>
