@@ -49,7 +49,7 @@ async function loginData() {
 
             if (res.token) {
                 // Redirect to the home page or perform any other action
-                window.location.href = "http://127.0.0.1:3000/x-hotel-front-end/index.html";
+                window.location.href = "http://127.0.0.1:3000/x-hotel-front-end/home.html";
             } else {
                 console.error("Invalid token");
                 // Display an error message to the user or take other actions
