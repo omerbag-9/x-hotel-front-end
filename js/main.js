@@ -4,7 +4,7 @@ var postReviewMessage = document.getElementById("comment")
 
 async function sendReview() {
     var userSendReview = {
-        user: userPostReview.value,
+        name: userPostReview.value,
         comment: postReviewMessage.value,
     }
     var data = await fetch(`https://xhotel-backend.onrender.com/api/api/reviews/`, {
