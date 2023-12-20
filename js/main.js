@@ -3,7 +3,7 @@
 let reviewList = [];
 
 async function addReview() {
-    let myReq = await fetch(`http://serco-dev.com:2020/api/api/reviews/`)
+    let myReq = await fetch(`http://127.0.0.1:8000/api/api/reviews/`)
     console.log(myReq)
     let Data = await myReq.json()
     reviewList = Data.reviews

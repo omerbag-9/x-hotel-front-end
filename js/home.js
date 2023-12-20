@@ -7,7 +7,7 @@ async function sendReview() {
         name: userPostReview.value,
         comment: postReviewMessage.value,
     }
-    var data = await fetch(`https://xhotel-backend.onrender.com/api/api/reviews/`, {
+    var data = await fetch(`http://127.0.0.1:8000/api/api/reviews/`, {
         method: "post",
         headers: {
           'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ async function sendReview() {
 let reviewList = [];
 
 async function addReview() {
-    let myReq = await fetch(`http://serco-dev.com:2020/api/api/reviews/`)
+    let myReq = await fetch(`http://127.0.0.1:8000/api/api/reviews/`)
     console.log(myReq)
     let Data = await myReq.json()
     reviewList = Data.reviews
@@ -53,7 +53,7 @@ async function addReview() {
     let homeName = [];
 
 async function addUserhome() {
-    let myReq = await fetch(`http://serco-dev.com:2020/api/api/reviews/`)
+    let myReq = await fetch(`http://127.0.0.1:8000/api/api/reviews/`)
     console.log(myReq)
     let Data = await myReq.json()
     homeName = Data.reviews

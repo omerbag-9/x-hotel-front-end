@@ -1,7 +1,7 @@
 // get and add hotels
 // let hotelsList = [];
 // async function addHotel() {
-//     let myReq = await fetch(``)
+//     let myReq = await fetch(`http://127.0.0.1:8000/`)
 //     let Data = await myReq.json()
 //     hotelsList = Data.Hotel
 //     console.log(hotelsList)

@@ -16,7 +16,7 @@ function logout() {
         localStorage.removeItem('token');
         
         // Redirect or perform other actions after successful logout
-        window.location.href = 'http://127.0.0.1:3000/x-hotel-front-end/sign-in.html'; // Redirect to login page, for example
+        window.location.href = 'http://127.0.0.1:8000/x-hotel-front-end/sign-in.html'; // Redirect to login page, for example
       } else {
         // Handle errors, such as displaying an error message
         console.error('Logout failed');

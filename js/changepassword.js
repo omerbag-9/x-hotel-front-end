@@ -7,7 +7,7 @@ async function changeData() {
         old_password: oldPassword.value,
         new_password: newPassword.value,
     }
-    var data = await fetch(`localhost:8000/api/login/`, {
+    var data = await fetch(`http://127.0.0.1:8000/api/login/`, {
         method: "post",
         body: JSON.stringify(changeUserData)
     })
