@@ -125,25 +125,27 @@ $(document).ready(function() {
 var checkinyear = document.getElementById("year")
 var checkinmonth = document.getElementById("month")
 var checkinday = document.getElementById("day")
-console.log(checkin)
+var checkoutyear = document.getElementById("year1")
+var checkoutmonth = document.getElementById("month1")
+var checkoutday = document.getElementById("day1")
+var adult = document.getElementById("adult")
+var kid = document.getElementById("kids")
+var id ;
 
-function book(){
-    var checkin = checkinyear.value+'-'+checkinmonth.value+'-'+checkinday.value
-
-    console.log(checkin)
-}
-
-async function book1() {
-    var userSendReview = {
-        name: userPostReview.value,
-        comment: postReviewMessage.value,
+async function book() {
+    var userSendBook = {
+        check_in_date: checkinyear.value+'-'+checkinmonth.value+'-'+checkinday.value,
+        check_out_date: checkoutyear.value+'-'+checkoutmonth.value+'-'+checkoutday.value,
+        adult:adult.value,
+        kids:kid.value,
+        id:id.value
     }
-    var data = await fetch(`http://127.0.0.1:8000/api/api/reviews/`, {
+    var data = await fetch(`http://127.0.0.1:8000/api/booking/`, {
         method: "post",
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(userSendReview)
+        body: JSON.stringify(userSendBook)
     })
     let res = await data.json()
     console.log(res);
