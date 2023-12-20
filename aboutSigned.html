@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/css code main/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/css code main/x-hotel-main.css" />
+    <link rel="stylesheet" href="./css/css code main/x-hotel-header.css" />
+    <link rel="stylesheet" href="./css/css code main/x-hotel-register.css" />
+    <link rel="stylesheet" href="./css/css code main/x-hotel-home.css" />
+    <link rel="stylesheet" href="./css/css code main/x-hotel-about.css" />
+    <link rel="stylesheet" href="./css/css code main/x-hotel-footer.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Dancing+Script:wght@600&family=PT+Sans&family=Roboto+Serif:opsz,wght@8..144,200;8..144,300&family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <title>XHotel</title>
+  </head>
+  <body class="position-relative">
+    <!-- bot -->
+    <div class="bot"></div>
+
+    <!-- header -->
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-opacity-50 fixed-top  z-5 w-100">
+        <div class="container">
+          <a class="navbar-brand font-nav" href="#">
+            <!-- <img src="./css/images/Blue White Simple Infinity Line Logo.png" alt="Logo" width="100" height="90" class="d-inline-block align-text-top"> -->
+            X-Hotel
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item ms-4">
+                <a class="nav-link nav-hover fw-bold text-black" aria-current="page" href="./home.html">Home</a>
+              </li>
+              <li class="nav-item ms-4">
+                <a class="nav-link nav-hover fw-bold text-black" href="./exploreSigned.html">Explore</a>
+              </li>
+              <li class="nav-item ms-4">
+                <a class="nav-link nav-hover fw-bold text-black" href="./hotelsSigned.html">Hotels</a>
+              </li>
+              <li class="nav-item ms-4">
+                <a class="nav-link nav-hover fw-bold text-black" href="./aboutSigned.html">About</a>
+              </li>
+              <li class="nav-item ms-4">
+                <a class="nav-link nav-hover fw-bold text-black" href="./dashboardSigned.html">Dashboard</a>
+              </li>
+            </ul>
+            <ul id="homeuserdata" class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <div class="dropdown">
+                <span>hello,</span>
+                <span>omer</span>
+                <button class="btn btn-outline-secondary  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                </button>
+                <ul class="dropdown-menu ps-3">
+                  <li><a href="profile.html" class="text-decoration-none pb-3 profile-a">Profile</a></li>
+                <li><button class="btn btn-sign" id="logout" onclick="logout()" type="submit">log out</button></li>
+              </ul>
+              </div>
+            </ul>
+          </div>
+    
+        </nav>
+
+    <!-- home -->
+    <div class="home">
+      <div class="overlay"></div>
+
+      <div class="home-content">
+        <h1 class="title">About Us</h1>
+
+        <p class="home-p">
+          the elegant luxury bedrooms in this gallery showcase custom interior
+          design and decorating ideas. view pictures and find your perfect
+          luxury bedroom design.
+        </p>
+
+        <div class="home-button">
+          <i class="fa fa-arrow-down" aria-hidden="true"> </i>
+        </div>
+        <!-- button -->
+      </div>
+      <!-- ./home-content -->
+    </div>
+    <!-- ./home -->
+
+    <!-- history -->
+    <div class="history">
+      <div class="container">
+        <div class="history-content">
+          <div class="history-box">
+            <div class="history-img">
+              <img src="./css/images/tefa.png" alt="" />
+              <div class="history-overlay">
+                <ul class="unstyled">
+                  <li>
+                    <a href=""><i class="fa-brands fa-facebook-f fa-lg"></i></a>
+                  </li>
+                  <li>
+                    <a href=""><i class="fa-brands fa-twitter fa-lg"></i></a>
+                  </li>
+                  <li>
+                    <a href=""><i class="fa-brands fa-google fa-lg"></i></a>
+                  </li>
+                  <li>
+                    <a href=""><i class="fa-brands fa-github fa-lg"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <!-- ./history-overlay -->
+            </div>
+            <!-- ./history-img -->
+          </div>
+          <!-- ./history-box -->
+
+          <div class="history-desc">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid
+              dolorem libero doloremque aliquam minus blanditiis optio
+              reiciendis maxime iure. Totam vel eius reprehenderit provident
+              natus nobis ratione similique odit necessitatibus?
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid
+              dolorem libero doloremque aliquam minus blanditiis optio
+              reiciendis maxime iure. Totam vel eius reprehenderit provident
+              natus nobis ratione similique odit necessitatibus?
+            </p>
+          </div>
+          <!-- ./history-desc -->
+        </div>
+        <!-- ./content -->
+        <div class="section-header section-padding m-5 ">
+            <h2 class="section-title">Clients</h2>
+            <span class="line"></span>
+          </div>
+          <!-- ./section-header -->
+          <div class="clients">
+            <ul>
+                <li><img class="rounded-circle " src="./css/images/componant/7190702.jpg" alt=""></li>
+                <li><img class="rounded-circle " src="./css/images/componant/356596-PB88SO-144.jpg" alt=""></li>
+                <li><img class="rounded-circle " src="./css/images/componant/495.jpg" alt=""></li>
+                <li><img class="rounded-circle " src="./css/images/componant/7380214.jpg" alt=""></li>
+                <li><img class="rounded-circle " src="./css/images/componant/8011891.jpg" alt=""></li>
+            </ul>
+          </div>
+      </div>
+      <!-- ./container -->
+    </div>
+    <!-- ./history -->
+
+    <!-- footer -->
+    <footer>
+      <div class="footer-items">
+        <div class="container">
+          <div class="footer-item">
+            <div class="section-header section-padding">
+              <h2 class="section-title footer-title">About</h2>
+              <span class="line"></span>
+            </div>
+            <!-- ./section-header -->
+          </div>
+          <!-- ./footer-item -->
+          <ul class="footer-title-list">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Environmental, Social and Governance (ESG)</a></li>
+            <li><a href="#">Health And Safety</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+          <ul class="social-icons">
+            <li>
+              <a href="#"><i class="fa-brands fa-facebook fa-lg"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-twitter fa-lg"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a>
+            </li>
+          </ul>
+
+          <ul class="footer-policy">
+            <li><a href="#">Legal Notice</a></li>
+            <li><a href="#">Privacy Notice</a></li>
+            <li><a href="#">Do Not Sell My Personal Information</a></li>
+            <li><a href="#">Accessibility Policy</a></li>
+          </ul>
+          <span class="footer-credits">
+            &#169; X-Hotel All Rights Reserved.</span
+          >
+        </div>
+        <!-- ./container -->
+      </div>
+      <!-- ./footer-items -->
+    </footer>
+  </body>
+</html>

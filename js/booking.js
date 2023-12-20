@@ -150,3 +150,8 @@ async function book() {
     let res = await data.json()
     console.log(res);
 }
+
+
+function bookcant(){
+  window.alert("sign in to book")
+}

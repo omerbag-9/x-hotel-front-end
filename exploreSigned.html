@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explor</title>
+    <link rel="stylesheet" href="./css/css code main/bootstrap.min.css" />
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/css code main/explor.css" />
+    <link rel="stylesheet" href="css/css code main/x-hotel-header.css" />
+    <link rel="stylesheet" href="./css/css code main/x-hotel-footer.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Dancing+Script:wght@600&family=PT+Sans&family=Roboto+Serif:opsz,wght@8..144,200;8..144,300&family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- header -->
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-opacity-50 fixed-top  z-5 w-100">
+        <div class="container">
+          <a class="navbar-brand font-nav" href="#">
+            <!-- <img src="./css/images/Blue White Simple Infinity Line Logo.png" alt="Logo" width="100" height="90" class="d-inline-block align-text-top"> -->
+            X-Hotel
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item ms-4">
+                <a class="nav-link nav-hover fw-bold text-black" aria-current="page" href="./home.html">Home</a>
+              </li>
+              <li class="nav-item ms-4">
+                <a class="nav-link nav-hover fw-bold text-black" href="./exploreSigned.html">Explore</a>
+              </li>
+              <li class="nav-item ms-4">
+                <a class="nav-link nav-hover fw-bold text-black" href="./hotelsSigned.html">Hotels</a>
+              </li>
+              <li class="nav-item ms-4">
+                <a class="nav-link nav-hover fw-bold text-black" href="./aboutSigned.html">About</a>
+              </li>
+              <li class="nav-item ms-4">
+                <a class="nav-link nav-hover fw-bold text-black" href="./dashboardSigned.html">Dashboard</a>
+              </li>
+            </ul>
+            <ul id="homeuserdata" class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <div class="dropdown">
+                <span>hello,</span>
+                <span>omer</span>
+                <button class="btn btn-outline-secondary  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                </button>
+                <ul class="dropdown-menu ps-3">
+                  <li><a href="profile.html" class="text-decoration-none pb-3 profile-a">Profile</a></li>
+                <li><button class="btn btn-sign" id="logout" onclick="logout()" type="submit">log out</button></li>
+              </ul>
+              </div>
+            </ul>
+          </div>
+    
+        </nav>
+
+    <!-- explor-home -->
+    <div class="explor-home">
+      <video controls autoplay class="w-100">
+        <source src="./css/images/Mondrian Park Avenue.mp4" type="video/mp4" />
+        <!-- <source src="movie.ogg" type="video/ogg"> -->
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <!-- ./explor-home -->
+
+    <!-- tour -->
+    <div class="tour">
+        <div class="tour-title section-header m-auto text-center mb-5">
+            <h2 class="section-title footer-title text-black">Take a Tour</h2>
+            <span class="line"></span>
+          </div>
+      <!-- <div class="tour-title m-auto text-center mb-5">
+        <h2>Take a Tour</h2>
+      </div> -->
+      <div class="tour-item container">
+        <div class="tour-img position-relative">
+          <img src="css/images/room.png" alt="" class="w-100" />
+          <div class="tour-desc text-center m-auto position-absolute">
+            <h3>Luxurious Rooms</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+              velit id quo ipsum molestiae. Nam facilis, tempore reprehenderit
+              recusandae debitis maxime repellendus impedit autem repudiandae
+              nostrum, odio ratione officiis inventore molestias! Alias ipsam, eum
+              eos sunt nobis at qui nostrum. Mollitia incidunt perferendis omnis
+              iste animi aperiam. Temporibus, consequuntur quisquam!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="tour-item container">
+        <div class="tour-img position-relative">
+          <img src="css/images/gym.png" alt="" class="w-100" />
+          <div class="tour-desc text-center m-auto position-absolute">
+            <h3>Gym Center</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+              velit id quo ipsum molestiae. Nam facilis, tempore reprehenderit
+              recusandae debitis maxime repellendus impedit autem repudiandae
+              nostrum, odio ratione officiis inventore molestias! Alias ipsam, eum
+              eos sunt nobis at qui nostrum. Mollitia incidunt perferendis omnis
+              iste animi aperiam. Temporibus, consequuntur quisquam!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="tour-item container last-item">
+        <div class="tour-img position-relative">
+          <img src="css/images/resturant.png" alt="" class="w-100" />
+          <div class="tour-desc text-center m-auto position-absolute">
+            <h3>Restaurant</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+              velit id quo ipsum molestiae. Nam facilis, tempore reprehenderit
+              recusandae debitis maxime repellendus impedit autem repudiandae
+              nostrum, odio ratione officiis inventore molestias! Alias ipsam, eum
+              eos sunt nobis at qui nostrum. Mollitia incidunt perferendis omnis
+              iste animi aperiam. Temporibus, consequuntur quisquam!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ./tour -->
+
+    <footer>
+      <div class="footer-items">
+        <div class="container">
+          <div class="footer-item">
+            <div class="section-header section-padding">
+              <h2 class="section-title footer-title">About</h2>
+              <span class="line"></span>
+            </div>
+            <!-- ./section-header -->
+          </div>
+          <!-- ./footer-item -->
+          <ul class="footer-title-list">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Environmental, Social and Governance (ESG)</a></li>
+            <li><a href="#">Health And Safety</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+          <ul class="social-icons">
+            <li>
+              <a href="#"><i class="fa-brands fa-facebook fa-lg"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-twitter fa-lg"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a>
+            </li>
+          </ul>
+
+          <ul class="footer-policy">
+            <li><a href="#">Legal Notice</a></li>
+            <li><a href="#">Privacy Notice</a></li>
+            <li><a href="#">Do Not Sell My Personal Information</a></li>
+            <li><a href="#">Accessibility Policy</a></li>
+          </ul>
+          <span class="footer-credits">
+            &#169; X-Hotel All Rights Reserved.</span
+          >
+        </div>
+        <!-- ./container -->
+      </div>
+      <!-- ./footer-items -->
+    </footer>
+  </body>
+</html>
