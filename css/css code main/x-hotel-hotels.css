@@ -103,27 +103,11 @@ a{
       }
     }
   
-    /* mobile */
-  @media screen and (max-width: 480px) {
-    .home-p{
-      display: none;
-    }
-    .home{
-      /* background-image: url(../images/213218582.jpg); */
-    }
- 
-  }
-  
-  /* tablets */
-  @media screen and (min-width: 481px) and (max-width: 960px) {
-    .home{
-      /* background-image: url(../images/498681147.jpg); */
-    }
-  }
+
 
   /* hotels */
   .hotels{
-    margin-bottom: 90px;
+    margin-bottom: 140px;
   }
   .hotels-content{
     display: grid;
@@ -169,6 +153,9 @@ a{
     grid-template-columns: 100%;
     row-gap: 1%;
     padding-bottom: 80px;
+  }
+  .home-p{
+    display: none;
   }
 }
 
