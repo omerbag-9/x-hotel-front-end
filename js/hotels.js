@@ -15,7 +15,7 @@
 //         hotelsList.forEach((element)=>{
 //             temp+=`<a href="./booking.html">
 //             <div class="hotels-item">
-//               <img src="${element.hotelImg}" alt="" />
+//               <img src="css/images/Rectangle 21.png" alt="" />
 //               <div class="item-overlay">
 //                 <h2>${element.hotelName}</h2>
 //                 <span class="d-block">${element.hotelLocation}</span>
