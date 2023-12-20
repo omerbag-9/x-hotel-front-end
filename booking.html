@@ -154,20 +154,20 @@
                             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                             <div class="checkin">
                               <span>checkin : &nbsp;</span>
-                              <select id="year"></select>
-                            <select id="month"></select>
-                            <select id="day"></select>
+                              <select id="year" required></select>
+                            <select id="month" required></select>
+                            <select id="day" required></select>
                             </div>
                             <div class="checkout my-4 ">
                               <span>checkout : </span>
-                              <select id="year1"></select>
-                            <select id="month1"></select>
-                            <select id="day1"></select>
+                              <select id="year1" required></select>
+                            <select id="month1" required></select>
+                            <select id="day1" required></select>
                             </div>
                             <div class="persons">
                               <span>persons: </span>
                               <label for="">Adults: </label>
-                              <select name="adult" id="adult">
+                              <select name="adult" id="adult" required>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -175,7 +175,8 @@
                                 <option value="5">5</option>
                               </select>
                               <label for="">Kids: </label>
-                              <select name="kids" id="kids">
+                              <select name="kids" id="kids" required>
+                                <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
