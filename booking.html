@@ -151,14 +151,42 @@
                           </div>
                           <form action="" >
                           <div class="modal-body">
-                              <label class="fw-bold " for="">Check-in</label>
-                              <input  class="check1 form-control w-25 " placeholder="Check-in"/>
-                              <label class="fw-bold " for="">Check-out</label>
-                              <input class="check1 form-control w-25 " placeholder="Check-out"/>
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                            <div class="checkin">
+                              <span>checkin : &nbsp;</span>
+                              <select id="year"></select>
+                            <select id="month"></select>
+                            <select id="day"></select>
+                            </div>
+                            <div class="checkout my-4 ">
+                              <span>checkout : </span>
+                              <select id="year1"></select>
+                            <select id="month1"></select>
+                            <select id="day1"></select>
+                            </div>
+                            <div class="persons">
+                              <span>persons: </span>
+                              <label for="">Adults: </label>
+                              <select name="adult" id="adult">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                              </select>
+                              <label for="">Kids: </label>
+                              <select name="kids" id="kids">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                              </select>
+                            </div>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button type="submit" class="btn btn-primary">Reserve</button>
+                              <button onclick="book()" type="submit" class="btn btn-primary">Reserve</button>
                             </div>
                           </form>
                           </div>
