@@ -53,7 +53,7 @@ async function addReview() {
     let homeName = [];
 
 async function addUserhome() {
-    let myReq = await fetch(`http://127.0.0.1:8000/api/api/reviews/`)
+    let myReq = await fetch(`http://127.0.0.1:8000/api/profile/`)
     console.log(myReq)
     let Data = await myReq.json()
     homeName = Data.reviews
@@ -69,7 +69,7 @@ async function addUserhome() {
             temp+=`
             <div class="dropdown">
             <span>hello,</span>
-            <span>${element.name}</span>
+            <span>${element.username}</span>
             <button class="btn btn-outline-secondary  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             </button>
             <ul class="dropdown-menu">

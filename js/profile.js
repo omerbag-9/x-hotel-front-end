@@ -1,23 +1,66 @@
 // get and add profile
 let profileList = [];
-
 async function addProfile() {
-    let myReq = await fetch(`http://127.0.0.1:8000/api/api/reviews/`)
-    console.log(myReq)
-    let Data = await myReq.json()
-    profileList = Data.user_data
-    console.log(profileList)
-    displayProfile()
+  try {
+    let myReq = await fetch(`http://127.0.0.1:8000/api/profile/`, {
+      headers: {
+        Authorization: `Bearer ${access}`,
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!myReq.ok) {
+      throw new Error(`HTTP error! Status: ${myReq.status}`);
     }
 
-    addProfile()
+    let data = await myReq.json();
+    profileList = data.user_data;
+    displayProfile();
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
 
-    function displayProfile(){
-        let temp = ""
-        profileList.forEach((element)=>{
-            temp+=` <p class="fw-bold">User Name : <span class="fw-normal">${element.username}</span></p>
-            <p class="fw-bold">Email : <span class="fw-normal">${element.email}</span></p>
-            <p class="fw-bold">Booked : <span class="fw-normal">${element.bookings}</span></p>`
-        })
-        document.getElementById("myProfile").innerHTML = temp
+addProfile();
+
+function displayProfile() {
+  let temp = "";
+  profileList.forEach((element) => {
+    temp = ` <p class="fw-bold">User Name : <span class="fw-normal">${element.username}</span></p>
+            <p class="fw-bold">Email : <span class="fw-normal">${element.email}</span></p>`;
+  });
+  document.getElementById("myProfile").innerHTML = temp;
+}
+
+// get and add profile
+let profileBookedList = [];
+async function addBookedProfile() {
+  try {
+    let myReq = await fetch(`http://127.0.0.1:8000/api/profile/`, {
+      headers: {
+        Authorization: `Bearer ${access}`,
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!myReq.ok) {
+      throw new Error(`HTTP error! Status: ${myReq.status}`);
     }
+
+    let data = await myReq.json();
+    profileBookedList = data.bookings;
+    displayBookedProfile();
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+addBookedProfile();
+
+function displayBookedProfile() {
+  let temp = "";
+  profileBookedList.forEach((element) => {
+    temp = `<p class="fw-bold">Booked : <span class="fw-normal">FROM: ${element.check_in_date} , </span><span class="fw-normal"> TO: ${element.check_out_date}</span></p>`;
+  });
+  document.getElementById("myProfile").innerHTML = temp;
+}

@@ -73,7 +73,7 @@ async function joinData() {
 
         if (data.ok) {
             // Registration successful, redirect to the home page
-            window.location.href = "http://127.0.0.1:5501/x-hotel-front-end-master/sign-in.html"; // Replace "/home" with the actual path to your home page
+            window.location.href = "http://127.0.0.1:3000/x-hotel-front-end/sign-in.html"; // Replace "/home" with the actual path to your home page
         } else {
             // Handle registration error
             let errorResponse = await data.json();
