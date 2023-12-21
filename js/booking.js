@@ -315,3 +315,131 @@ async function addRoom() {
 function bookcant(){
   window.alert("sign in to book")
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////
+
+$(document).ready(function() {
+  const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+  let qntYears = 4;
+  let selectYear = $("#year2");
+  let selectMonth = $("#month2");
+  let selectDay = $("#day2");
+  let currentYear = new Date().getFullYear();
+
+  for (var y = 0; y < qntYears; y++) {
+    let date = new Date(currentYear);
+    let yearElem = document.createElement("option");
+    yearElem.value = currentYear
+    yearElem.textContent = currentYear;
+    selectYear.append(yearElem);
+    currentYear++;
+  }
+
+  for (var m = 0; m < 12; m++) {
+    let month = monthNames[m];
+    let monthElem = document.createElement("option");
+    monthElem.value = m;
+    monthElem.textContent = month;
+    selectMonth.append(monthElem);
+  }
+
+  var d = new Date();
+  var month = d.getMonth();
+  var year = d.getFullYear();
+  var day = d.getDate();
+
+  selectYear.val(year);
+  selectYear.on("change", AdjustDays);
+  selectMonth.val(month);
+  selectMonth.on("change", AdjustDays);
+
+  AdjustDays();
+  selectDay.val(day)
+
+  function AdjustDays() {
+    var year = selectYear.val();
+    var month = parseInt(selectMonth.val()) + 1;
+    selectDay.empty();
+
+    //get the last day, so the number of days in that month
+    var days = new Date(year, month, 0).getDate();
+
+    //lets create the days of that month
+    for (var d = 1; d <= days; d++) {
+      var dayElem = document.createElement("option");
+      dayElem.value = d;
+      dayElem.textContent = d;
+      selectDay.append(dayElem);
+    }
+  }
+});
+
+
+
+
+
+
+
+
+var checkineventyear = document.getElementById("year");
+var checkineventmonth = document.getElementById("month");
+var checkineventday = document.getElementById("day");
+var idEvent = document.getElementById("event1").name;
+var idEvent = document.getElementById("event2").name;
+
+async function book() {
+    try {
+        var userSendBook = {
+            check_in_date: checkineventyear.value + '-' + checkineventmonth.value + '-' + checkineventday.value,
+            event_id: idEvent,
+        };
+
+        var data = await fetch(`http://127.0.0.1:8000/api/booking/`, {
+            method: "post",
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userSendBook),
+        });
+
+        if (!data.ok) {
+            throw new Error(`HTTP error! Status: ${data.status}`);
+        }
+
+        let res = await data.json();
+        console.log(res);
+        // Handle the success response here if needed
+    } catch (error) {
+        console.error('Error during booking:', error);
+        window.alert("this room is already booked in this time")
+        // You can handle different types of errors here
+        if (error instanceof TypeError) {
+            // Handle specific error types if needed
+        } else {
+            // Handle other errors
+        }
+
+        // Display an error message to the user or perform other error handling actions
+    }
+}
+
+
+
