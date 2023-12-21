@@ -222,12 +222,12 @@ async function addRoom() {
     let Data = await myReq.json()
     roomList = Data.rooms
     console.log(roomList)
-    displayReview()
+    displayRoom()
     }
 
     addRoom()
 
-    function displayReview(){
+    function displayRoom(){
         let temp = ""
         roomList.forEach((element)=>{
             temp+=`   <div class="booking-item" id="room" name="${room_id}">
@@ -398,9 +398,9 @@ $(document).ready(function() {
 
 
 
-var checkineventyear = document.getElementById("year");
-var checkineventmonth = document.getElementById("month");
-var checkineventday = document.getElementById("day");
+var checkineventyear = document.getElementById("year2");
+var checkineventmonth = document.getElementById("month2");
+var checkineventday = document.getElementById ("day2");
 var idEvent = document.getElementById("event1").name;
 var idEvent = document.getElementById("event2").name;
 
