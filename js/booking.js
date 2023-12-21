@@ -122,33 +122,188 @@ $(document).ready(function() {
 
 
 
-var checkinyear = document.getElementById("year")
-var checkinmonth = document.getElementById("month")
-var checkinday = document.getElementById("day")
-var checkoutyear = document.getElementById("year1")
-var checkoutmonth = document.getElementById("month1")
-var checkoutday = document.getElementById("day1")
-var adult = document.getElementById("adult")
-var kid = document.getElementById("kids")
-var id ;
+// var checkinyear = document.getElementById("year")
+// var checkinmonth = document.getElementById("month")
+// var checkinday = document.getElementById("day")
+// var checkoutyear = document.getElementById("year1")
+// var checkoutmonth = document.getElementById("month1")
+// var checkoutday = document.getElementById("day1")
+// var adult = document.getElementById("adult")
+// var kid = document.getElementById("kids")
+// var id = document.getElementById("room1").name ;
+
+// async function book() {
+//     var userSendBook = {
+//         check_in_date: checkinyear.value+'-'+checkinmonth.value+'-'+checkinday.value,
+//         check_out_date: checkoutyear.value+'-'+checkoutmonth.value+'-'+checkoutday.value,
+//         adult:adult.value,
+//         kids:kid.value,
+//         room:id,
+//     }
+//     var data = await fetch(`http://127.0.0.1:8000/api/booking/`, {
+//         method: "post",
+//         headers: {
+//           'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(userSendBook)
+//     })
+//     let res = await data.json()
+//     console.log(res);
+// }
+
+
+
+
+
+
+var checkinyear = document.getElementById("year");
+var checkinmonth = document.getElementById("month");
+var checkinday = document.getElementById("day");
+var checkoutyear = document.getElementById("year1");
+var checkoutmonth = document.getElementById("month1");
+var checkoutday = document.getElementById("day1");
+var adult = document.getElementById("adult");
+var kid = document.getElementById("kids");
+var id = document.getElementById("room1").name;
 
 async function book() {
-    var userSendBook = {
-        check_in_date: checkinyear.value+'-'+checkinmonth.value+'-'+checkinday.value,
-        check_out_date: checkoutyear.value+'-'+checkoutmonth.value+'-'+checkoutday.value,
-        adult:adult.value,
-        kids:kid.value,
+    try {
+        var userSendBook = {
+            check_in_date: checkinyear.value + '-' + checkinmonth.value + '-' + checkinday.value,
+            check_out_date: checkoutyear.value + '-' + checkoutmonth.value + '-' + checkoutday.value,
+            adult: adult.value,
+            kids: kid.value,
+            room: id,
+        };
+
+        var data = await fetch(`http://127.0.0.1:8000/api/booking/`, {
+            method: "post",
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userSendBook),
+        });
+
+        if (!data.ok) {
+            throw new Error(`HTTP error! Status: ${data.status}`);
+        }
+
+        let res = await data.json();
+        console.log(res);
+        // Handle the success response here if needed
+    } catch (error) {
+        console.error('Error during booking:', error);
+        window.alert("this room is already booked in this time")
+        // You can handle different types of errors here
+        if (error instanceof TypeError) {
+            // Handle specific error types if needed
+        } else {
+            // Handle other errors
+        }
+
+        // Display an error message to the user or perform other error handling actions
     }
-    var data = await fetch(`http://127.0.0.1:8000/api/booking/`, {
-        method: "post",
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userSendBook)
-    })
-    let res = await data.json()
-    console.log(res);
 }
+
+
+
+
+
+
+let roomList = [];
+
+async function addRoom() {
+    let myReq = await fetch(`http://127.0.0.1:8000/api/api/reviews/`)
+    console.log(myReq)
+    let Data = await myReq.json()
+    roomList = Data.rooms
+    console.log(roomList)
+    displayReview()
+    }
+
+    addRoom()
+
+    function displayReview(){
+        let temp = ""
+        roomList.forEach((element)=>{
+            temp+=`   <div class="booking-item" id="room" name="${room_id}">
+            <img src="./css/images/Rectangle 26.png" alt="hotel room sweet" />
+            <h2>${room_name}</h2>
+            <span class="me-4 ">${room_type}</span>
+            <span>${room_price}</span>
+            <div class="booking-line"></div>
+            <ul>
+              <li><i class="fa-solid fa-tv"></i></li>
+              <li><i class="fa-solid fa-shower"></i></li>
+              <li><i class="fa-solid fa-wifi"></i></li>
+              <li><!-- Button trigger modal -->
+                <button type="button" class="btn-booking" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Book Now
+                </button>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Choose Date</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <form action="" >
+                      <div class="modal-body">
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                        <div class="checkin">
+                          <span>checkin : &nbsp;</span>
+                          <select id="year" required></select>
+                        <select id="month" required></select>
+                        <select id="day" required></select>
+                        </div>
+                        <div class="checkout my-4 ">
+                          <span>checkout : </span>
+                          <select id="year1" required></select>
+                        <select id="month1" required></select>
+                        <select id="day1" required></select>
+                        </div>
+                        <div class="persons">
+                          <span>persons: </span>
+                          <label for="">Adults: </label>
+                          <select name="adult" id="adult" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                          <label for="">Kids: </label>
+                          <select name="kids" id="kids" required>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+
+                        </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button onclick="book()" type="button" class="btn btn-primary">Reserve</button>
+                        </div>
+                      </form>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+            </ul>
+          </div>`
+        })
+        document.getElementById("myRoom").innerHTML = temp
+    }
+
+
 
 
 function bookcant(){

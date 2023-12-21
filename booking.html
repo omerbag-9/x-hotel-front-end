@@ -127,7 +127,7 @@
             </div>
             <!-- ./section-header -->
             <div class="booking-items">
-              <div class="booking-item">
+              <div class="booking-item" id="room1" name="1">
                 <img src="./css/images/Rectangle 26.png" alt="hotel room sweet" />
                 <h2>The Royal Room</h2>
                 <span>$190</span>
@@ -183,11 +183,12 @@
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                               </select>
+
                             </div>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button onclick="bookcant()" type="button" class="btn btn-primary">Reserve</button>
+                              <button onclick="book()" type="button" class="btn btn-primary">Reserve</button>
                             </div>
                           </form>
                           </div>
@@ -355,5 +356,6 @@
       <!-- ./footer-items -->
     </footer>
   <script src="./js/booking.js"></script>
+  <script src="./js/logout.js"></script>
 </body>
 </html>

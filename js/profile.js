@@ -4,7 +4,7 @@ async function addProfile() {
   try {
     let myReq = await fetch(`http://127.0.0.1:8000/api/profile/`, {
       headers: {
-        Authorization: `Bearer ${access}`,
+        'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
         "Content-Type": "application/json",
       },
     });
@@ -26,11 +26,25 @@ addProfile();
 function displayProfile() {
   let temp = "";
   profileList.forEach((element) => {
-    temp = ` <p class="fw-bold">User Name : <span class="fw-normal">${element.username}</span></p>
-            <p class="fw-bold">Email : <span class="fw-normal">${element.email}</span></p>`;
+    temp = `<p class="fw-bold">User Name : <span class="fw-normal">${element.username}</span></p>
+    <p class="fw-bold">Email : <span class="fw-normal">${element.email}</span></p>`;
   });
   document.getElementById("myProfile").innerHTML = temp;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // get and add profile
 let profileBookedList = [];
@@ -38,7 +52,7 @@ async function addBookedProfile() {
   try {
     let myReq = await fetch(`http://127.0.0.1:8000/api/profile/`, {
       headers: {
-        Authorization: `Bearer ${access}`,
+        'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
         "Content-Type": "application/json",
       },
     });
