@@ -5,7 +5,7 @@ async function addProfile() {
     let myReq = await fetch(`http://127.0.0.1:8000/api/api/reviews/`)
     console.log(myReq)
     let Data = await myReq.json()
-    profileList = Data.reviews
+    profileList = Data.user_data
     console.log(profileList)
     displayProfile()
     }
