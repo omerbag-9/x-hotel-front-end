@@ -50,32 +50,77 @@ async function addReview() {
 
 
 
-    let homeName = [];
+//     let homeName = [];
+
+// async function addUserhome() {
+//     let myReq = await fetch(`http://127.0.0.1:8000/api/profile/`)
+
+//     console.log(myReq)
+//     let Data = await myReq.json()
+//     homeName = Data.user_data
+//     console.log(homeName)
+//     displayUserHome()
+//     }
+
+//     addUserhome()
+
+//     function displayUserHome(){
+//         let temp = ""
+//         homeName.forEach((element)=>{
+//             temp+=`
+//             <div class="dropdown">
+//             <span>hello,</span>
+//             <span>${element.username}</span>
+//             <button class="btn btn-outline-secondary  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+//             </button>
+//             <ul class="dropdown-menu">
+//               <li><button class="btn " id="logout" onclick="logout()" type="submit">log out</button></li>
+//             </ul>
+//           </div>`
+//         })
+//         document.getElementById("homeuserdata").innerHTML = temp
+//     }
+
+
+
+
+
+let homeName = [];
 
 async function addUserhome() {
-    let myReq = await fetch(`http://127.0.0.1:8000/api/profile/`)
-    console.log(myReq)
-    let Data = await myReq.json()
-    homeName = Data.reviews
-    console.log(homeName)
-    displayUserHome()
-    }
+  try {
+    let myReq = await fetch(`http://127.0.0.1:8000/api/profile/`, {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+        'Content-Type': 'application/json',
+      },
+    });
 
-    addUserhome()
+    console.log(myReq);
+    let Data = await myReq.json();
+    homeName = Data.user_data;
+    console.log(homeName);
+    displayUserHome();
+  } catch (error) {
+    console.error('Error fetching user profile:', error);
+  }
+}
 
-    function displayUserHome(){
-        let temp = ""
-        homeName.forEach((element)=>{
-            temp+=`
-            <div class="dropdown">
-            <span>hello,</span>
-            <span>${element.username}</span>
-            <button class="btn btn-outline-secondary  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            </button>
-            <ul class="dropdown-menu">
-              <li><button class="btn " id="logout" onclick="logout()" type="submit">log out</button></li>
-            </ul>
-          </div>`
-        })
-        document.getElementById("homeuserdata").innerHTML = temp
-    }
+addUserhome();
+
+function displayUserHome() {
+  let temp = '';
+  homeName.forEach((element) => {
+    temp += `
+      <div class="dropdown">
+        <span>hello,</span>
+        <span>${element.username}</span>
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        </button>
+        <ul class="dropdown-menu">
+          <li><button class="btn" id="logout" onclick="logout()" type="submit">log out</button></li>
+        </ul>
+      </div>`;
+  });
+  document.getElementById('homeuserdata').innerHTML = temp;
+}

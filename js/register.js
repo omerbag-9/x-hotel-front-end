@@ -94,6 +94,14 @@
 
 
 
+var userNameJoinInput = document.getElementById("username");
+var firstNameJoinInput = document.getElementById("first_name");
+var lastNameJoinInput = document.getElementById("last_name");
+var countryJoinInput = document.getElementById("country");
+var zipJoinInput = document.getElementById("zip");
+var emailJoinInput = document.getElementById("email");
+var passwordJoinInput = document.getElementById("password");
+var hobbiesJoinInput = document.getElementById("hobbies");
 
 
 
