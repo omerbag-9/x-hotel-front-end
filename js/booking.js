@@ -138,7 +138,6 @@ async function book() {
         check_out_date: checkoutyear.value+'-'+checkoutmonth.value+'-'+checkoutday.value,
         adult:adult.value,
         kids:kid.value,
-        id:id.value
     }
     var data = await fetch(`http://127.0.0.1:8000/api/booking/`, {
         method: "post",

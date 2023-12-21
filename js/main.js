@@ -30,7 +30,9 @@ async function addReview() {
 
 
 
-
+   function sendReviewNotSigned(){
+        window.alert("you should be signed")
+    }
 
 
 
