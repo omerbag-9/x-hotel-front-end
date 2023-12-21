@@ -165,6 +165,7 @@ var checkoutmonth = document.getElementById("month1");
 var checkoutday = document.getElementById("day1");
 var adult = document.getElementById("adult");
 var kid = document.getElementById("kids");
+var name = document.getElementById("bookingName")
 var id = document.getElementById("room1").name;
 
 async function book() {
@@ -174,6 +175,7 @@ async function book() {
             check_out_date: checkoutyear.value + '-' + checkoutmonth.value + '-' + checkoutday.value,
             adult: adult.value,
             kids: kid.value,
+            name:name.value,
             room: id,
         };
 
@@ -254,6 +256,10 @@ async function addRoom() {
                       <form action="" >
                       <div class="modal-body">
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                        <div class="name">
+                              <label for="">name : </label>
+                              <input id="bookingName" type="text">
+                            </div>
                         <div class="checkin">
                           <span>checkin : &nbsp;</span>
                           <select id="year" required></select>
