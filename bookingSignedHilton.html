@@ -213,10 +213,10 @@
           </div>
           <!-- ./section-header -->
           <div class="events-items">
-            <div class="booking-item">
+            <div class="booking-item" id="event1" name="event1">
               <img src="./css/images/Rectangle 26.png" alt="hotel room sweet" />
               <h2>The Royal Room</h2>
-              <span>$190</span>
+              <span>$100</span>
               <div class="booking-line"></div>
               <ul>
                 <li><i class="fa-solid fa-tv"></i></li>
@@ -237,12 +237,16 @@
                         </div>
                         <form action="" >
                         <div class="modal-body">
-                            <label class="fw-bold " for="">Check-in</label>
-                            <input id="checkin" class="form-control w-25 " placeholder="Check-in"/>
+                          <div class="checkin">
+                            <span>checkin : &nbsp;</span>
+                            <select id="year2" required></select>
+                          <select id="month2" required></select>
+                          <select id="day2" required></select>
+                          </div>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Reserve</button>
+                            <button onclick="bookEvent()" type="submit" class="btn btn-primary">Reserve</button>
                           </div>
                         </form>
                         </div>
@@ -252,10 +256,10 @@
               </ul>
             </div>
             <!-- ./booking-item -->
-            <div class="booking-item">
+            <div class="booking-item" id="event2" name="event2">
               <img src="./css/images/Rectangle 26.png" alt="hotel room sweet" />
-              <h2>The Royal Room</h2>
-              <span>$190</span>
+              <h2>The meeting Room</h2>
+              <span>$120</span>
               <div class="booking-line"></div>
               <ul>
                 <li><i class="fa-solid fa-tv"></i></li>
@@ -276,12 +280,16 @@
                         </div>
                         <form action="" >
                         <div class="modal-body">
-                            <label class="fw-bold " for="">Check-in</label>
-                            <input class="form-control w-25 " placeholder="Check-in"/>
+                          <div class="checkin">
+                            <span>checkin : &nbsp;</span>
+                            <select id="year2" required></select>
+                          <select id="month2" required></select>
+                          <select id="day2" required></select>
+                          </div>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Reserve</button>
+                            <button onclick="bookEvent()" type="submit" class="btn btn-primary">Reserve</button>
                           </div>
                         </form>
                         </div>

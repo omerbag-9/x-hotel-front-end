@@ -404,7 +404,7 @@ var checkineventday = document.getElementById("day");
 var idEvent = document.getElementById("event1").name;
 var idEvent = document.getElementById("event2").name;
 
-async function book() {
+async function bookEvent() {
     try {
         var userSendBook = {
             check_in_date: checkineventyear.value + '-' + checkineventmonth.value + '-' + checkineventday.value,
