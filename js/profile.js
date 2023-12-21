@@ -15,9 +15,9 @@ async function addProfile() {
     function displayProfile(){
         let temp = ""
         profileList.forEach((element)=>{
-            temp+=` <p class="fw-bold">User Name : <span class="fw-normal">${element.profileName}</span></p>
-            <p class="fw-bold">Email : <span class="fw-normal">${element.profileEmail}</span></p>
-            <p class="fw-bold">Booked : <span class="fw-normal">${element.profileBooked}</span></p>`
+            temp+=` <p class="fw-bold">User Name : <span class="fw-normal">${element.username}</span></p>
+            <p class="fw-bold">Email : <span class="fw-normal">${element.email}</span></p>
+            <p class="fw-bold">Booked : <span class="fw-normal">${element.bookings}</span></p>`
         })
         document.getElementById("myProfile").innerHTML = temp
     }
