@@ -1,126 +1,3 @@
-$(document).ready(function() {
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"
-    ];
-    let qntYears = 4;
-    let selectYear = $("#year");
-    let selectMonth = $("#month");
-    let selectDay = $("#day");
-    let currentYear = new Date().getFullYear();
-  
-    for (var y = 0; y < qntYears; y++) {
-      let date = new Date(currentYear);
-      let yearElem = document.createElement("option");
-      yearElem.value = currentYear
-      yearElem.textContent = currentYear;
-      selectYear.append(yearElem);
-      currentYear++;
-    }
-  
-    for (var m = 0; m < 12; m++) {
-      let month = monthNames[m];
-      let monthElem = document.createElement("option");
-      monthElem.value = m;
-      monthElem.textContent = month;
-      selectMonth.append(monthElem);
-    }
-  
-    var d = new Date();
-    var month = d.getMonth();
-    var year = d.getFullYear();
-    var day = d.getDate();
-  
-    selectYear.val(year);
-    selectYear.on("change", AdjustDays);
-    selectMonth.val(month);
-    selectMonth.on("change", AdjustDays);
-  
-    AdjustDays();
-    selectDay.val(day)
-  
-    function AdjustDays() {
-      var year = selectYear.val();
-      var month = parseInt(selectMonth.val()) + 1;
-      selectDay.empty();
-  
-      //get the last day, so the number of days in that month
-      var days = new Date(year, month, 0).getDate();
-  
-      //lets create the days of that month
-      for (var d = 1; d <= days; d++) {
-        var dayElem = document.createElement("option");
-        dayElem.value = d;
-        dayElem.textContent = d;
-        selectDay.append(dayElem);
-      }
-    }
-  });
-
-
-
-
-
-/////////////////////////////////////////////
-  $(document).ready(function() {
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"
-    ];
-    let qntYears = 4;
-    let selectYear = $("#year1");
-    let selectMonth = $("#month1");
-    let selectDay = $("#day1");
-    let currentYear = new Date().getFullYear();
-  
-    for (var y = 0; y < qntYears; y++) {
-      let date = new Date(currentYear);
-      let yearElem = document.createElement("option");
-      yearElem.value = currentYear
-      yearElem.textContent = currentYear;
-      selectYear.append(yearElem);
-      currentYear++;
-    }
-  
-    for (var m = 0; m < 12; m++) {
-      let month = monthNames[m];
-      let monthElem = document.createElement("option");
-      monthElem.value = m;
-      monthElem.textContent = month;
-      selectMonth.append(monthElem);
-    }
-  
-    var d = new Date();
-    var month = d.getMonth();
-    var year = d.getFullYear();
-    var day = d.getDate();
-  
-    selectYear.val(year);
-    selectYear.on("change", AdjustDays);
-    selectMonth.val(month);
-    selectMonth.on("change", AdjustDays);
-  
-    AdjustDays();
-    selectDay.val(day)
-  
-    function AdjustDays() {
-      var year = selectYear.val();
-      var month = parseInt(selectMonth.val()) + 1;
-      selectDay.empty();
-  
-      //get the last day, so the number of days in that month
-      var days = new Date(year, month, 0).getDate();
-  
-      //lets create the days of that month
-      for (var d = 1; d <= days; d++) {
-        var dayElem = document.createElement("option");
-        dayElem.value = d;
-        dayElem.textContent = d;
-        selectDay.append(dayElem);
-      }
-    }
-  });
-////////////////////////////////////////////////////////////////
-
-
 
 // var checkinyear = document.getElementById("year")
 // var checkinmonth = document.getElementById("month")
@@ -157,28 +34,29 @@ $(document).ready(function() {
 
 
 
-var checkinyear = document.getElementById("year");
-var checkinmonth = document.getElementById("month");
-var checkinday = document.getElementById("day");
-var checkoutyear = document.getElementById("year1");
-var checkoutmonth = document.getElementById("month1");
-var checkoutday = document.getElementById("day1");
-var adult = document.getElementById("adult");
-var kid = document.getElementById("kids");
-var name = document.getElementById("bookingName")
-var id = document.getElementById("room1").name;
+var checkinyear = document.getElementsByClassName("year");
+var checkinmonth = document.getElementsByClassName("month");
+var checkinday = document.getElementsByClassName("day");
+var checkoutyear = document.getElementsByClassName("year1");
+var checkoutmonth = document.getElementsByClassName("month1");
+var checkoutday = document.getElementsByClassName("day1");
+var adults = document.getElementsByClassName("adult");
+var kid = document.getElementsByClassName("kids");
+var namebooking = document.getElementsByClassName("bookingName")
+var room = document.getElementById("room_id");
+
+
 
 async function book() {
     try {
         var userSendBook = {
             check_in_date: checkinyear.value + '-' + checkinmonth.value + '-' + checkinday.value,
             check_out_date: checkoutyear.value + '-' + checkoutmonth.value + '-' + checkoutday.value,
-            adult: adult.value,
+            adults: adults.value,
             kids: kid.value,
-            name:name.value,
-            room: id,
+            name:namebooking.value,
+            room:room
         };
-
         var data = await fetch(`http://127.0.0.1:8000/api/booking/`, {
             method: "post",
             headers: {
@@ -197,7 +75,6 @@ async function book() {
         // Handle the success response here if needed
     } catch (error) {
         console.error('Error during booking:', error);
-        window.alert("this room is already booked in this time")
         // You can handle different types of errors here
         if (error instanceof TypeError) {
             // Handle specific error types if needed
@@ -214,10 +91,18 @@ async function book() {
 
 
 
+
+
+
+
+
+
+
+//////////////////////////////////////////////////
 let roomList = [];
 
 async function addRoom() {
-    let myReq = await fetch(`http://127.0.0.1:8000/api/api/reviews/`)
+    let myReq = await fetch(`http://127.0.0.1:8000/api/all-rooms/`)
     console.log(myReq)
     let Data = await myReq.json()
     roomList = Data.rooms
@@ -230,11 +115,11 @@ async function addRoom() {
     function displayRoom(){
         let temp = ""
         roomList.forEach((element)=>{
-            temp+=`   <div class="booking-item" id="room" name="${room_id}">
+            temp+=` <div class="booking-item" id="${element.room_id}" name="${element.room_id}">
             <img src="./css/images/Rectangle 26.png" alt="hotel room sweet" />
-            <h2>${room_name}</h2>
-            <span class="me-4 ">${room_type}</span>
-            <span>${room_price}</span>
+            <h2>${element.room_name}</h2>
+            <span class="me-4 ">room type: ${element.room_type}</span>
+            <span>price: ${element.room_price}$</span>
             <div class="booking-line"></div>
             <ul>
               <li><i class="fa-solid fa-tv"></i></li>
@@ -262,20 +147,130 @@ async function addRoom() {
                             </div>
                         <div class="checkin">
                           <span>checkin : &nbsp;</span>
-                          <select id="year" required></select>
-                        <select id="month" required></select>
-                        <select id="day" required></select>
+                          <select class="year" required>
+                            <option value="year" disabled selected>year</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                          </select>
+                        <select class="month" required>
+                          <option value="month" selected disabled>month</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                        </select>
+                        <select class="day" required>
+                          <option value="day" selected disabled>day</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                          <option value="13">13</option>
+                          <option value="14">14</option>
+                          <option value="15">15</option>
+                          <option value="16">16</option>
+                          <option value="17">17</option>
+                          <option value="18">18</option>
+                          <option value="19">19</option>
+                          <option value="20">20</option>
+                          <option value="21">21</option>
+                          <option value="22">22</option>
+                          <option value="23">23</option>
+                          <option value="24">24</option>
+                          <option value="25">25</option>
+                          <option value="26">26</option>
+                          <option value="27">27</option>
+                          <option value="28">28</option>
+                          <option value="29">29</option>
+                          <option value="30">30</option>
+                          <option value="31">31</option>
+                         
+                        </select>
                         </div>
                         <div class="checkout my-4 ">
                           <span>checkout : </span>
-                          <select id="year1" required></select>
-                        <select id="month1" required></select>
-                        <select id="day1" required></select>
+                          <select class="year1" required>
+                            <option value="year" selected disabled>year</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                          </select>
+                        <select class="month1"  required>
+                          <option value="month" selected disabled>month</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                        </select>
+                        <select class="day1" required>
+                          <option value="day" selected disabled>day</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                          <option value="13">13</option>
+                          <option value="14">14</option>
+                          <option value="15">15</option>
+                          <option value="16">16</option>
+                          <option value="17">17</option>
+                          <option value="18">18</option>
+                          <option value="19">19</option>
+                          <option value="20">20</option>
+                          <option value="21">21</option>
+                          <option value="22">22</option>
+                          <option value="23">23</option>
+                          <option value="24">24</option>
+                          <option value="25">25</option>
+                          <option value="26">26</option>
+                          <option value="27">27</option>
+                          <option value="28">28</option>
+                          <option value="29">29</option>
+                          <option value="30">30</option>
+                          <option value="31">31</option>
+                        </select>
+                       
+                  
+                        
                         </div>
                         <div class="persons">
                           <span>persons: </span>
                           <label for="">Adults: </label>
-                          <select name="adult" id="adult" required>
+                          <select name="adult" class="adult" required>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -283,7 +278,7 @@ async function addRoom() {
                             <option value="5">5</option>
                           </select>
                           <label for="">Kids: </label>
-                          <select name="kids" id="kids" required>
+                          <select name="kids" class="kids" required>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -291,7 +286,7 @@ async function addRoom() {
                             <option value="4">4</option>
                             <option value="5">5</option>
                           </select>
-
+          
                         </div>
                         </div>
                         <div class="modal-footer">
@@ -326,120 +321,6 @@ function bookcant(){
 
 
 
-
-
-
-
-
-///////////////////////////////
-
-$(document).ready(function() {
-  const monthNames = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-  ];
-  let qntYears = 4;
-  let selectYear = $("#year2");
-  let selectMonth = $("#month2");
-  let selectDay = $("#day2");
-  let currentYear = new Date().getFullYear();
-
-  for (var y = 0; y < qntYears; y++) {
-    let date = new Date(currentYear);
-    let yearElem = document.createElement("option");
-    yearElem.value = currentYear
-    yearElem.textContent = currentYear;
-    selectYear.append(yearElem);
-    currentYear++;
-  }
-
-  for (var m = 0; m < 12; m++) {
-    let month = monthNames[m];
-    let monthElem = document.createElement("option");
-    monthElem.value = m;
-    monthElem.textContent = month;
-    selectMonth.append(monthElem);
-  }
-
-  var d = new Date();
-  var month = d.getMonth();
-  var year = d.getFullYear();
-  var day = d.getDate();
-
-  selectYear.val(year);
-  selectYear.on("change", AdjustDays);
-  selectMonth.val(month);
-  selectMonth.on("change", AdjustDays);
-
-  AdjustDays();
-  selectDay.val(day)
-
-  function AdjustDays() {
-    var year = selectYear.val();
-    var month = parseInt(selectMonth.val()) + 1;
-    selectDay.empty();
-
-    //get the last day, so the number of days in that month
-    var days = new Date(year, month, 0).getDate();
-
-    //lets create the days of that month
-    for (var d = 1; d <= days; d++) {
-      var dayElem = document.createElement("option");
-      dayElem.value = d;
-      dayElem.textContent = d;
-      selectDay.append(dayElem);
-    }
-  }
-});
-
-
-
-
-
-
-
-
-var checkineventyear = document.getElementById("year2");
-var checkineventmonth = document.getElementById("month2");
-var checkineventday = document.getElementById ("day2");
-var idEvent = document.getElementById("event1").name;
-var idEvent = document.getElementById("event2").name;
-
-async function bookEvent() {
-    try {
-        var userSendBook = {
-            check_in_date: checkineventyear.value + '-' + checkineventmonth.value + '-' + checkineventday.value,
-            event_id: idEvent,
-        };
-
-        var data = await fetch(`http://127.0.0.1:8000/api/booking/`, {
-            method: "post",
-            headers: {
-                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(userSendBook),
-        });
-
-        if (!data.ok) {
-            throw new Error(`HTTP error! Status: ${data.status}`);
-        }
-
-        let res = await data.json();
-        console.log(res);
-        // Handle the success response here if needed
-    } catch (error) {
-        console.error('Error during booking:', error);
-        window.alert("this room is already booked in this time")
-        // You can handle different types of errors here
-        if (error instanceof TypeError) {
-            // Handle specific error types if needed
-        } else {
-            // Handle other errors
-        }
-
-        // Display an error message to the user or perform other error handling actions
-    }
-}
 
 
 

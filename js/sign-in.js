@@ -204,7 +204,7 @@ async function loginData() {
 
         if (response.ok) {
             // Save the access token in local storage
-            localStorage.setItem('accessToken', res.access);
+            localStorage.setItem('accessToken', res.access_token);
 
             window.location.href = "http://127.0.0.1:3000/x-hotel-front-end/home.html";
         } else {

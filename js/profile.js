@@ -14,7 +14,7 @@ async function addProfile() {
     }
 
     let data = await myReq.json();
-    profileList = data.user_data;
+    profileList = data.profile;
     displayProfile();
   } catch (error) {
     console.error("Error:", error);

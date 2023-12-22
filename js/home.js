@@ -98,7 +98,7 @@ async function addUserhome() {
 
     console.log(myReq);
     let Data = await myReq.json();
-    homeName = Data.user_data;
+    homeName = Data.profile;
     console.log(homeName);
     displayUserHome();
   } catch (error) {
@@ -118,6 +118,7 @@ function displayUserHome() {
         <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         </button>
         <ul class="dropdown-menu">
+        <li><a href="profile.html" class="text-decoration-none pb-3 profile-a">Profile</a></li>
           <li><button class="btn" id="logout" onclick="logout()" type="submit">log out</button></li>
         </ul>
       </div>`;
