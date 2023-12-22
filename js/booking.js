@@ -32,60 +32,68 @@
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Your existing code here
 
-  var checkindate = document.querySelector(".checkindate");
-  var checkoutdate = document.querySelector(".checkoutdate");
-  var adults = document.querySelector(".adult");
-  var kid = document.querySelector(".kids");
-  var namebooking = document.querySelector(".bookingName");
-  var room = document.querySelector(".roomnum");
+var list = []
+var checkindate = document.querySelectorAll(".checkindate")
+var checkoutdate = document.querySelectorAll(".checkoutdate")
+var adults = document.querySelectorAll(".adult");
+var kid = document.querySelectorAll(".kids");
+var namebooking = document.querySelectorAll(".bookingName")
+var room = document.querySelectorAll(".roomnum")
+console.log(checkindate);
+console.log(checkoutdate);
+console.log(adults);
+console.log(kid);
+console.log(namebooking);
+console.log(room);
 
-  async function book() {
-      try {
-          var userSendBook = {
-              name: namebooking.value,
-              adults: adults.value,
-              kids: kid.value,
-              room: room.value,
-              check_in_date: checkindate.value,
-              check_out_date: checkoutdate.value
-          };
-          var data = await fetch(`http://127.0.0.1:8000/api/booking/`, {
-              method: "post",
-              headers: {
-                  'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
-                  'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(userSendBook),
-          });
+    //     let nodelist = ""
+    //     list.forEach((element)=>{
+    //     nodelist+=element.checkindate
+    //     })
+    //      listData = nodelist
+    // console.log(listData);
 
-          if (!data.ok) {
-              throw new Error(`HTTP error! Status: ${data.status}`);
-          }
 
-          let res = await data.json();
-          console.log(res);
-          // Handle the success response here if needed
+async function book() {
+    try {
+        var userSendBook = {
+          name:namebooking.value,
+          adults: adults.value,
+          kids: kid.value,
+          room:room.value,
+          check_in_date: checkindate.value,
+          check_out_date: checkoutdate.value
+        };
+        var data = await fetch(`http://127.0.0.1:8000/api/booking/`, {
+            method: "post",
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userSendBook),
+        });
 
-      } catch (error) {
-          console.error('Error during booking:', error);
-          // You can handle different types of errors here
-          if (error instanceof TypeError) {
-              // Handle specific error types if needed
-          } else {
-              // Handle other errors
-          }
+        if (!data.ok) {
+            throw new Error(`HTTP error! Status: ${data.status}`);
+        }
 
-          // Display an error message to the user or perform other error handling actions
-      }
-  }
+        let res = await data.json();
+        console.log(res);
+        // Handle the success response here if needed
+        
+    } catch (error) {
+        console.error('Error during booking:', error);
+        // You can handle different types of errors here
+        if (error instanceof TypeError) {
+            // Handle specific error types if needed
+        } else {
+            // Handle other errors
+        }
 
-  // Optionally, you can call the `book` function here or bind it to a button click, etc.
-  // For example:
-  document.getElementById('book').addEventListener('click', book);
-});
+        // Display an error message to the user or perform other error handling actions
+    }
+}
 
 
 
@@ -129,12 +137,12 @@ async function addRoomHilton() {
               <li><i class="fa-solid fa-shower"></i></li>
               <li><i class="fa-solid fa-wifi"></i></li>
               <li><!-- Button trigger modal -->
-                <button type="button" class="btn-booking" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn-booking" data-bs-toggle="modal" data-bs-target="#exampleModal${element.room_id}">
                   Book Now
                 </button>
                 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModal${element.room_id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -146,7 +154,7 @@ async function addRoomHilton() {
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                         <div class="name">
                               <label for="">name : </label>
-                              <input id="bookingName" type="text">
+                              <input class="bookingName" type="text">
                             </div>
                         <div class="checkin">
                           <span>checkin : &nbsp;</span>
@@ -184,7 +192,7 @@ async function addRoomHilton() {
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button id="book" type="button" class="btn btn-primary">Reserve</button>
+                          <button onclick="book()" type="button" class="btn btn-primary">Reserve</button>
                         </div>
                       </form>
                       </div>
