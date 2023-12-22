@@ -33,7 +33,6 @@
 
 
 
-var list = []
 var checkindate = document.querySelectorAll(".checkindate")
 var checkoutdate = document.querySelectorAll(".checkoutdate")
 var adults = document.querySelectorAll(".adult");
@@ -47,9 +46,12 @@ console.log(kid);
 console.log(namebooking);
 console.log(room);
 
+
+
+    //     var list = []
     //     let nodelist = ""
     //     list.forEach((element)=>{
-    //     nodelist+=element.checkindate
+    //     nodelist+=element.checkindate.value
     //     })
     //      listData = nodelist
     // console.log(listData);
