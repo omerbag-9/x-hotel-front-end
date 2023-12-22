@@ -1,119 +1,21 @@
+let roomList4season = [];
 
-// var checkinyear = document.getElementById("year")
-// var checkinmonth = document.getElementById("month")
-// var checkinday = document.getElementById("day")
-// var checkoutyear = document.getElementById("year1")
-// var checkoutmonth = document.getElementById("month1")
-// var checkoutday = document.getElementById("day1")
-// var adult = document.getElementById("adult")
-// var kid = document.getElementById("kids")
-// var id = document.getElementById("room1").name ;
-
-// async function book() {
-//     var userSendBook = {
-//         check_in_date: checkinyear.value+'-'+checkinmonth.value+'-'+checkinday.value,
-//         check_out_date: checkoutyear.value+'-'+checkoutmonth.value+'-'+checkoutday.value,
-//         adult:adult.value,
-//         kids:kid.value,
-//         room:id,
-//     }
-//     var data = await fetch(`http://127.0.0.1:8000/api/booking/`, {
-//         method: "post",
-//         headers: {
-//           'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(userSendBook)
-//     })
-//     let res = await data.json()
-//     console.log(res);
-// }
-
-
-
-
-
-
-var checkindate = document.querySelector(".checkindate")
-var checkoutdate = document.querySelector(".checkoutdate")
-var adults = document.querySelector(".adult");
-var kid = document.querySelector(".kids");
-var namebooking = document.querySelector(".bookingName")
-var room = document.querySelector(".roomnum")
-
-
-
-async function book() {
-    try {
-        var userSendBook = {
-            check_in_date: checkindate.value,
-            check_out_date: checkoutdate.value,
-            adults: adults.value,
-            kids: kid.value,
-            name:namebooking.value,
-            room:room.value
-        };
-        var data = await fetch(`http://127.0.0.1:8000/api/booking/`, {
-            method: "post",
-            headers: {
-                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(userSendBook),
-        });
-
-        if (!data.ok) {
-            throw new Error(`HTTP error! Status: ${data.status}`);
-        }
-
-        let res = await data.json();
-        console.log(res);
-        // Handle the success response here if needed
-        
-    } catch (error) {
-        console.error('Error during booking:', error);
-        // You can handle different types of errors here
-        if (error instanceof TypeError) {
-            // Handle specific error types if needed
-        } else {
-            // Handle other errors
-        }
-
-        // Display an error message to the user or perform other error handling actions
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-//////////////////////////////////////////////////
-let roomListHilton = [];
-
-async function addRoomHilton() {
+async function addRoom4season() {
     let myReq = await fetch(`http://127.0.0.1:8000/api/all-rooms/`)
     console.log(myReq)
     let Data = await myReq.json()
-    roomListHilton = Data.rooms
-    console.log(roomListHilton)
-    displayRoomHilton()
+    roomList4season = Data.rooms
+    console.log(roomList4season)
+    displayRoom4season()
     }
 
-    addRoomHilton()
+    addRoom4season()
 
-    function displayRoomHilton(){
+    function displayRoom4season(){
 
         let temp = ""
-        roomListHilton.forEach((element)=>{
-          if(element.hotel == 'Hilton'){
+        roomList4season.forEach((element)=>{
+          if(element.hotel == '4season'){
             temp+=`<div class="booking-item">
             <img src="./css/images/Rectangle 26.png" alt="hotel room sweet" />
             <h2>${element.room_name}</h2>
@@ -192,24 +94,4 @@ async function addRoomHilton() {
         }})
         document.getElementById("myRoom").innerHTML = temp
     }
-
-
-
-
-function bookcant(){
-  window.alert("sign in to book")
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
