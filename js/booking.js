@@ -39,9 +39,13 @@
 
 var reserveClose = document.querySelector(".reservation button.close")
 var reserveShow = document.getElementById("btn-booking")
+var reservebook = document.getElementById("btnbook")
 var reserveContainer = document.getElementById("reservation")
 
 reserveClose.addEventListener('click',function(){
+  reserveContainer.style.visibility = 'hidden'
+})
+reservebook.addEventListener('click',function(){
   reserveContainer.style.visibility = 'hidden'
 })
 reserveShow.addEventListener('click',function(){
