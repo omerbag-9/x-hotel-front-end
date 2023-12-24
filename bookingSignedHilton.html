@@ -109,90 +109,87 @@
     </div>
     <!-- ./booking-page -->
 
-
-        <!-- booking -->
-        <div class="booking">
+         
+        <div class="booking position-relative ">
           <div class="container-lg ">
             <div class="section-header">
               <h2 class="section-title">Booking</h2>
               <span class="line"></span>
             </div>
-            <!-- ./section-header -->
             <div class="booking-items" id="myRoom">
-              <!-- <div class="booking-item" id="room" name="1">
+              <div class="booking-item" id="room" name="1">
                 <img src="./css/images/Rectangle 26.png" alt="hotel room sweet" />
                 <h2>The Royal Room</h2>
                 <span class="me-4 ">single</span>
-                <span>$190</span>
+                <span class="me-4 ">$190</span>
+                <span>room id : 1</span>
                 <div class="booking-line"></div>
                 <ul>
                   <li><i class="fa-solid fa-tv"></i></li>
                   <li><i class="fa-solid fa-shower"></i></li>
                   <li><i class="fa-solid fa-wifi"></i></li>
-                  <li>
-                    <button type="button" class="btn-booking" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                      Book Now
-                    </button>
-                    
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Choose Date</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <form action="" >
-                          <div class="modal-body">
-                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-                            <div class="checkin">
-                              <span>checkin : &nbsp;</span>
-                              <select id="year" required></select>
-                            <select id="month" required></select>
-                            <select id="day" required></select>
-                            </div>
-                            <div class="checkout my-4 ">
-                              <span>checkout : </span>
-                              <select id="year1" required></select>
-                            <select id="month1" required></select>
-                            <select id="day1" required></select>
-                            </div>
-                            <div class="persons">
-                              <span>persons: </span>
-                              <label for="">Adults: </label>
-                              <select name="adult" id="adult" required>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select>
-                              <label for="">Kids: </label>
-                              <select name="kids" id="kids" required>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select>
-
-                            </div>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button onclick="book()" type="button" class="btn btn-primary">Reserve</button>
-                            </div>
-                          </form>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
                 </ul>
-              </div> -->
-              <!-- ./booking-item -->
-
+              </div> 
             </div>
-            <!-- ./booking-items -->
+         
+
+            <!-- reservation -->
+            <div id="reservation" style="visibility: hidden;" class="reservation">
+              <div class="name">
+                <label for="">name : </label>
+                <input id="bookingName" type="text">
+              </div>
+          <div class="checkin">
+            <span>checkin : &nbsp;&nbsp;&nbsp;</span>
+            <input type="date"  id="checkindate">
+          </div>
+          <div class="checkout mt-2">
+            <span>checkout : &nbsp;</span>
+            <input type="date"  id="checkoutdate">
+          </div>
+          <div class="mt-2 ">
+          <span>room id : </span>
+          <select id="room_id">
+            <option value="1" selected>1</option>
+            <option value="2" selected>2</option>
+            <option value="3" selected>3</option>
+            <option value="4" selected>4</option>
+            <option value="5" selected>5</option>
+            <option value="6" selected>6</option>
+            <option value="7" selected>7</option>
+            <option value="8" selected>8</option>
+            <option value="9" selected>9</option>
+            <option value="10" selected>10</option>
+            </select> 
+          </div>
+          <div class="persons">
+            <span>persons: </span>
+            <label for="">Adults: </label>
+            <select  id="adult" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <label for="">Kids: </label>
+            <select  id="kids" required>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>                      
+          </div>
+          <button onclick="book()" type="submit" class="reserve">Reserve</button>
+          <button class="close">x</button>
+            </div>   
+
+            <div class="m-auto text-center ">
+              <button id="btn-booking" class="btn-booking" type="button">Book Now</button>
+            </div>
+            <!-- ./reservation --> 
           </div>
           <!-- ./container -->
         </div>
