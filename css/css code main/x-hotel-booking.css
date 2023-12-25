@@ -64,6 +64,36 @@
 
 
 
+.reservationEvent{
+    position: absolute;
+    visibility: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);   
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    padding: 90px;
+    background: rgb(253, 250, 250);
+}
+
+.reservationEvent button.reserve{
+    position: absolute;
+    bottom: 5%;
+    right: 5%;   
+    padding: 10px 32px;
+    border-radius: 10px;
+    background: #2d7881;
+    color: white;
+    border: none;
+}
+
+.reservationEvent button.close{
+    position: absolute;
+    top: 2%;
+    right: 2%;   
+    padding: 20;
+    color: #2d7881;
+}
+
 .reservation{
     position: absolute;
     visibility: hidden;
@@ -71,7 +101,7 @@
     left: 50%;
     transform: translate(-50%,-50%);   
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-    padding: 80px;
+    padding: 90px;
     background: rgb(253, 250, 250);
 }
 

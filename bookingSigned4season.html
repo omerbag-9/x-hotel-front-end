@@ -201,107 +201,90 @@
     <input class="m-5 form-control w-25 " placeholder="Check-out"/>
   </form> -->
 
-  <!-- events -->
-   <div class="booking">
-    <div class="container-lg ">
-      <div class="section-header">
-        <h2 class="section-title">Events</h2>
-        <span class="line"></span>
+        <!-- events -->
+        <div class="booking">
+          <div class="container-lg ">
+            <div class="section-header">
+              <h2 class="section-title">Events</h2>
+              <span class="line"></span>
+            </div>
+            <!-- ./section-header -->
+            <div class="events-items position-relative ">
+              <div class="booking-item" id="event" name="1">
+                <img src="./css/images/Rectangle 26.png" />
+                <h2>The Royal Hall</h2>
+                <span class="me-4 ">$130</span>
+                <span>event id : 3</span>
+                <div class="booking-line"></div>
+                <ul>
+                  <li><i class="fa-solid fa-tv"></i></li>
+                  <li><i class="fa-solid fa-shower"></i></li>
+                  <li><i class="fa-solid fa-wifi"></i></li>
+                </ul>
+              </div> 
+              <!-- ./booking-item -->
+              <div class="booking-item" id="event" name="1">
+                <img src="./css/images/Rectangle 26.png" />
+                <h2>The meeting Hall</h2>
+                <span class="me-4 ">$100</span>
+                <span>event id : 4</span>
+                <div class="booking-line"></div>
+                <ul>
+                  <li><i class="fa-solid fa-tv"></i></li>
+                  <li><i class="fa-solid fa-shower"></i></li>
+                  <li><i class="fa-solid fa-wifi"></i></li>
+                </ul>
+              </div> 
+              <!-- ./booking-item -->
+           <!-- reservation -->
+             <!-- reservation -->
+         <div id="reservationEvent" style="visibility: hidden;" class="reservationEvent">
+          <div class="name">
+            <label for="">name : </label>
+            <input id="bookingNameEvent" type="text">
+          </div>
+      <div class="checkin">
+        <span>checkin : &nbsp;&nbsp;&nbsp;</span>
+        <input type="date"  id="checkindateEvent">
       </div>
-      <!-- ./section-header -->
-      <div class="events-items">
-        <div class="booking-item" id="event1" name="1">
-          <img src="./css/images/Rectangle 26.png" alt="hotel room sweet" />
-          <h2>The Royal Room</h2>
-          <span>$100</span>
-          <div class="booking-line"></div>
-          <ul>
-            <li><i class="fa-solid fa-tv"></i></li>
-            <li><i class="fa-solid fa-shower"></i></li>
-            <li><i class="fa-solid fa-wifi"></i></li>
-            <li><!-- Button trigger modal -->
-              <button type="button" class="btn-booking" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                Book Event
-              </button>
-              
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="exampleModalLabel">Choose Date</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <form action="" >
-                    <div class="modal-body">
-                      <div class="checkin">
-                        <span>checkin : &nbsp;</span>
-                        <select id="year2" required></select>
-                      <select id="month2" required></select>
-                      <select id="day2" required></select>
-                      </div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button onclick="bookEvent()" type="submit" class="btn btn-primary">Reserve</button>
-                      </div>
-                    </form>
-                    </div>
-                  </div>
-                </div>
-              </li>
-          </ul>
-        </div>
-        <!-- ./booking-item -->
-        <div class="booking-item" id="event2" name="2">
-          <img src="./css/images/Rectangle 26.png" alt="hotel room sweet" />
-          <h2>The meeting Room</h2>
-          <span>$120</span>
-          <div class="booking-line"></div>
-          <ul>
-            <li><i class="fa-solid fa-tv"></i></li>
-            <li><i class="fa-solid fa-shower"></i></li>
-            <li><i class="fa-solid fa-wifi"></i></li>
-            <li><!-- Button trigger modal -->
-              <button type="button" class="btn-booking" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                Book Event
-              </button>
-              
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="exampleModalLabel">Choose Date</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <form action="" >
-                    <div class="modal-body">
-                      <div class="checkin">
-                        <span>checkin : &nbsp;</span>
-                        <select id="year2" required></select>
-                      <select id="month2" required></select>
-                      <select id="day2" required></select>
-                      </div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button onclick="bookEvent()" type="submit" class="btn btn-primary">Reserve</button>
-                      </div>
-                    </form>
-                    </div>
-                  </div>
-                </div>
-              </li>
-          </ul>
-        </div>
-        <!-- ./booking-item -->
+      <div class="mt-2 ">
+      <span>event id : </span>
+      <select id="event_id">
+        <option value="1" selected>1</option>
+        <option value="2" selected>2</option>
+        <option value="3" selected>3</option>
+        <option value="4" selected>4</option>
+        <option value="5" selected>5</option>
+        <option value="6" selected>6</option>
+        <option value="7" selected>7</option>
+        <option value="8" selected>8</option>
+        <option value="9" selected>9</option>
+        <option value="10" selected>10</option>
+        </select> 
       </div>
-      <!-- ./booking-items -->
-    </div>
-    <!-- ./container -->
-  </div>
-  <!-- ./booking -->
+      <div class="mt-2 ">
+      <span>event type : </span>
+      <select id="event_type">
+        <option value="wedding" selected>wedding</option>
+        <option value="meeting" selected>meeting</option>
+        </select> 
+      </div>
+      <button id="btnbookEvent" onclick="bookEvent()" type="submit" class="reserve">Reserve</button>
+      <button class="close">x</button>
+        </div>   
+
+       
+        <!-- ./reservation --> 
+            </div>
+            <!-- ./booking-items -->
+            <div class="m-auto text-center">
+              <button id="btn-bookingEvent" class="btn-booking" type="button">Book Now</button>
+            </div>
+          </div>
+          <!-- ./container -->
+        </div>
+        <!-- ./booking -->
+        
     <!-- footer -->
     <footer>
       <div class="footer-items">
