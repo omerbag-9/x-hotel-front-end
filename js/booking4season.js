@@ -44,7 +44,7 @@ reserveShowEvent.addEventListener('click',function(){
     let roomList4season = [];
 
     async function addRoom4season() {
-        let myReq = await fetch(`http://127.0.0.1:8000/api/all-rooms/`)
+        let myReq = await fetch(`https://xhotel3.onrender.com/api/all-rooms/`)
         console.log(myReq)
         let Data = await myReq.json()
         roomList4season = Data.rooms
@@ -112,7 +112,7 @@ reserveShowEvent.addEventListener('click',function(){
     
         try {
       
-            var data = await fetch(`http://127.0.0.1:8000/api/booking/`, {
+            var data = await fetch(`https://xhotel3.onrender.com/api/booking/`, {
                 method: "post",
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
@@ -164,7 +164,7 @@ reserveShowEvent.addEventListener('click',function(){
     
         try {
       
-            var data = await fetch(`http://127.0.0.1:8000/api/event/`, {
+            var data = await fetch(`https://xhotel3.onrender.com/api/event/`, {
                 method: "post",
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,

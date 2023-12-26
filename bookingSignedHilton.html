@@ -24,6 +24,7 @@
       href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Dancing+Script:wght@600&family=PT+Sans&family=Roboto+Serif:opsz,wght@8..144,200;8..144,300&family=Varela+Round&display=swap"
       rel="stylesheet"
     />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <script src="./js/bootstrap.bundle.min.js"></script>
     <title>XHotel</title>
@@ -117,7 +118,7 @@
               <span class="line"></span>
             </div>
             <div class="booking-items" id="myRoom">
-              <div class="booking-item" id="room" name="1">
+              <!-- <div class="booking-item" id="room" name="1">
                 <img src="./css/images/Rectangle 26.png" alt="hotel room sweet" />
                 <h2>The Royal Room</h2>
                 <span class="me-4 ">single</span>
@@ -129,12 +130,13 @@
                   <li><i class="fa-solid fa-shower"></i></li>
                   <li><i class="fa-solid fa-wifi"></i></li>
                 </ul>
-              </div> 
+              </div>  -->
             </div>
          
 
             <!-- reservation -->
             <div id="reservation" style="visibility: hidden;" class="reservation">
+              <!-- <div class="price fs-2 fw-bold text-secondary ">price : 100</div> -->
               <div class="name">
                 <label for="">name : </label>
                 <input id="bookingName" type="text">
@@ -182,7 +184,11 @@
               <option value="5">5</option>
             </select>                      
           </div>
+          <div class="">
+            <span class="fs-2 fw-bold text-secondary " id="price"></span>
+          </div>
           <button id="btnbook" onclick="book()" type="submit" class="reserve">Reserve</button>
+          <button id="btnbook" onclick="calculatePrice()" type="button" class="calc">calculate</button>
           <button class="close">x</button>
             </div>   
 
@@ -337,5 +343,7 @@
   <script src="./js/profile.js"></script>
   <script src="./js/logout.js"></script>
   <script src="js/home.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 </body>
 </html>

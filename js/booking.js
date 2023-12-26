@@ -76,7 +76,7 @@ reserveShowEvent.addEventListener('click',function(){
     let roomListHilton = [];
 
     async function addRoomHilton() {
-        let myReq = await fetch(`http://127.0.0.1:8000/api/all-rooms/`)
+        let myReq = await fetch(`https://xhotel3.onrender.com/api/all-rooms/`)
         console.log(myReq)
         let Data = await myReq.json()
         roomListHilton = Data.rooms
@@ -144,7 +144,7 @@ reserveShowEvent.addEventListener('click',function(){
     
         try {
       
-            var data = await fetch(`http://127.0.0.1:8000/api/booking/`, {
+            var data = await fetch(`https://xhotel3.onrender.com/api/booking/`, {
                 method: "post",
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
@@ -156,6 +156,9 @@ reserveShowEvent.addEventListener('click',function(){
             if (!data.ok) {
               window.alert("the room is booked in this time")
                 throw new Error(`HTTP error! Status: ${data.status}`);
+            }
+            else{
+              window.location.href = "https://xhotel3.onrender.com/payment/";
             }
     
             let res = await data.json();
@@ -199,7 +202,7 @@ reserveShowEvent.addEventListener('click',function(){
     
         try {
       
-            var data = await fetch(`http://127.0.0.1:8000/api/event/`, {
+            var data = await fetch(`https://xhotel3.onrender.com/api/event/`, {
                 method: "post",
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
@@ -229,6 +232,84 @@ reserveShowEvent.addEventListener('click',function(){
             // Display an error message to the user or perform other error handling actions
         }
     }
+
+
+
+///////////////////////
+
+// Function to make an HTTP request to get room data
+function fetchRoomData(callback) {
+  // Replace with the actual URL of your JSON endpoint
+  const apiUrl = 'https://xhotel3.onrender.com/api/all-rooms/';
+
+  jQuery.ajax({
+      url: apiUrl,
+      type: 'GET',
+      dataType: 'json',
+      success: function (data) {
+          callback(data);
+      },
+      error: function (error) {
+          console.error('Error fetching room data:', error);
+      }
+  });
+}
+
+// Function to calculate the new price on the client side
+function calculatePrice() {
+  // Get user input values from the form
+  const checkInDate = $('#checkindate').val();
+  const checkOutDate = $('#checkoutdate').val();
+  const numberOfAdults = parseInt($('#adult').val());
+  const numberOfKids = parseInt($('#kids').val());
+
+  // Retrieve the room ID entered by the user
+  const roomId = $('#room_id').val();
+
+  // Fetch room data asynchronously
+  fetchRoomData(function (jsonData) {
+      // Find the room in the fetched JSON data based on the entered room ID
+      const room = findRoomById(jsonData, roomId);
+
+      if (!room) {
+          console.error('Room not found with ID:', roomId);
+          return;
+      }
+
+      // Calculate the number of days between check-in and check-out
+      const numberOfDays = calculateNumberOfDays(checkInDate, checkOutDate);
+
+      // Calculate the new price based on the provided parameters and fetched room price
+      const newPrice = room.room_price * numberOfDays * (1 + 0.2 * numberOfAdults + 0.1 * numberOfKids);
+
+      // Display the new price to the user
+      // $('#result').text(`New Price: $${newPrice.toFixed(2)}`);
+      $('#price').text(`total Price: ${newPrice.toFixed(2)}$`);
+
+  });
+}
+
+// Function to find a room in the JSON data based on the room ID
+function findRoomById(jsonData, roomId) {
+  return jsonData.rooms.find(room => room.room_id === parseInt(roomId));
+}
+
+// Function to calculate the number of days between two dates
+function calculateNumberOfDays(checkInDate, checkOutDate) {
+  const startDate = new Date(checkInDate);
+const endDate = new Date(checkOutDate);
+
+if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
+    console.error('Invalid date format');
+    return;
+}
+  const timeDifference = endDate.getTime() - startDate.getTime();
+  const numberOfDays = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+  return numberOfDays;
+}
+
+
 
 
 function bookcant(){

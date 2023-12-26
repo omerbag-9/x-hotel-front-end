@@ -119,7 +119,7 @@ async function joinData() {
     };
 
     try {
-        var data = await fetch(`http://127.0.0.1:8000/api/register/`, {
+        var data = await fetch(`https://xhotel3.onrender.com/api/register/`, {
             method: "post",
             credentials: "include",
             headers: {

@@ -2,7 +2,7 @@
 let profileList = [];
 async function addProfile() {
   try {
-    let myReq = await fetch(`http://127.0.0.1:8000/api/profile/`, {
+    let myReq = await fetch(`https://xhotel3.onrender.com/api/profile/`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
         "Content-Type": "application/json",
@@ -50,7 +50,7 @@ function displayProfile() {
 let profileBookedList = [];
 async function addBookedProfile() {
   try {
-    let myReq = await fetch(`http://127.0.0.1:8000/api/profile/`, {
+    let myReq = await fetch(`https://xhotel3.onrender.com/api/profile/`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
         "Content-Type": "application/json",

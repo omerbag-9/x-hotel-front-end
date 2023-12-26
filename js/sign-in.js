@@ -190,7 +190,7 @@ async function loginData() {
     }
 
     try {
-        var response = await fetch(`http://127.0.0.1:8000/api/login/`, {
+        var response = await fetch(`https://xhotel3.onrender.com/api/login/`, {
             method: "post",
             credentials: 'include',
             headers: {

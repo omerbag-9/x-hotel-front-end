@@ -124,7 +124,16 @@
     color: #2d7881;
 }
 
-
+.reservation .calc{
+    position: absolute;
+    bottom: 5%;
+    right:60%;   
+    padding: 10px 32px;
+    border-radius: 10px;
+    background: #2d7881;
+    color: white;
+    border: none;
+}
 
 /* mobile */
 @media screen and (max-width:480px) {

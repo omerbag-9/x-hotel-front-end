@@ -2,7 +2,7 @@
 let dashList = [];
 
 async function addDash() {
-    let myReq = await fetch(`http://127.0.0.1:8000/api/DashBoard/`)
+    let myReq = await fetch(`https://xhotel3.onrender.com/api/DashBoard/`)
     console.log(myReq)
     let Data = await myReq.json()
     dashList = Data.counts
@@ -38,7 +38,7 @@ async function addDash() {
     let dashEventList = [];
 
 async function addDashEvent() {
-    let myReq = await fetch(`http://127.0.0.1:8000/api/count-users-attending-event/`)
+    let myReq = await fetch(`https://xhotel3.onrender.com/api/count-users-attending-event/`)
     console.log(myReq)
     let Data = await myReq.json()
     dashEventList = Data.number_of_users_attending_event
@@ -52,8 +52,8 @@ async function addDashEvent() {
     function displayDashEvent(){
         let temp = ""
         dashEventList.forEach((element)=>{
-            temp+=`<div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="${element.number_of_users_attending_event}" aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-bar bg-success" style="width: ${element.number_of_users_attending_event}%">${element.number_of_users_attending_event}%</div>
+            temp+=`<div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="${element.attending_data}" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-success" style="width: ${element.attending_data}%">${element.attending_data}%</div>
           </div>`
         })
         document.getElementById("myDash").innerHTML = temp

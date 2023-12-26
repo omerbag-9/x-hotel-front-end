@@ -7,7 +7,7 @@ async function sendReview() {
         name: userPostReview.value,
         comment: postReviewMessage.value,
     }
-    var data = await fetch(`http://127.0.0.1:8000/api/api/reviews/`, {
+    var data = await fetch(`https://xhotel3.onrender.com/api/api/reviews/`, {
         method: "post",
         headers: {
           'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ async function sendReview() {
 let reviewList = [];
 
 async function addReview() {
-    let myReq = await fetch(`http://127.0.0.1:8000/api/api/reviews/`)
+    let myReq = await fetch(`https://xhotel3.onrender.com/api/api/reviews/`)
     console.log(myReq)
     let Data = await myReq.json()
     reviewList = Data.reviews
@@ -89,7 +89,7 @@ let homeName = [];
 
 async function addUserhome() {
   try {
-    let myReq = await fetch(`http://127.0.0.1:8000/api/profile/`, {
+    let myReq = await fetch(`https://xhotel3.onrender.com/api/profile/`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
         'Content-Type': 'application/json',

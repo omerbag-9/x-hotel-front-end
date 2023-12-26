@@ -2,7 +2,7 @@
 async function logout() {
   try {
     // Send a request to the server to invalidate the token
-    const response = await fetch('http://127.0.0.1:8000/api/logout/', {
+    const response = await fetch('https://xhotel3.onrender.com/api/logout/', {
       method: 'POST',
       headers: {
         // 'Authorization': 'Bearer ' + localStorage.getItem('token'), // Include the token in the headers
