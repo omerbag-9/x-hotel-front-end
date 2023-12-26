@@ -72,6 +72,10 @@
 }
 
 
+.w-10{
+  width: 10%;
+}
+
 
 /* mobile */
 @media screen and (max-width:480px) {
