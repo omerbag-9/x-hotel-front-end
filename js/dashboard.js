@@ -50,11 +50,11 @@ async function addDashEvent() {
     addDashEvent()
 
     function displayDashEvent(){
-        let temp = ""
-        dashEventList.forEach((element)=>{
-            temp+=`<div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="${element.attending_data}" aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-bar bg-success" style="width: ${element.attending_data}%">${element.attending_data}%</div>
+        let tempDash = ""
+        dashEventList.forEach((e)=>{
+            tempDash+=`<div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="${e.attending_data}" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-success" style="width: ${e.attending_data}%">${e.attending_data}</div>
           </div>`
         })
-        document.getElementById("eventIp").innerHTML = temp
+        document.getElementById("eventIp").innerHTML = tempDash
     }
