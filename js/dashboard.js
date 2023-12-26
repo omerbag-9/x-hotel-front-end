@@ -56,5 +56,5 @@ async function addDashEvent() {
             <div class="progress-bar bg-success" style="width: ${element.attending_data}%">${element.attending_data}%</div>
           </div>`
         })
-        document.getElementById("myDash").innerHTML = temp
+        document.getElementById("eventIp").innerHTML = temp
     }
