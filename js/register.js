@@ -130,7 +130,7 @@ async function joinData() {
 
         if (data.ok) {
             // Registration successful, redirect to the home page
-            window.location.href = "http://127.0.0.1:3000/x-hotel-front-end/sign-in.html";
+            window.location.href = "https://omerbag-9.github.io/x-hotel-front-end/sign-in.html";
         } else {
             // Handle registration error
             let errorResponse = await data.json();

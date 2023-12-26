@@ -206,7 +206,7 @@ async function loginData() {
             // Save the access token in local storage
             localStorage.setItem('accessToken', res.access_token);
 
-            window.location.href = "http://127.0.0.1:3000/x-hotel-front-end/home.html";
+            window.location.href = "https://omerbag-9.github.io/x-hotel-front-end/home.html";
         } else {
             console.error('Login failed:', res);
             window.alert("Username or password are incorrect");

@@ -14,7 +14,7 @@ async function logout() {
 
     if (response.ok) {
       // Redirect or perform other actions after successful logout
-      window.location.href = 'http://127.0.0.1:3000/x-hotel-front-end/index.html'; // Redirect to the login page, for example
+      window.location.href = 'https://omerbag-9.github.io/x-hotel-front-end/index.html'; // Redirect to the login page, for example
     } else {
       // Handle non-ok responses (e.g., show an error message)
       console.error('Logout failed. HTTP status:', response.status);
