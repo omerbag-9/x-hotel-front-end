@@ -29,7 +29,7 @@ async function loginData() {
             window.location.href = "https://omerbag-9.github.io/x-hotel-front-end/adminPanel.html";
         } else {
             console.error('Login failed:', res);
-            window.alert("Username or password are incorrect");
+            window.alert("email or password are incorrect");
         }
     } catch (error) {
         console.error('Error during login:', error);
