@@ -194,3 +194,98 @@ reserveShowEvent.addEventListener('click',function(){
             // Display an error message to the user or perform other error handling actions
         }
     }
+
+
+
+
+
+
+
+
+
+
+    // Bind calculatePrice function to input change events
+$('#checkindate, #checkoutdate, #adult, #kids').on('change', calculatePrice);
+
+// Function to make an HTTP request to get room data
+function fetchRoomData(callback) {
+  // Replace with the actual URL of your JSON endpoint
+  const apiUrl = 'https://xhotel3.onrender.com/api/all-rooms/';
+
+  jQuery.ajax({
+      url: apiUrl,
+      type: 'GET',
+      dataType: 'json',
+      success: function (data) {
+          callback(data);
+      },
+      error: function (error) {
+          console.error('Error fetching room data:', error);
+      }
+  });
+}
+
+// Function to calculate the new price on the client side
+function calculatePrice() {
+  // Get user input values from the form
+  const checkInDate = $('#checkindate').val();
+  const checkOutDate = $('#checkoutdate').val();
+  const numberOfAdults = parseInt($('#adult').val()) || 0; // Default to 0 if not entered
+  const numberOfKids = parseInt($('#kids').val()) || 0; // Default to 0 if not entered
+
+  // Check if checkInDate and checkOutDate are entered
+  if (!checkInDate || !checkOutDate) {
+    console.error('Please enter both check-in and check-out dates');
+    return;
+  }
+
+  // Retrieve the room ID entered by the user
+  const roomId = $('#room_id').val();
+
+  // Fetch room data asynchronously
+  fetchRoomData(function (jsonData) {
+      // Find the room in the fetched JSON data based on the entered room ID
+      const room = findRoomById(jsonData, roomId);
+
+      if (!room) {
+          console.error('Room not found with ID:', roomId);
+          return;
+      }
+
+      // Calculate the number of days between check-in and check-out
+      const numberOfDays = calculateNumberOfDays(checkInDate, checkOutDate);
+
+      // Check if numberOfDays is a valid number
+      if (isNaN(numberOfDays) || numberOfDays <= 0) {
+        console.error('Invalid number of days');
+        return;
+      }
+
+      // Calculate the new price based on the provided parameters and fetched room price
+      const newPrice = room.room_price * numberOfDays * (1 + 0.2 * numberOfAdults + 0.1 * numberOfKids);
+
+      // Display the new price to the user
+      $('#price').text(`Total Price: ${newPrice.toFixed(2)}$`);
+  });
+}
+
+// Function to find a room in the JSON data based on the room ID
+function findRoomById(jsonData, roomId) {
+  return jsonData.rooms.find(room => room.room_id === parseInt(roomId));
+}
+
+// Function to calculate the number of days between two dates
+function calculateNumberOfDays(checkInDate, checkOutDate) {
+  const startDate = new Date(checkInDate);
+  const endDate = new Date(checkOutDate);
+
+  if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
+    console.error('Invalid date format');
+    return NaN;
+  }
+
+  const timeDifference = endDate.getTime() - startDate.getTime();
+  const numberOfDays = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+  return numberOfDays;
+}
