@@ -1,10 +1,12 @@
 
 // login
+var userNameLoginInput = document.getElementById("username")
 var emailLoginInput = document.getElementById("email")
 var passwordLoginInput = document.getElementById("password")
 
 async function loginData() {
     var loginUserData = {
+        username: userNameLoginInput.value,
         email: emailLoginInput.value,
         password: passwordLoginInput.value,
     }
