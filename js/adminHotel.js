@@ -40,8 +40,8 @@ async function displayHotels() {
     let myReq = await fetch(`https://xhotel3.onrender.com/api/hotels/`)
     console.log(myReq)
     let Data = await myReq.json()
-    reviewList = Data.hotels
-    console.log(reviewList)
+    HotelDataList = Data.hotels
+    console.log(HotelDataList)
     displayHotelsData()
     }
 
