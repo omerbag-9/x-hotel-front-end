@@ -1,7 +1,7 @@
 // get and add hotels
 let hotelsList = [];
 async function addHotel() {
-    let myReq = await fetch(`https://xhotel3.onrender.com/api/hotels/`)
+    let myReq = await fetch(`https://xhotel3.onrender.com/api/hotel-details/`)
     let Data = await myReq.json()
     hotelsList = Data.hotels
     console.log(hotelsList)
