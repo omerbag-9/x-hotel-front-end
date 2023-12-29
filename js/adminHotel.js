@@ -10,7 +10,7 @@ async function addHotel() {
         location: HotelLocation.value,
         average_price: HotelAvgPrice.value,
     }
-
+    console.log(HotelData);
         var response = await fetch(`https://xhotel3.onrender.com/api/hotels/`, {
             method: "post",
             credentials: 'include',
