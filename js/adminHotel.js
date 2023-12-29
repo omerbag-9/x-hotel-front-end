@@ -19,8 +19,7 @@ async function addHotel() {
             },
             body: JSON.stringify(HotelData)
         });
-        displayHotelData()
-        
+        displayHotels()        
         let res = await response.json();
         console.log(res);
 
@@ -43,12 +42,12 @@ async function displayHotels() {
     let Data = await myReq.json()
     reviewList = Data.hotels
     console.log(reviewList)
-    displayReview()
+    displayHotelsData()
     }
 
-    displayHotels()
+  
 
-    function displayReview(){
+    function displayHotelsData(){
         let temp = ""
         HotelDataList.forEach((element)=>{
             temp+=`<tr>
