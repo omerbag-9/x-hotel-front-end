@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Hotl</title>
+    <link rel="stylesheet" href="./css/css code main/bootstrap.min.css" />
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/css code main/add-hotel.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Dancing+Script:wght@600&family=PT+Sans&family=Roboto+Serif:opsz,wght@8..144,200;8..144,300&family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-black text-white">
+   
+    <div class="container py-5">
+        <form>
+            <div class="mb-3">
+                <label for="addName">Name</label>
+                <input type="text" id="addName" class="form-control bg-black text-white" />
+            </div>
+            <div class="mb-3">
+                <label for="addDescription">Description</label>
+                <input type="text" id="addDescription" class="form-control bg-black text-white" />
+            </div>
+            <div class="mb-3">
+                <label for="addLocation">Location</label>
+                <input type="text" id="addLocation" class="form-control bg-black text-white" />
+            </div>
+            <div class="mb-3">
+                <label for="addAvgPrice">Avarage Price</label>
+                <input type="number" id="addAvgPrice" class="form-control bg-black text-white" />
+            </div>
+            <button type="button" class="btn btn-outline-success" onclick="addProduct()">Add</button>
+            <button type="button" class="btn btn-outline-danger" onclick="clearForm()">Clear Form</button>
+        </form>
+
+        <input  onkeyup="search()" class="form-control w-50 mx-auto my-5" type="text" placeholder="Search......" name="" id="searchInput">
+
+        <table class="table text-center table-dark table-striped table-hover  table-bordered ">
+            <thead>
+                <th>Index</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Location</th>
+                <th>Avarage Price</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </thead>
+            <tbody id="myData">
+
+            </tbody>
+        </table>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
