@@ -28,7 +28,7 @@ async function loginData() {
             // Save the access token in local storage
             localStorage.setItem('accessToken', res.access_token);
 
-            window.location.href = "https://omerbag-9.github.io/x-hotel-front-end/adminPanel.html";
+            window.location.href = "https://omerbag-9.github.io/x-hotel-front-end/adminHotel.html";
         } else {
             console.error('Login failed:', res);
             window.alert("you are not admin");
