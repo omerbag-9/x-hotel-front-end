@@ -58,9 +58,36 @@ async function displayHotels() {
                 <button class="btn btn-warning">Update</button>
             </td>
             <td>
-                <button class="btn btn-danger">Delete</button>
+                <button onclick="deleteHotel('${element.id}')" class="btn btn-danger">Delete</button>
             </td>
         </tr> `
         })
         document.getElementById("myHotelData").innerHTML = temp
     }
+
+
+    ///////////////////
+
+// Function to delete a hotel
+async function deleteHotel(hotelId) {
+    if (confirm("Are you sure you want to delete this hotel?")) {
+        try {
+            const response = await fetch(`https://xhotel3.onrender.com/api/hotels/${hotelId}`, {
+                method: "DELETE",
+                credentials: 'include',
+            });
+
+            if (response.ok) {
+                window.alert("Hotel deleted successfully");
+                displayHotels();
+            } else {
+                const errorData = await response.json();
+                window.alert(`Error deleting hotel: ${errorData.message}`);
+            }
+        } catch (error) {
+            console.error("Error deleting hotel:", error);
+            window.alert("An error occurred while deleting the hotel");
+        }
+    }
+}
+
