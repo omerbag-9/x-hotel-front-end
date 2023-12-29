@@ -1,5 +1,5 @@
 var HotelName = document.getElementById("HotelName")
-var HotelDesc = document.getElementById("Hoteldesc")
+var HotelDesc = document.getElementById("HotelDesc")
 var HotelLocation = document.getElementById("hotelLocation")
 var HotelAvgPrice = document.getElementById("hotelAvgPrice")
 
