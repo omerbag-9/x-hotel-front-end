@@ -12,7 +12,7 @@ async function loginData() {
     }
 
     try {
-        var response = await fetch(`https://xhotel3.onrender.com/api/login/`, {
+        var response = await fetch(`https://xhotel3.onrender.com/api/admin_login/`, {
             method: "post",
             credentials: 'include',
             headers: {
