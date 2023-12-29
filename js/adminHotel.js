@@ -52,8 +52,8 @@ async function displayHotels() {
         HotelDataList.forEach((element)=>{
             temp+=`<tr>
             <td>${element.name}</td>
-            <td>${element.location}$</td>
-            <td>${element.average_price}</td>
+            <td>${element.location}</td>
+            <td>${element.average_price}$</td>
             <td>
                 <button class="btn btn-warning">Update</button>
             </td>
