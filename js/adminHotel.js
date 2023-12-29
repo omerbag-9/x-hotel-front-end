@@ -37,7 +37,7 @@ async function addHotel() {
 let HotelDataList = [];
 
 async function displayHotels() {
-    let myReq = await fetch(`https://xhotel3.onrender.com/api/hotel-details/`)
+    let myReq = await fetch(`https://xhotel3.onrender.com/api/hotels/`)
     console.log(myReq)
     let Data = await myReq.json()
     reviewList = Data.hotels
@@ -45,7 +45,7 @@ async function displayHotels() {
     displayHotelsData()
     }
 
-  
+    displayHotels() 
 
     function displayHotelsData(){
         let temp = ""
