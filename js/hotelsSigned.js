@@ -13,7 +13,7 @@ async function addHotel() {
     function displayHotel(){
         let temp = ""
         hotelsList.forEach((element)=>{
-            temp+=`<a href="./bookingSigned${element.name}.html">
+            temp+=`<a href="./booking${element.name}.html">
             <div class="hotels-item"  >
               <img src="css/images/Rectangle 20.png" alt="" />
               <div class="item-overlay">
