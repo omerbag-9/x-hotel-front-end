@@ -12,7 +12,7 @@ async function loginData() {
     }
 
     try {
-        var response = await fetch(`https://xhotel3.onrender.com/api/login/`, {
+        var response = await fetch(`https://xhotel3.onrender.com/api/admin_login/`, {
             method: "post",
             credentials: 'include',
             headers: {
@@ -28,10 +28,10 @@ async function loginData() {
             // Save the access token in local storage
             localStorage.setItem('accessToken', res.access_token);
 
-            window.location.href = "https://omerbag-9.github.io/x-hotel-front-end/adminPanel.html";
+            window.location.href = "https://omerbag-9.github.io/x-hotel-front-end/adminHotel.html";
         } else {
             console.error('Login failed:', res);
-            window.alert("email or password are incorrect");
+            window.alert("you are not admin");
         }
     } catch (error) {
         console.error('Error during login:', error);
