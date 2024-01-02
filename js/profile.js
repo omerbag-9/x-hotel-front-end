@@ -32,7 +32,10 @@ function displayProfile() {
   document.getElementById("myProfile").innerHTML = temp;
 }
 
-
+{/* <p class="fw-bold">booking details:</p>
+<p class="fw-bold">checkin : <span class="fw-normal">${element.checkin}</span></p>
+<p class="fw-bold">checkout : <span class="fw-normal">${element.checkout}</span></p>
+<p class="fw-bold">roomType : <span class="fw-normal">${element.room_type}</span></p> */}
 
 
 
