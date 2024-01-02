@@ -130,7 +130,7 @@ async function joinData() {
 
         if (data.ok) {
             // Registration successful, redirect to the home page
-            window.location.href = "https://omerbag-9.github.io/x-hotel-front-end/sign-in.html";
+            window.alert("confirm your email")
         } else {
             // Handle registration error
             let errorResponse = await data.json();

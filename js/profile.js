@@ -81,3 +81,46 @@ function displayBookedProfile() {
   });
   document.getElementById("myProfile").innerHTML = temp;
 }
+
+
+
+
+
+
+// get and add profile
+let profilebookingList = [];
+async function addBookingProfile() {
+  try {
+    let myReq = await fetch(`https://xhotel3.onrender.com/api/profilebooking/`, {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!myReq.ok) {
+      throw new Error(`HTTP error! Status: ${myReq.status}`);
+    }
+
+    let data = await myReq.json();
+    profilebookingList = data.booking_info;
+    displayBookedProfile();
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+addBookingProfile();
+
+function displayBookedProfile() {
+  let temp = "";
+  profilebookingList.forEach((element) => {
+    temp = `<p>check in date: </p>
+    <span>${element.check_in_date}</span>
+    <p>check in date: </p>
+    <span>${element.check_out_date}</span>
+    <p>booked room price: </p>
+    <span>${element.total_price}</span>`;
+  });
+  document.getElementById("myProfilebookings").innerHTML = temp;
+}
