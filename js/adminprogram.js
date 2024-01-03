@@ -9,12 +9,12 @@ var Snorkeling = document.getElementById("Snorkeling")
 async function addProgram() {
     var ProgramData = {
         days: days.value,
-        Massage: Massage.value,
-        Safari: Safari.value,
-        Camping: Camping.value,
-        Seatrip: Seatrip.value,
-        Diving: Diving.value,
-        Snorkeling: Snorkeling.value,
+        massage: Massage.value,
+        safari: Safari.value,
+        camping: Camping.value,
+        seatrip: Seatrip.value,
+        diving: Diving.value,
+        snorkeling: Snorkeling.value,
     }
     console.log(ProgramData);
         var response = await fetch(`https://xhotel3.onrender.com/api/programs/`, {
