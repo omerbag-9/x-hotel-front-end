@@ -113,14 +113,14 @@ async function addBookingProfile() {
 addBookingProfile();
 
 function displayBookingProfile() {
-  let temp = "";
+  let temp1 = "";
   profilebookingList.forEach((element) => {
-    temp = `<p>check in date: </p>
+    temp1 = `<p>check in date: </p>
     <span>${element.check_in_date}</span>
     <p>check in date: </p>
     <span>${element.check_out_date}</span>
     <p>booked room price: </p>
     <span>${element.total_price}</span>`;
   });
-  document.getElementById("myProfilebookings").innerHTML = temp;
+  document.getElementById("myProfilebookings").innerHTML = temp1;
 }
