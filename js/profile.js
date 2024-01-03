@@ -117,7 +117,7 @@ function displayBookingProfile() {
   profilebookingList.forEach((element) => {
     temp1 = `<span>check in date: ${element.check_in_date}
     <span>check in date: ${element.check_out_date}
-    <span>booked room price: ${element.total_price}`;
+    <span>booked room price: ${element.total_price}$`;
   });
   document.getElementById("myProfilebookings").innerHTML = temp1;
 }
