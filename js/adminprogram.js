@@ -1,10 +1,10 @@
-var days = Number(document.getElementById("Days"))
-var Massage =Number( document.getElementById("Massage"))
-var Safari = Number(document.getElementById("Safari"))
-var Camping = Number(document.getElementById("Camping"))
-var Seatrip =Number(document.getElementById("Seatrip")) 
-var Diving = Number(document.getElementById("Diving"))
-var Snorkeling =Number( document.getElementById("Snorkeling"))
+var days = document.getElementById("Days")
+var Massage = document.getElementById("Massage")
+var Safari = document.getElementById("Safari")
+var Camping = document.getElementById("Camping")
+var Seatrip = document.getElementById("Seatrip")
+var Diving = document.getElementById("Diving")
+var Snorkeling = document.getElementById("Snorkeling")
 
 async function addProgram() {
     var ProgramData = {
