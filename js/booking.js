@@ -158,7 +158,7 @@ reserveShowEvent.addEventListener('click',function(){
                 throw new Error(`HTTP error! Status: ${data.status}`);
             }
             else{
-              window.location.href = `https://xhotel3.onrender.com/make_payment/${id}/`;
+              window.location.href = `https://xhotel3.onrender.com/make_payment/`;
             }
     
             let res = await data.json();
