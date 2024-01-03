@@ -229,3 +229,28 @@ function clearForm() {
     addButton.onclick = addRoom;
 }
 
+//////////////////////////
+var searchInputroom = document.getElementById('searchInputroom')
+function searchroom(){
+    var temp = ""
+    var searchRoomVar = searchInputroom.value.toLowerCase()
+    // console.log(searchRoomVar)
+    for (var i =0 ; i<roomDataList.length ; i++){
+       if(roomDataList[i].room_name.toLowerCase().includes(searchRoomVar)==true || roomDataList[i].hotel.toLowerCase().includes(searchRoomVar)==true){
+        temp += ` <tr>
+        <td>`+roomDataList[i].hotel.toLowerCase().replace(searchRoomVar,'<span class="bg-primary">'+searchRoomVar+'</span>')+`</td>
+        <td>`+roomDataList[i].room_id+`$</td>
+        <td>`+roomDataList[i].room_name.toLowerCase().replace(searchRoomVar,'<span class="bg-primary">'+searchRoomVar+'</span>')+`</td>
+        <td>`+roomDataList[i].room_price+`$</td>
+            <td>`+roomDataList[i].room_type.toLowerCase().replace(searchRoomVar,'<span class="bg-primary">'+searchRoomVar+'</span>')+`$</td>
+            <td>
+                <button class="btn btn-warning">Update</button>
+            </td>
+            <td>
+                <button onclick="deleteHotel(`+roomDataList[i].room_id+`)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>`
+       }
+    }
+    document.getElementById("myRoomData").innerHTML= temp
+}
