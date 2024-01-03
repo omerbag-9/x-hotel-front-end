@@ -104,7 +104,7 @@ async function addBookingProfile() {
 
     let data = await myReq.json();
     profilebookingList = data.booking_info;
-    displayBookedProfile();
+    displayBookingProfile();
   } catch (error) {
     console.error("Error:", error);
   }
@@ -112,7 +112,7 @@ async function addBookingProfile() {
 
 addBookingProfile();
 
-function displayBookedProfile() {
+function displayBookingProfile() {
   let temp = "";
   profilebookingList.forEach((element) => {
     temp = `<p>check in date: </p>
