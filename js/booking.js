@@ -131,7 +131,7 @@ reserveShowEvent.addEventListener('click',function(){
     
 
 
-      async function book() {
+      async function book(id) {
 
         var userSendBook = {
         name:namebooking.value,
@@ -158,8 +158,8 @@ reserveShowEvent.addEventListener('click',function(){
                 throw new Error(`HTTP error! Status: ${data.status}`);
             }
             else{
-              // window.location.href = `https://xhotel3.onrender.com/make_payment/`;
               window.alert("booked successfuly")
+              window.location.href = `https://xhotel3.onrender.com/make_payment/${id}/`;
             }
     
             let res = await data.json();
