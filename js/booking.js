@@ -159,7 +159,7 @@ reserveShowEvent.addEventListener('click',function(){
             }
             else{
               window.alert("booked successfuly")
-              window.location.href = `https://xhotel3.onrender.com/make_payment/`;
+              window.location.href = `https://xhotel3.onrender.com/payment/`;
             }
     
             let res = await data.json();

@@ -76,6 +76,8 @@ a{
     height: 50px;
     border-radius: 50px;
     background: black;
+    background-image: url(./images/6396323.jpg);
+    background-size: cover;
   }
 
   .profile-a{
@@ -106,6 +108,7 @@ a{
 .title-line:hover::before{
     width: 70%;
 } */
+
 
 
 /* mobile */
